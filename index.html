@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAP Hospital — Orthopedic &amp; Spine Care, Bhogpur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Frank+Ruhl+Libre:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0B4F8A;
+    --blue-dark:#073a68;
+    --blue-tint:#EAF3FA;
+    --green:#2BB673;
+    --green-dark:#1e9159;
+    --bg:#F8FAFC;
+    --ink:#152A3D;
+    --ink-soft:#4B6072;
+    --gold:#C6963A;
+    --line:#E1E9F0;
+    --card:#FFFFFF;
+    --radius-lg:22px;
+    --radius-md:14px;
+    --shadow-soft: 0 10px 30px rgba(11,79,138,0.08);
+    --shadow-card: 0 6px 20px rgba(11,79,138,0.07);
+    --maxw:1220px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Poppins',sans-serif;
+    color:var(--blue-dark);
+    margin:0 0 .5em 0;
+    line-height:1.25;
+  }
+  .eyebrow{
+    font-family:'Frank Ruhl Libre', serif;
+    font-weight:600;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--green-dark);
+    font-size:.86rem;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;height:2px;background:var(--green);display:inline-block;border-radius:2px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;cursor:pointer;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{padding:76px 0;}
+  :focus-visible{outline:3px solid var(--green); outline-offset:2px;}
+
+  /* ---------- ANIMATIONS ---------- */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+  @keyframes fadeLeft{from{opacity:0;transform:translateX(-30px);}to{opacity:1;transform:translateX(0);}}
+  @keyframes fadeRight{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:translateX(0);}}
+  @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+  @keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(192,57,43,0.35);}70%{box-shadow:0 0 0 14px rgba(192,57,43,0);}100%{box-shadow:0 0 0 0 rgba(192,57,43,0);}}
+  @keyframes softPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+  @keyframes spinSlow{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  .reveal{opacity:0;animation:fadeUp .7s ease forwards;animation-play-state:paused;}
+  .reveal.in-view{animation-play-state:running;}
+  .reveal.d1{animation-delay:.08s;}
+  .reveal.d2{animation-delay:.16s;}
+  .reveal.d3{animation-delay:.24s;}
+  .reveal.d4{animation-delay:.32s;}
+  .reveal-left{opacity:0;animation:fadeLeft .7s ease forwards;animation-play-state:paused;}
+  .reveal-left.in-view{animation-play-state:running;}
+  .reveal-right{opacity:0;animation:fadeRight .7s ease forwards;animation-play-state:paused;}
+  .reveal-right.in-view{animation-play-state:running;}
+
+  .float-anim{animation:floatY 5s ease-in-out infinite;}
+  .float-anim.slow{animation-duration:7s;}
+  .float-anim.delay{animation-delay:1.2s;}
+
+  .btn-emergency{animation:pulseRing 2.6s infinite;}
+  .btn-emergency:hover{animation:none;}
+
+  .t-icon svg{transition:transform .35s ease;}
+  .t-card:hover .t-icon svg{transform:rotate(-8deg) scale(1.12);}
+  .t-card:hover .t-icon{background:var(--green);transition:background .3s ease;}
+  .t-card:hover .t-icon svg path, .t-card:hover .t-icon svg circle{stroke:#fff;}
+
+  .stat .num{transition:transform .3s ease;}
+  .stat:hover .num{transform:scale(1.08);}
+
+  .nav-link{position:relative;overflow:hidden;}
+  .nav-link::after{
+    content:"";position:absolute;left:15px;right:15px;bottom:6px;height:2px;background:var(--green);
+    transform:scaleX(0);transform-origin:left;transition:transform .25s ease;
+  }
+  .nav-link:hover::after, .nav-link.active::after{transform:scaleX(1);}
+
+  .logo-mark{transition:transform .4s ease;}
+  .logo:hover .logo-mark{transform:rotate(-8deg) scale(1.06);}
+
+  /* ---------- NAVBAR ---------- */
+  header.site-header{
+    position:sticky;top:0;z-index:1000;
+    background:rgba(248,250,252,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:var(--maxw);margin:0 auto;
+  }
+  .logo{display:flex;align-items:center;gap:12px;}
+  .logo-mark{
+    width:52px;height:52px;border-radius:14px;
+    background:linear-gradient(155deg,var(--blue) 0%, var(--blue-dark) 100%);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 16px rgba(11,79,138,0.28);
+    flex-shrink:0;
+  }
+  .logo-text{line-height:1.1;}
+  .logo-text .name{font-family:'Poppins';font-weight:800;font-size:1.28rem;color:var(--blue-dark);letter-spacing:.2px;}
+  .logo-text .sub{font-size:.72rem;color:var(--green-dark);font-weight:600;letter-spacing:.14em;text-transform:uppercase;}
+  nav.main-nav{display:flex;gap:2px;align-items:center;}
+  nav.main-nav button.nav-link{
+    background:none;border:none;padding:10px 15px;border-radius:10px;
+    font-weight:600;font-size:.98rem;color:var(--ink-soft);
+    transition:.2s;
+  }
+  nav.main-nav button.nav-link:hover{background:var(--blue-tint);color:var(--blue-dark);}
+  nav.main-nav button.nav-link.active{background:var(--blue-tint);color:var(--blue-dark);}
+  .nav-cta-group{display:flex;gap:10px;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:13px 24px;border-radius:100px;font-weight:700;font-size:.98rem;
+    border:2px solid transparent; white-space:nowrap;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--green);color:#fff;box-shadow:0 8px 18px rgba(43,182,115,0.32);}
+  .btn-primary:hover{background:var(--green-dark);box-shadow:0 10px 22px rgba(43,182,115,0.4);}
+  .btn-outline{background:#fff;color:var(--blue);border-color:var(--blue);}
+  .btn-outline:hover{background:var(--blue);color:#fff;}
+  .btn-emergency{background:#fff;color:#C0392B;border-color:#F1D3CE;}
+  .btn-emergency:hover{background:#C0392B;color:#fff;border-color:#C0392B;}
+  .btn-block{width:100%;}
+  .btn-lg{padding:17px 32px;font-size:1.08rem;}
+  .hamburger{display:none;background:none;border:2px solid var(--line);border-radius:10px;padding:9px 11px;}
+  .hamburger span{display:block;width:22px;height:2.5px;background:var(--blue-dark);margin:4px 0;border-radius:2px;}
+
+  /* ---------- PAGES ---------- */
+  .page{display:none;}
+  .page.active{display:block;animation:fadein .35s ease;}
+  @keyframes fadein{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:linear-gradient(180deg,#EAF3FA 0%, #F8FAFC 72%);
+    padding:64px 0 40px;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;}
+  .hero h1{font-size:clamp(2.1rem,4vw,3.05rem);margin-bottom:.4em;}
+  .hero h1 .hl{color:var(--green-dark);}
+  .hero p.lead{font-size:1.18rem;color:var(--ink-soft);max-width:520px;margin-bottom:1.7em;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+  .hero-trust{display:flex;gap:26px;flex-wrap:wrap;}
+  .trust-chip{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--ink-soft);font-size:.94rem;}
+  .trust-chip svg{flex-shrink:0;}
+  .hero-visual{position:relative;}
+  .hero-art-card{
+    background:var(--card);border-radius:28px;box-shadow:var(--shadow-soft);
+    padding:20px;position:relative;z-index:2;
+  }
+  .hero-badge{
+    position:absolute;background:#fff;border-radius:16px;padding:14px 18px;
+    box-shadow:var(--shadow-card);display:flex;align-items:center;gap:12px;z-index:3;
+  }
+  .hero-badge.b1{top:14%;left:-8%;}
+  .hero-badge.b2{bottom:8%;right:-6%;}
+  .hero-badge .num{font-family:'Poppins';font-weight:800;color:var(--blue-dark);font-size:1.3rem;line-height:1;}
+  .hero-badge .lbl{font-size:.78rem;color:var(--ink-soft);font-weight:600;}
+  .joint-motif{position:absolute;opacity:.14;z-index:0;}
+  .jm1{top:-40px;right:-60px;width:340px;}
+  .jm2{bottom:-60px;left:-70px;width:280px;}
+
+  /* ---------- STATS ---------- */
+  .stats-bar{background:var(--blue);}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:44px 0;}
+  .stat{text-align:center;color:#fff;}
+  .stat .num{font-family:'Poppins';font-weight:800;font-size:2.3rem;color:#fff;}
+  .stat .num .plus{color:var(--green);}
+  .stat .lbl{color:#CFE3F3;font-weight:600;font-size:.95rem;margin-top:2px;}
+
+  /* ---------- SECTION HEAD ---------- */
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(1.7rem,2.6vw,2.3rem);}
+  .section-head p{color:var(--ink-soft);font-size:1.05rem;}
+
+  /* ---------- TREATMENT CARDS ---------- */
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .t-card{
+    background:var(--card);border-radius:var(--radius-lg);padding:30px 26px;
+    box-shadow:var(--shadow-card);border:1px solid var(--line);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .t-card:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(11,79,138,0.14);}
+  .t-icon{
+    width:58px;height:58px;border-radius:16px;background:var(--blue-tint);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  }
+  .t-card h3{font-size:1.18rem;margin-bottom:.4em;}
+  .t-card p{color:var(--ink-soft);font-size:.98rem;margin:0 0 .8em;}
+  .t-link{color:var(--green-dark);font-weight:700;font-size:.94rem;display:inline-flex;align-items:center;gap:6px;}
+
+  /* ---------- DOCTOR INTRO ---------- */
+  .doctor-panel{
+    background:linear-gradient(120deg,var(--blue) 0%,var(--blue-dark) 100%);
+    border-radius:28px;padding:0;overflow:hidden;color:#fff;
+    display:grid;grid-template-columns:.85fr 1.15fr;align-items:stretch;
+  }
+  .doctor-photo-wrap{position:relative;background:#0a4478;display:flex;align-items:flex-end;justify-content:center;min-height:340px;}
+  .doctor-content{padding:44px 46px;}
+  .doctor-content .eyebrow{color:#8FD9B4;}
+  .doctor-content .eyebrow::before{background:#8FD9B4;}
+  .doctor-content h2{color:#fff;}
+  .doctor-content p{color:#D7E6F2;font-size:1.03rem;}
+  .doctor-quals{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 26px;}
+  .qual-pill{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);padding:9px 16px;border-radius:100px;font-size:.88rem;font-weight:600;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi-card{background:var(--card);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-card);border:1px solid var(--line);}
+  .stars{color:var(--gold);letter-spacing:2px;font-size:1.05rem;margin-bottom:10px;}
+  .testi-card p.quote{color:var(--ink-soft);font-style:normal;margin-bottom:18px;}
+  .testi-person{display:flex;align-items:center;gap:12px;}
+  .avatar-circle{width:46px;height:46px;border-radius:50%;background:var(--blue-tint);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--blue-dark);font-family:'Poppins';flex-shrink:0;}
+  .testi-person .pname{font-weight:700;color:var(--ink);font-size:.96rem;}
+  .testi-person .ptag{color:var(--ink-soft);font-size:.84rem;}
+
+  /* ---------- HOSPITAL GALLERY ---------- */
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:18px;
+  }
+  .gallery-item{
+    position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-card);
+    border:1px solid var(--line);background:var(--blue-tint);
+  }
+  .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+  .gallery-item:hover img{transform:scale(1.08);}
+  .gallery-item.big{grid-column:span 2;grid-row:span 2;}
+  .gallery-caption{
+    position:absolute;left:0;right:0;bottom:0;padding:14px 16px;
+    background:linear-gradient(0deg, rgba(7,35,60,0.78) 0%, rgba(7,35,60,0) 100%);
+    color:#fff;font-weight:600;font-size:.88rem;
+    opacity:0;transform:translateY(8px);transition:.3s ease;
+  }
+  .gallery-item:hover .gallery-caption{opacity:1;transform:translateY(0);}
+  .gallery-note{
+    display:flex;align-items:center;gap:10px;background:var(--blue-tint);border:1px dashed var(--blue);
+    color:var(--blue-dark);font-size:.86rem;font-weight:600;padding:12px 18px;border-radius:12px;margin-top:18px;
+  }
+
+  /* ---------- VIDEO SECTION ---------- */
+  .video-panel{
+    position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft);
+    aspect-ratio:16/8;background:linear-gradient(120deg,var(--blue-dark),var(--blue));
+  }
+  .video-panel img.video-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;}
+  .video-panel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;background:#06263f;}
+  .play-btn{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:86px;height:86px;border-radius:50%;background:rgba(255,255,255,0.95);
+    display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,0.35);
+    border:none;cursor:pointer;z-index:2;transition:transform .25s ease;
+  }
+  .play-btn:hover{transform:translate(-50%,-50%) scale(1.08);}
+  .play-btn::before{
+    content:"";position:absolute;inset:0;border-radius:50%;
+    box-shadow:0 0 0 0 rgba(255,255,255,0.6);animation:pulseRingWhite 2.4s infinite;
+  }
+  @keyframes pulseRingWhite{0%{box-shadow:0 0 0 0 rgba(255,255,255,0.45);}70%{box-shadow:0 0 0 18px rgba(255,255,255,0);}100%{box-shadow:0 0 0 0 rgba(255,255,255,0);}}
+  .video-caption-row{display:flex;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap;gap:10px;}
+  .video-caption-row h3{margin:0;}
+  .video-caption-row p{margin:0;color:var(--ink-soft);font-size:.94rem;}
+  .video-panel.playing .play-btn, .video-panel.playing .video-poster{display:none;}
+
+  /* ---------- TESTIMONIAL PHOTOS ---------- */
+  .testi-photo{
+    width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;
+    border:3px solid var(--blue-tint);box-shadow:var(--shadow-card);
+  }
+  .testi-card{transition:transform .3s ease, box-shadow .3s ease;}
+  .testi-card:hover{transform:translateY(-6px);box-shadow:0 16px 30px rgba(11,79,138,0.12);}
+
+  /* ---------- MAP ---------- */
+  .map-section{background:var(--blue-tint);}
+  .map-wrap{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);border:1px solid var(--line);}
+  .map-wrap iframe{width:100%;height:380px;border:0;display:block;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#08243D;color:#B9CBDA;padding:60px 0 26px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;}
+  .footer-col h4{color:#fff;font-size:1.02rem;margin-bottom:1em;}
+  .footer-col p, .footer-col a{color:#9FB4C6;font-size:.94rem;}
+  .footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+  .footer-col ul a:hover{color:#fff;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.85rem;color:#7F97AA;}
+  .foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .foot-logo .name{font-family:'Poppins';font-weight:800;color:#fff;font-size:1.15rem;}
+
+  /* ---------- GENERIC INNER PAGE HERO ---------- */
+  .page-hero{
+    background:linear-gradient(180deg,#EAF3FA 0%, #F8FAFC 100%);
+    padding:54px 0 20px;
+  }
+  .breadcrumb{color:var(--ink-soft);font-size:.92rem;font-weight:600;margin-bottom:10px;}
+  .breadcrumb .cur{color:var(--green-dark);}
+  .page-hero h1{font-size:clamp(1.9rem,3.4vw,2.6rem);max-width:720px;}
+  .page-hero p{color:var(--ink-soft);max-width:640px;font-size:1.06rem;}
+
+  /* ---------- ABOUT PAGE ---------- */
+  .about-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .about-img-block{background:var(--blue-tint);border-radius:var(--radius-lg);padding:26px;}
+  .value-list{list-style:none;padding:0;margin:22px 0;display:flex;flex-direction:column;gap:16px;}
+  .value-list li{display:flex;gap:14px;align-items:flex-start;color:var(--ink-soft);}
+  .value-list .chk{
+    width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-size:.8rem;margin-top:2px;
+  }
+  .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px;}
+  .mv-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px;box-shadow:var(--shadow-card);}
+  .accred-strip{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px;}
+  .accred-chip{background:#fff;border:1px solid var(--line);border-radius:100px;padding:11px 20px;font-weight:700;color:var(--blue-dark);font-size:.9rem;box-shadow:var(--shadow-card);}
+
+  /* ---------- DOCTOR PROFILE PAGE ---------- */
+  .doc-profile-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;}
+  .doc-card{background:var(--card);border-radius:var(--radius-lg);padding:30px;box-shadow:var(--shadow-card);border:1px solid var(--line);text-align:center;position:sticky;top:100px;}
+  .doc-avatar-lg{width:150px;height:150px;border-radius:50%;background:linear-gradient(155deg,var(--blue),var(--blue-dark));margin:0 auto 18px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-card);}
+  .doc-name{font-size:1.4rem;margin-bottom:.2em;}
+  .doc-role{color:var(--green-dark);font-weight:700;margin-bottom:16px;}
+  .doc-meta-row{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line);font-size:.92rem;color:var(--ink-soft);}
+  .doc-meta-row span:last-child{color:var(--ink);font-weight:600;}
+  .timeline{border-left:3px solid var(--blue-tint);padding-left:26px;margin-left:6px;}
+  .timeline-item{position:relative;padding-bottom:30px;}
+  .timeline-item:last-child{padding-bottom:0;}
+  .timeline-item::before{content:"";position:absolute;left:-32.5px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--green);border:3px solid #fff;box-shadow:0 0 0 3px var(--blue-tint);}
+  .timeline-item .yr{font-weight:700;color:var(--blue-dark);font-family:'Poppins';font-size:.94rem;}
+  .spec-tags{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0;}
+  .spec-tag{background:var(--blue-tint);color:var(--blue-dark);padding:9px 16px;border-radius:100px;font-weight:600;font-size:.88rem;}
+  .timing-table{width:100%;border-collapse:collapse;margin-top:10px;}
+  .timing-table td{padding:12px 0;border-bottom:1px solid var(--line);font-size:.96rem;}
+  .timing-table td:last-child{text-align:right;font-weight:700;color:var(--blue-dark);}
+
+  /* ---------- SERVICES PAGE ---------- */
+  .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .service-row{
+    display:flex;gap:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);
+    padding:28px;box-shadow:var(--shadow-card);
+  }
+  .service-row .t-icon{flex-shrink:0;}
+  .service-row h3{margin-bottom:.3em;}
+  .service-row p{color:var(--ink-soft);font-size:.97rem;margin:0 0 10px;}
+  .service-row .tags{display:flex;gap:8px;flex-wrap:wrap;}
+  .service-row .tags span{background:var(--blue-tint);color:var(--blue-dark);font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:100px;}
+
+  /* ---------- FACILITIES PAGE ---------- */
+  .facility-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .facility-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-md);padding:26px 22px;text-align:center;box-shadow:var(--shadow-card);}
+  .facility-card .t-icon{margin:0 auto 16px;}
+  .facility-card h3{font-size:1.02rem;}
+  .facility-card p{color:var(--ink-soft);font-size:.9rem;margin:0;}
+
+  /* ---------- SUCCESS STORIES ---------- */
+  .story-feature{display:grid;grid-template-columns:1fr 1fr;gap:40px;background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);border:1px solid var(--line);padding:40px;align-items:center;margin-bottom:40px;}
+  .story-stats{display:flex;gap:30px;margin:20px 0;}
+  .story-stat .num{font-family:'Poppins';font-weight:800;color:var(--green-dark);font-size:1.7rem;}
+  .story-stat .lbl{font-size:.82rem;color:var(--ink-soft);font-weight:600;}
+  .before-after{display:flex;gap:14px;}
+  .ba-box{flex:1;background:var(--blue-tint);border-radius:var(--radius-md);padding:20px;text-align:center;}
+  .ba-box .lbl{font-weight:700;color:var(--blue-dark);font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
+  .ba-box .val{font-family:'Poppins';font-weight:800;font-size:1.5rem;color:var(--ink);}
+
+  /* ---------- APPOINTMENT PAGE ---------- */
+  .appt-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:flex-start;}
+  .appt-form-card{background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow-soft);border:1px solid var(--line);padding:40px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+  .form-group{display:flex;flex-direction:column;gap:8px;}
+  .form-group.full{grid-column:1/-1;}
+  .form-group label{font-weight:700;font-size:.92rem;color:var(--ink);}
+  .form-group input, .form-group select, .form-group textarea{
+    border:2px solid var(--line);border-radius:12px;padding:13px 16px;font-family:inherit;font-size:1rem;
+    background:#fcfdfe;color:var(--ink);transition:.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus{border-color:var(--blue);outline:none;background:#fff;}
+  .form-group textarea{resize:vertical;min-height:100px;}
+  .appt-side-card{background:var(--blue-dark);color:#fff;border-radius:var(--radius-lg);padding:34px;margin-bottom:20px;}
+  .appt-side-card h3{color:#fff;}
+  .appt-side-card p{color:#CFE3F3;font-size:.94rem;}
+  .appt-side-list{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-direction:column;gap:14px;}
+  .appt-side-list li{display:flex;gap:12px;align-items:center;font-size:.94rem;font-weight:600;}
+  .info-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-card);}
+  .info-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line);}
+  .info-row:last-child{border-bottom:none;}
+  .info-row .lbl{font-weight:700;font-size:.9rem;color:var(--ink-soft);}
+  .info-row .val{font-weight:600;color:var(--ink);}
+
+  /* ---------- CONTACT PAGE ---------- */
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;}
+  .contact-card-list{display:flex;flex-direction:column;gap:18px;margin-bottom:26px;}
+  .contact-item-card{display:flex;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-md);padding:22px;box-shadow:var(--shadow-card);align-items:flex-start;}
+  .contact-item-card h4{margin:0 0 4px;font-size:1.02rem;}
+  .contact-item-card p{margin:0;color:var(--ink-soft);font-size:.94rem;}
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    background:linear-gradient(120deg,var(--green) 0%, var(--green-dark) 100%);
+    border-radius:28px;padding:52px 50px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;color:#fff;
+  }
+  .cta-band h2{color:#fff;margin-bottom:.2em;}
+  .cta-band p{color:#DDF3E7;margin:0;}
+  .cta-band .btn-primary{background:#fff;color:var(--green-dark);}
+  .cta-band .btn-primary:hover{background:#f0fff6;}
+
+  .divider-motif{display:flex;justify-content:center;padding:6px 0 0;opacity:.5;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:1080px){
+    .card-grid{grid-template-columns:repeat(2,1fr);}
+    .testi-grid{grid-template-columns:repeat(2,1fr);}
+    .facility-grid{grid-template-columns:repeat(2,1fr);}
+    .service-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .doctor-panel{grid-template-columns:1fr;}
+    .doctor-photo-wrap{min-height:220px;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px;}
+    .gallery-item.big{grid-column:span 2;grid-row:span 1;}
+    .about-split{grid-template-columns:1fr;}
+    .doc-profile-grid{grid-template-columns:1fr;}
+    .doc-card{position:static;}
+    .appt-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .story-feature{grid-template-columns:1fr;}
+  }
+  @media (max-width:860px){
+    nav.main-nav{display:none;}
+    .hamburger{display:inline-flex;flex-direction:column;justify-content:center;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;}
+    .hero-badge{display:none;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .card-grid{grid-template-columns:1fr;}
+    .testi-grid{grid-template-columns:1fr;}
+    .facility-grid{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:140px;}
+    .video-panel{aspect-ratio:16/10;}
+    .mv-grid{grid-template-columns:1fr;}
+    section{padding:52px 0;}
+    .cta-band{flex-direction:column;text-align:center;padding:40px 28px;}
+    .nav-cta-group .btn span.txt{display:none;}
+    .nav-cta-group .btn{padding:13px 16px;}
+  }
+  @media (max-width:560px){
+    .facility-grid{grid-template-columns:1fr;}
+    .hero-ctas{flex-direction:column;align-items:stretch;}
+    .hero-trust{flex-direction:column;gap:12px;}
+    .wrap{padding:0 18px;}
+  }
+
+  /* ---------- MOBILE MENU ---------- */
+  #mobileMenu{
+    display:none;position:fixed;inset:0;background:rgba(8,36,61,0.55);z-index:2000;
+  }
+  #mobileMenu.open{display:block;}
+  .mobile-panel{
+    position:absolute;top:0;right:0;width:82%;max-width:340px;height:100%;background:#fff;
+    padding:26px 22px;box-shadow:-10px 0 30px rgba(0,0,0,0.2);display:flex;flex-direction:column;gap:6px;
+  }
+  .mobile-panel button.nav-link{
+    text-align:left;background:none;border:none;padding:15px 12px;font-size:1.05rem;font-weight:700;color:var(--ink);border-bottom:1px solid var(--line);
+  }
+  .mobile-close{align-self:flex-end;background:none;border:none;font-size:1.6rem;color:var(--ink-soft);margin-bottom:6px;}
+  .doc-avatar-lg {
+    width: 160px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.doc-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="nav-row">
+    <a href="#" class="logo" onclick="goTo('home');return false;">
+      <span class="logo-mark">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path d="M8 3.5c1.2 0 2 1 2 2.2 0 .9-.4 1.5-.9 2.1L7 10a3 3 0 0 0 0 4l2.1 2.2c.5.6.9 1.2.9 2.1 0 1.2-.8 2.2-2 2.2S6 19.5 6 18.3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M16 3.5c-1.2 0-2 1-2 2.2 0 .9.4 1.5.9 2.1L17 10a3 3 0 0 1 0 4l-2.1 2.2c-.5.6-.9 1.2-.9 2.1 0 1.2.8 2.2 2 2.2s2-1 2-2.2" stroke="#8FD9B4" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="logo-text">
+        <div class="name">JAP Hospital</div>
+        <div class="sub">Ortho &amp; Spine Care</div>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <button class="nav-link" data-page="home" onclick="goTo('home')">Home</button>
+      <button class="nav-link" data-page="about" onclick="goTo('about')">About</button>
+      <button class="nav-link" data-page="doctor" onclick="goTo('doctor')">Doctor</button>
+      <button class="nav-link" data-page="services" onclick="goTo('services')">Treatments</button>
+      <button class="nav-link" data-page="facilities" onclick="goTo('facilities')">Facilities</button>
+      <button class="nav-link" data-page="stories" onclick="goTo('stories')">Success Stories</button>
+      <button class="nav-link" data-page="contact" onclick="goTo('contact')">Contact</button>
+    </nav>
+
+    <div class="nav-cta-group">
+      <a class="btn btn-emergency" href="tel:+911234500000">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.3 21 3 12.7 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#C0392B" stroke-width="1.6"/></svg>
+        <span class="txt">Emergency</span>
+      </a>
+      <button class="btn btn-primary" onclick="goTo('appointment')">
+        <span class="txt">Book Appointment</span>
+      </button>
+      <button class="hamburger" onclick="toggleMobileMenu(true)" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu">
+  <div class="mobile-panel">
+    <button class="mobile-close" onclick="toggleMobileMenu(false)">&times;</button>
+    <button class="nav-link" onclick="goTo('home')">Home</button>
+    <button class="nav-link" onclick="goTo('about')">About</button>
+    <button class="nav-link" onclick="goTo('doctor')">Doctor</button>
+    <button class="nav-link" onclick="goTo('services')">Treatments</button>
+    <button class="nav-link" onclick="goTo('facilities')">Facilities</button>
+    <button class="nav-link" onclick="goTo('stories')">Success Stories</button>
+    <button class="nav-link" onclick="goTo('appointment')">Book Appointment</button>
+    <button class="nav-link" onclick="goTo('contact')">Contact</button>
+  </div>
+</div>
+
+<main id="pages">
+
+<!-- ============================================================ HOME ============================================================ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy" style="animation:fadeUp .8s ease both;">
+        <div class="eyebrow" style="animation:fadeUp .6s ease both;">Orthopedic &amp; Spine Specialty Hospital</div>
+        <h1 style="animation:fadeUp .8s ease .1s both;">Walk Pain‑Free Again with Trusted <span class="hl">Knee Replacement &amp; Spine Care</span></h1>
+        <p class="lead" style="animation:fadeUp .8s ease .2s both;">JAP Hospital, Bhogpur brings advanced joint replacement and spine surgery to Punjab — combining experienced surgeons, modern operation theatres and gentle, patient‑first care for every age.</p>
+        <div class="hero-ctas" style="animation:fadeUp .8s ease .3s both;">
+          <button class="btn btn-primary btn-lg" onclick="goTo('appointment')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 2v4M16 2v4M3.5 9h17M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.6"/></svg>
+            Book an Appointment
+          </button>
+          <a class="btn btn-emergency btn-lg" href="tel:+911234500000">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.3 21 3 12.7 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#C0392B" stroke-width="1.6"/></svg>
+            24/7 Emergency: 1234‑500‑000
+          </a>
+        </div>
+        <div class="hero-trust" style="animation:fadeUp .8s ease .4s both;">
+          <div class="trust-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z" stroke="#0B4F8A" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="#2BB673" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>NABH‑standard Safety</div>
+          <div class="trust-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#0B4F8A" stroke-width="1.6"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" stroke="#0B4F8A" stroke-width="1.6" stroke-linecap="round"/></svg>Senior Ortho Surgeons</div>
+          <div class="trust-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C.7 8.5 2 5 5.3 4.2 7.5 3.7 9.7 4.6 11 6.4l1 1.4 1-1.4c1.3-1.8 3.5-2.7 5.7-2.2C22 5 23.3 8.5 21.5 12c-2.5 4.5-9.5 9-9.5 9Z" stroke="#0B4F8A" stroke-width="1.6"/></svg>Personalised Recovery Plans</div>
+        </div>
+      </div>
+
+      <div class="hero-visual" style="animation:fadeIn 1s ease .2s both;">
+        <svg class="joint-motif jm1 float-anim slow" viewBox="0 0 200 200" fill="none"><path d="M60 10c15 0 25 12 25 27 0 11-5 18-11 26l-16 20a37 37 0 0 0 0 50l16 20c6 8 11 15 11 26 0 15-10 27-25 27" stroke="#0B4F8A" stroke-width="6"/></svg>
+        <div class="hero-art-card">
+          <svg viewBox="0 0 460 400" width="100%" height="auto">
+            <rect x="0" y="0" width="460" height="400" rx="20" fill="#EAF3FA"/>
+            <!-- simple caring illustration: doctor assisting elderly patient walking -->
+            <circle cx="150" cy="120" r="34" fill="#0B4F8A"/>
+            <rect x="122" y="150" width="56" height="110" rx="26" fill="#0B4F8A"/>
+            <rect x="100" y="240" width="24" height="90" rx="10" fill="#0B4F8A"/>
+            <rect x="170" y="240" width="24" height="90" rx="10" fill="#0B4F8A"/>
+            <circle cx="300" cy="130" r="30" fill="#2BB673"/>
+            <rect x="275" y="158" width="50" height="95" rx="24" fill="#2BB673"/>
+            <rect x="255" y="240" width="22" height="80" rx="10" fill="#2BB673"/>
+            <rect x="320" y="240" width="22" height="80" rx="10" fill="#2BB673"/>
+            <path d="M178 210c20-10 62-10 90 5" stroke="#0B4F8A" stroke-width="8" stroke-linecap="round"/>
+            <rect x="60" y="330" width="360" height="14" rx="7" fill="#C7DDEE"/>
+            <circle cx="150" cy="95" r="10" fill="#F8FAFC"/>
+            <circle cx="300" cy="107" r="9" fill="#F8FAFC"/>
+          </svg>
+        </div>
+        <div class="hero-badge b1 float-anim">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z" fill="#2BB673"/></svg>
+          <div><div class="num">98%</div><div class="lbl">Surgery Success</div></div>
+        </div>
+        <div class="hero-badge b2 float-anim delay">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#0B4F8A"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="#0B4F8A"/></svg>
+          <div><div class="num">10+ Yrs</div><div class="lbl">Ortho Experience</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="wrap stats-grid">
+      <div class="stat reveal d1"><div class="num"><span class="counter" data-target="10">0</span><span class="plus">+</span></div><div class="lbl">Years of Experience</div></div>
+      <div class="stat reveal d2"><div class="num"><span class="counter" data-target="6000">0</span><span class="plus">+</span></div><div class="lbl">Successful Surgeries</div></div>
+      <div class="stat reveal d3"><div class="num"><span class="counter" data-target="98">0</span><span class="plus">%</span></div><div class="lbl">Patient Satisfaction</div></div>
+      <div class="stat reveal d4"><div class="num">24<span class="plus">/7</span></div><div class="lbl">Emergency Care</div></div>
+    </div>
+  </div>
+
+  <!-- TREATMENTS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+        <div class="eyebrow" style="justify-content:center;">What We Treat</div>
+        <h2>Focused Orthopedic &amp; Spine Treatments</h2>
+        <p>From joint pain to complex spine conditions, our specialists design a care plan around your mobility goals.</p>
+      </div>
+      <div class="card-grid">
+        <div class="t-card reveal d1">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.7"/><path d="M12 7v5l3 3" stroke="#2BB673" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <h3>Knee Replacement</h3>
+          <p>Total &amp; partial knee replacement using precision implants for lasting, natural movement.</p>
+          <a class="t-link" onclick="goTo('services')" href="#">Learn more →</a>
+        </div>
+        <div class="t-card reveal d2">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M8 6h8M8 18h8" stroke="#0B4F8A" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <h3>Spine Surgery</h3>
+          <p>Minimally invasive spine and disc surgery to relieve chronic back and nerve pain.</p>
+          <a class="t-link" onclick="goTo('services')" href="#">Learn more →</a>
+        </div>
+        <div class="t-card reveal d3">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.7"/><circle cx="12" cy="12" r="3" stroke="#2BB673" stroke-width="1.7"/></svg></div>
+          <h3>Joint Treatments</h3>
+          <p>Hip, shoulder and joint pain management from early arthritis to advanced replacement.</p>
+          <a class="t-link" onclick="goTo('services')" href="#">Learn more →</a>
+        </div>
+        <div class="t-card reveal d1">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12h4l2-6 4 12 2-6h4" stroke="#0B4F8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Sports Injury Care</h3>
+          <p>Ligament, tendon and fracture treatment to get active patients back on their feet.</p>
+          <a class="t-link" onclick="goTo('services')" href="#">Learn more →</a>
+        </div>
+        <div class="t-card reveal d2">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 4v16M18 4v16M6 12h12" stroke="#0B4F8A" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <h3>Arthroscopy</h3>
+          <p>Keyhole joint surgery for faster recovery with minimal scarring and pain.</p>
+          <a class="t-link" onclick="goTo('services')" href="#">Learn more →</a>
+        </div>
+        <div class="t-card reveal d3">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C.7 8.5 2 5 5.3 4.2 7.5 3.7 9.7 4.6 11 6.4l1 1.4 1-1.4c1.3-1.8 3.5-2.7 5.7-2.2C22 5 23.3 8.5 21.5 12c-2.5 4.5-9.5 9-9.5 9Z" stroke="#0B4F8A" stroke-width="1.7"/></svg></div>
+          <h3>Physiotherapy &amp; Rehab</h3>
+          <p>Guided rehabilitation programmes to restore strength, balance and confidence.</p>
+          <a class="t-link" onclick="goTo('services')" href="#">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOSPITAL GALLERY -->
+  <section>
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+        <div class="eyebrow" style="justify-content:center;">Our Hospital</div>
+        <h2>A Look Inside JAP Hospital</h2>
+        <p>A glimpse of our building, operation theatres and patient care areas in Bhogpur.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item big reveal">
+          <!-- REPLACE src BELOW with your hospital's main building photo -->
+          <img src="Hospital building.jpeg" alt="JAP Hospital building, Bhogpur">
+          <div class="gallery-caption">Hospital Building — Bhogpur</div>
+        </div>
+        <div class="gallery-item reveal d1">
+          <!-- REPLACE src BELOW with your operation theatre photo -->
+          <img src="Operation Theatre.jpeg" alt="Operation Theatre">
+          <div class="gallery-caption">Operation Theatre</div>
+        </div>
+        <div class="gallery-item reveal d2">
+          <!-- REPLACE src BELOW with your reception / lobby photo -->
+          <img src="Reception.jpeg" alt="Hospital Reception">
+          <div class="gallery-caption">Reception &amp; Lobby</div>
+        </div>
+        <div class="gallery-item reveal d3">
+          <!-- REPLACE src BELOW with your patient room photo -->
+          <img src="Patient room.jpeg" alt="Patient Room">
+          <div class="gallery-caption">Patient Rooms</div>
+        </div>
+        <div class="gallery-item reveal d4">
+          <!-- REPLACE src BELOW with your physiotherapy area photo -->
+          <img src="Physiotherapy.jpeg" alt="Physiotherapy Centre">
+          <div class="gallery-caption">Physiotherapy Centre</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTOR INTRO -->
+  <section>
+    <div class="wrap">
+      <div class="doctor-panel">
+        <div class="doctor-photo-wrap">
+            <img src="dr photo.PNG" alt="Dr. Aman Singh" class="doctor-photo">
+</div>
+        <div class="doctor-content">
+          <div class="eyebrow">Meet Your Surgeon</div>
+          <h2>Dr. Aman Singh, MS Orthopaedics</h2>
+          <p>Leading our orthopedic team with over 10 years of focused experience in joint replacement and spine surgery, Dr. Singh has helped thousands of patients across Punjab regain pain‑free movement.</p>
+          <div class="doctor-quals">
+            <span class="qual-pill">MBBS, MS (Ortho)</span>
+            <span class="qual-pill">Fellowship in Joint Replacement</span>
+            <span class="qual-pill">Spine Surgery Certified</span>
+            <span class="qual-pill">6,000+ Surgeries</span>
+          </div>
+          <button class="btn btn-primary" onclick="goTo('doctor')">View Full Profile</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOSPITAL TOUR VIDEO -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Take a Tour</div>
+        <h2>See JAP Hospital Before You Visit</h2>
+        <p>A short walkthrough of our wards, operation theatres and physiotherapy centre.</p>
+      </div>
+      <div class="video-panel reveal" id="hospitalVideoPanel">
+        <!-- REPLACE the poster src below with a real thumbnail image of your hospital -->
+        <img class="video-poster" src="https://placehold.co/1280x720/07233C/FFFFFF?font=poppins&text=JAP+Hospital+Tour" alt="Hospital tour video thumbnail">
+        <!-- REPLACE the <source src> below with the path to your real video file -->
+        <video id="hospitalVideo" controls playsinline poster="https://placehold.co/1280x720/07233C/FFFFFF?font=poppins&text=JAP+Hospital+Tour">
+          <source src="videos/jap-hospital-tour.mp4" type="video/mp4">
+        </video>
+        <button class="play-btn" id="playVideoBtn" aria-label="Play hospital tour video" onclick="playHospitalVideo()">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l12-7L8 5Z" fill="#0B4F8A"/></svg>
+        </button>
+      </div>
+      <div class="video-caption-row">
+        <div><h3>Hospital Walkthrough — 2 min</h3><p>Wards · Operation Theatre · Physiotherapy Centre</p></div>
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+        <div class="eyebrow" style="justify-content:center;">Patient Voices</div>
+        <h2>Real Recoveries, Real Relief</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal d1">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"After my knee replacement at JAP Hospital, I climbed stairs without pain for the first time in years. The staff treated me like family."</p>
+          <div class="testi-person">
+            <!-- REPLACE src below with the patient's real photo -->
+            <img class="testi-photo" src="https://placehold.co/120x120/EAF3FA/0B4F8A?font=poppins&text=RK" alt="Ranjit Kaur">
+            <div><div class="pname">Ranjit Kaur</div><div class="ptag">Knee Replacement, Age 64</div></div>
+          </div>
+        </div>
+        <div class="testi-card reveal d2">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"My chronic back pain is gone after spine surgery here. Dr. Singh explained every step so clearly, my whole family felt at ease."</p>
+          <div class="testi-person">
+            <!-- REPLACE src below with the patient's real photo -->
+            <img class="testi-photo" src="https://placehold.co/120x120/EAF3FA/0B4F8A?font=poppins&text=SS" alt="Sukhdev Singh">
+            <div><div class="pname">Sukhdev Singh</div><div class="ptag">Spine Surgery, Age 58</div></div>
+          </div>
+        </div>
+        <div class="testi-card reveal d3">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"The physiotherapy team guided me every day. Within 6 weeks I was walking in the park again without support."</p>
+          <div class="testi-person">
+            <!-- REPLACE src below with the patient's real photo -->
+            <img class="testi-photo" src="https://placehold.co/120x120/EAF3FA/0B4F8A?font=poppins&text=GK" alt="Gurpreet Kaur">
+            <div><div class="pname">Gurpreet Kaur</div><div class="ptag">Hip Joint Treatment, Age 71</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="map-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Visit Us</div>
+        <h2>Find JAP Hospital in Bhogpur</h2>
+        <p>Conveniently located and easy to reach with dedicated patient parking.</p>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2488.3367225185725!2d75.63720297561237!3d31.539765674205167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391bab41a41102d1%3A0x72575e8e207c7b97!2sJAP%20HOSPITAL-BEST%20ORTHOPAEDIC%20AND%20MULTISPECIALITY%2CJOINT%20REPLACEMENT!5e1!3m2!1sen!2sin!4v1783936059710!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Ready to move without pain?</h2>
+          <p>Book a consultation with our orthopedic team today.</p>
+        </div>
+        <button class="btn btn-primary btn-lg" onclick="goTo('appointment')" style="background:#fff;color:var(--green-dark);">Book Appointment</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================================================ ABOUT ============================================================ -->
+<div class="page" id="page-about">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb">Home / <span class="cur">About Hospital</span></div>
+      <h1>Caring for Punjab's Joints &amp; Spines Since 2013</h1>
+      <p>JAP Hospital is Bhogpur's dedicated orthopedic and spine centre, built around one goal: helping patients of every age move, work and live without pain.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap about-split">
+      <div class="about-img-block">
+        <svg viewBox="0 0 460 360" width="100%">
+          <rect width="460" height="360" rx="16" fill="#fff"/>
+          <rect x="30" y="40" width="180" height="130" rx="14" fill="#0B4F8A"/>
+          <rect x="230" y="40" width="200" height="60" rx="14" fill="#2BB673"/>
+          <rect x="230" y="112" width="200" height="58" rx="14" fill="#0B4F8A"/>
+          <rect x="30" y="188" width="400" height="130" rx="14" fill="#EAF3FA" stroke="#0B4F8A" stroke-width="1.5"/>
+          <path d="M60 300c15-10 45-10 60 0M340 300c15-10 45-10 60 0" stroke="#2BB673" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="eyebrow">Our Story</div>
+        <h2>A Hospital Built Around Movement</h2>
+        <p style="color:var(--ink-soft);">Founded by a team of orthopedic specialists, JAP Hospital was established to bring city‑level joint and spine care closer to families in Bhogpur and surrounding Punjab. What began as a small orthopedic clinic has grown into a full‑fledged surgical centre equipped with modern operation theatres, dedicated rehabilitation facilities, and a team that treats every patient with patience and respect.</p>
+        <ul class="value-list">
+          <li><span class="chk">✓</span> Specialist‑only orthopedic &amp; spine focus, not a general hospital</li>
+          <li><span class="chk">✓</span> Elderly‑friendly facilities with wheelchair access throughout</li>
+          <li><span class="chk">✓</span> Transparent treatment costs explained before surgery</li>
+          <li><span class="chk">✓</span> Dedicated physiotherapy &amp; recovery support after every surgery</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="mv-grid">
+        <div class="mv-card">
+          <div class="eyebrow">Our Mission</div>
+          <h3>Restore Mobility, Restore Independence</h3>
+          <p style="color:var(--ink-soft);margin:0;">To provide safe, affordable and advanced orthopedic care so every patient can return to a life of movement and independence.</p>
+        </div>
+        <div class="mv-card">
+          <div class="eyebrow">Our Vision</div>
+          <h3>Punjab's Trusted Name in Bone &amp; Joint Care</h3>
+          <p style="color:var(--ink-soft);margin:0;">To be the most trusted orthopedic and spine care destination in the region, known for compassionate, world‑class treatment.</p>
+        </div>
+      </div>
+      <div class="accred-strip">
+        <span class="accred-chip">NABH Entry Level Certified</span>
+        <span class="accred-chip">ISO 9001:2015</span>
+        <span class="accred-chip">Ayushman Bharat Empanelled</span>
+        <span class="accred-chip">Cashless Insurance Tie‑ups</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta-band">
+        <div><h2>Want to know more about our team?</h2><p>Meet the surgeon leading your care.</p></div>
+        <button class="btn btn-primary btn-lg" style="background:#fff;color:var(--green-dark);" onclick="goTo('doctor')">Meet the Doctor</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ DOCTOR PROFILE ============================================================ -->
+<div class="page" id="page-doctor">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb">Home / <span class="cur">Doctor Profile</span></div>
+      <h1>Dr. Aman Singh</h1>
+      <p>Chief Orthopaedic Surgeon  CEO &amp; Spine Surgeon — 10+ years dedicated to joint replacement and spine care.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap doc-profile-grid">
+      <div class="doc-card">
+        <div class="doc-avatar-lg">
+            <img src="dr photo.PNG" alt="Dr. Aman Singh" class="doc-image">
+        </div>
+        <div class="doc-name">Dr. Aman Singh</div>
+        <div class="doc-role">MS Orthopaedics, Spine Fellowship</div>
+        <div class="doc-meta-row"><span>Experience</span><span>10+ Years</span></div>
+        <div class="doc-meta-row"><span>Surgeries Performed</span><span>6,000+</span></div>
+        <div class="doc-meta-row"><span>Languages</span><span>Punjabi, Hindi, English</span></div>
+        <div class="doc-meta-row"><span>Consultation Fee</span><span>₹500</span></div>
+        <button class="btn btn-primary btn-block" style="margin-top:22px;" onclick="goTo('appointment')">Book Consultation</button>
+      </div>
+
+      <div>
+        <div class="eyebrow">Specialisation</div>
+        <h2>Expertise in Joint &amp; Spine Surgery</h2>
+        <div class="spec-tags">
+          <span class="spec-tag">Total Knee Replacement</span>
+          <span class="spec-tag">Partial Knee Replacement</span>
+          <span class="spec-tag">Spine &amp; Disc Surgery</span>
+          <span class="spec-tag">Hip Replacement</span>
+          <span class="spec-tag">Arthroscopy</span>
+          <span class="spec-tag">Fracture Care</span>
+        </div>
+        <p style="color:var(--ink-soft);">Dr. Singh trained in advanced joint replacement techniques and has led the orthopedic programme at JAP Hospital since its founding. Known among patients for taking time to explain every procedure in simple Punjabi and Hindi, he is especially attentive to the needs of elderly patients and their families.</p>
+
+        <h3 style="margin-top:34px;">Education &amp; Career Journey</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="yr">2010</div>
+            <p style="margin:.3em 0 0;color:var(--ink-soft);">MBBS, Government Medical College, Amritsar</p>
+          </div>
+          <div class="timeline-item">
+            <div class="yr">2013</div>
+            <p style="margin:.3em 0 0;color:var(--ink-soft);">MS in Orthopedics, PGIMER Chandigarh</p>
+          </div>
+          <div class="timeline-item">
+            <div class="yr">2015</div>
+            <p style="margin:.3em 0 0;color:var(--ink-soft);">Fellowship in Joint Replacement Surgery, Delhi</p>
+          </div>
+          <div class="timeline-item">
+            <div class="yr">2018</div>
+            <p style="margin:.3em 0 0;color:var(--ink-soft);">Advanced Spine Surgery Certification</p>
+          </div>
+          <div class="timeline-item">
+            <div class="yr">2013–Present</div>
+            <p style="margin:.3em 0 0;color:var(--ink-soft);">Chief Orthopedic Surgeon, JAP Hospital, Bhogpur</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:34px;">Consultation Timings</h3>
+        <table class="timing-table">
+          <tr><td>Monday – Friday</td><td>9:00 AM – 2:00 PM</td></tr>
+          <tr><td>Saturday</td><td>9:00 AM – 1:00 PM</td></tr>
+          <tr><td>Sunday</td><td>Emergency Only</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ SERVICES ============================================================ -->
+<div class="page" id="page-services">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb">Home / <span class="cur">Treatments &amp; Services</span></div>
+      <h1>Treatments &amp; Services</h1>
+      <p>Complete orthopedic and spine care under one roof — from diagnosis to surgery to full recovery.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="service-grid">
+        <div class="service-row">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.7"/></svg></div>
+          <div>
+            <h3>Total Knee Replacement</h3>
+            <p>Full replacement of a damaged knee joint with a durable implant, restoring pain‑free walking and standing.</p>
+            <div class="tags"><span>Robotic‑assisted option</span><span>2–3 day stay</span></div>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 4a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3M15 4a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3" stroke="#0B4F8A" stroke-width="1.7"/></svg></div>
+          <div>
+            <h3>Partial Knee Replacement</h3>
+            <p>A gentler option for patients with damage limited to one part of the knee, preserving healthy bone.</p>
+            <div class="tags"><span>Faster recovery</span><span>Smaller incision</span></div>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M8 6h8M8 18h8" stroke="#0B4F8A" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <div>
+            <h3>Spine &amp; Disc Surgery</h3>
+            <p>Minimally invasive treatment for slipped discs, spinal stenosis and chronic nerve compression.</p>
+            <div class="tags"><span>Minimally invasive</span><span>Nerve‑safe technique</span></div>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.7"/><circle cx="12" cy="12" r="3" stroke="#2BB673" stroke-width="1.7"/></svg></div>
+          <div>
+            <h3>Hip Replacement</h3>
+            <p>Restoring hip mobility for patients with arthritis, fractures or long‑standing joint damage.</p>
+            <div class="tags"><span>Anterior approach available</span></div>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 4v16M18 4v16M6 12h12" stroke="#0B4F8A" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <div>
+            <h3>Arthroscopy (Keyhole Surgery)</h3>
+            <p>Diagnosing and repairing joint problems through tiny incisions for a quicker, less painful recovery.</p>
+            <div class="tags"><span>Same‑day discharge</span></div>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12h4l2-6 4 12 2-6h4" stroke="#0B4F8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div>
+            <h3>Fracture &amp; Trauma Care</h3>
+            <p>Round‑the‑clock treatment for bone fractures, dislocations and sports‑related injuries.</p>
+            <div class="tags"><span>24/7 availability</span></div>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C.7 8.5 2 5 5.3 4.2 7.5 3.7 9.7 4.6 11 6.4l1 1.4 1-1.4c1.3-1.8 3.5-2.7 5.7-2.2C22 5 23.3 8.5 21.5 12c-2.5 4.5-9.5 9-9.5 9Z" stroke="#0B4F8A" stroke-width="1.7"/></svg></div>
+          <div>
+            <h3>Physiotherapy &amp; Rehabilitation</h3>
+            <p>Structured post‑surgery exercise programmes to rebuild strength, flexibility and confidence.</p>
+            <div class="tags"><span>In‑house therapy gym</span></div>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H4z" stroke="#0B4F8A" stroke-width="1.7"/><path d="M8 20h8" stroke="#0B4F8A" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <div>
+            <h3>Sports Injury Treatment</h3>
+            <p>Ligament and tendon repair for active patients aiming to return safely to their sport or routine.</p>
+            <div class="tags"><span>Custom recovery plan</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="cta-band">
+        <div><h2>Not sure which treatment you need?</h2><p>Book a consultation and let our specialists guide you.</p></div>
+        <button class="btn btn-primary btn-lg" style="background:#fff;color:var(--green-dark);" onclick="goTo('appointment')">Book Appointment</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ FACILITIES ============================================================ -->
+<div class="page" id="page-facilities">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb">Home / <span class="cur">Facilities</span></div>
+      <h1>Modern Facilities for Comfortable Care</h1>
+      <p>Purpose‑built infrastructure designed for the safety and comfort of orthopedic and elderly patients.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="facility-grid">
+        <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>Modular Operation Theatres</h3><p>Laminar‑flow OTs with advanced surgical equipment.</p></div>
+        <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C.7 8.5 2 5 5.3 4.2 7.5 3.7 9.7 4.6 11 6.4l1 1.4 1-1.4c1.3-1.8 3.5-2.7 5.7-2.2C22 5 23.3 8.5 21.5 12c-2.5 4.5-9.5 9-9.5 9Z" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>ICU &amp; Post‑Op Care</h3><p>24/7 monitored recovery units for surgical patients.</p></div>
+        <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>Physiotherapy Centre</h3><p>Dedicated rehab gym with guided exercise plans.</p></div>
+        <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 12h16M12 4v16" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>Digital Diagnostic Lab</h3><p>On‑site X‑ray, MRI referral &amp; pathology services.</p></div>
+        <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 3h6l1 4H8l1-4Z" stroke="#0B4F8A" stroke-width="1.6"/><path d="M6 7h12l-1 14H7L6 7Z" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>In‑house Pharmacy</h3><p>All prescribed medicines available on premises.</p></div>
+        <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 13l2-6h10l3 6M3 13v5h2m14-5v5h-2M5 18h10" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>24/7 Ambulance Service</h3><p>Rapid emergency response across Bhogpur &amp; nearby areas.</p></div>
+        <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="#0B4F8A" stroke-width="1.6"/><path d="M4 10h16" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>Comfortable Patient Rooms</h3><p>Elderly‑friendly rooms with attached washrooms &amp; support rails.</p></div>
+        <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#0B4F8A" stroke-width="1.6"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>Wheelchair Accessibility</h3><p>Ramps, rails and wide corridors throughout the hospital.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ SUCCESS STORIES ============================================================ -->
+<div class="page" id="page-stories">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb">Home / <span class="cur">Patient Success Stories</span></div>
+      <h1>Patient Success Stories</h1>
+      <p>Real journeys of recovery from patients who trusted JAP Hospital with their mobility.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="story-feature">
+        <div>
+          <div class="eyebrow">Total Knee Replacement</div>
+          <h2>"I Danced at My Granddaughter's Wedding"</h2>
+          <p style="color:var(--ink-soft);">Ranjit Kaur, 64, had suffered from knee pain for over a decade before her total knee replacement at JAP Hospital. Within three months, she was walking without support and dancing at a family wedding.</p>
+          <div class="story-stats">
+            <div class="story-stat"><div class="num">3 Months</div><div class="lbl">To Full Recovery</div></div>
+            <div class="story-stat"><div class="num">Zero</div><div class="lbl">Post‑op Complications</div></div>
+          </div>
+        </div>
+        <div class="before-after">
+          <div class="ba-box"><div class="lbl">Before</div><div class="val">Could not climb stairs</div></div>
+          <div class="ba-box"><div class="lbl">After</div><div class="val">Walks 2 km daily</div></div>
+        </div>
+      </div>
+
+      <div class="story-feature">
+        <div class="before-after" style="order:2;">
+          <div class="ba-box"><div class="lbl">Before</div><div class="val">Bedridden with back pain</div></div>
+          <div class="ba-box"><div class="lbl">After</div><div class="val">Back to farming work</div></div>
+        </div>
+        <div>
+          <div class="eyebrow">Spine Surgery</div>
+          <h2>"Back to Working in My Fields"</h2>
+          <p style="color:var(--ink-soft);">Sukhdev Singh, 58, was unable to stand for more than a few minutes due to a slipped disc. After spine surgery and dedicated physiotherapy, he now manages his farm daily without pain.</p>
+          <div class="story-stats">
+            <div class="story-stat"><div class="num">6 Weeks</div><div class="lbl">Recovery Time</div></div>
+            <div class="story-stat"><div class="num">100%</div><div class="lbl">Pain Relief Reported</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-grid">
+        <div class="testi-card reveal d1">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"The physiotherapy team guided me every single day until I could walk unaided again."</p>
+          <div class="testi-person">
+            <img class="testi-photo" src="https://placehold.co/120x120/EAF3FA/0B4F8A?font=poppins&text=GK" alt="Gurpreet Kaur">
+            <div><div class="pname">Gurpreet Kaur</div><div class="ptag">Hip Joint Treatment, Age 71</div></div>
+          </div>
+        </div>
+        <div class="testi-card reveal d2">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Honest advice, clear costs, and a surgeon who explained everything in Punjabi for my father."</p>
+          <div class="testi-person">
+            <img class="testi-photo" src="https://placehold.co/120x120/EAF3FA/0B4F8A?font=poppins&text=HS" alt="Harpreet Singh">
+            <div><div class="pname">Harpreet Singh</div><div class="ptag">Son of Patient</div></div>
+          </div>
+        </div>
+        <div class="testi-card reveal d3">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Arthroscopy on my knee had me back on the field within weeks. Excellent care throughout."</p>
+          <div class="testi-person">
+            <img class="testi-photo" src="https://placehold.co/120x120/EAF3FA/0B4F8A?font=poppins&text=MK" alt="Manpreet Kaur">
+            <div><div class="pname">Manpreet Kaur</div><div class="ptag">Sports Injury, Age 29</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ APPOINTMENT ============================================================ -->
+<div class="page" id="page-appointment">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb">Home / <span class="cur">Appointment Booking</span></div>
+      <h1>Book Your Appointment</h1>
+      <p>Fill in your details and our care team will confirm your visit by phone within a few hours.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap appt-grid">
+      <div class="appt-form-card">
+        <h2 style="margin-bottom:.2em;">Patient Details</h2>
+        <p style="color:var(--ink-soft);margin-bottom:24px;">All fields marked with * are required.</p>
+        <form onsubmit="submitAppointment(event)">
+          <div class="form-row">
+            <div class="form-group"><label for="fname">Full Name *</label><input id="fname" type="text" placeholder="e.g. Ranjit Kaur" required></div>
+            <div class="form-group"><label for="fage">Age *</label><input id="fage" type="number" placeholder="e.g. 62" min="1" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="fphone">Phone Number *</label><input id="fphone" type="tel" placeholder="+91 98xxxxxxx0" required></div>
+            <div class="form-group"><label for="femail">Email Address</label><input id="femail" type="email" placeholder="you@email.com"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="ftreat">Treatment Required *</label>
+              <select id="ftreat" required>
+                <option value="">Select a treatment</option>
+                <option>Knee Replacement</option>
+                <option>Spine Surgery</option>
+                <option>Hip Replacement</option>
+                <option>Arthroscopy</option>
+                <option>Fracture / Trauma Care</option>
+                <option>Physiotherapy</option>
+                <option>General Consultation</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="fdate">Preferred Date *</label><input id="fdate" type="date" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group full"><label for="fmsg">Additional Notes</label><textarea id="fmsg" placeholder="Describe your symptoms or concerns (optional)"></textarea></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Confirm Appointment Request</button>
+        </form>
+      </div>
+
+      <div>
+        <div class="appt-side-card">
+          <h3>Emergency? Skip the Form.</h3>
+          <p>For urgent fractures or acute pain, call our 24/7 emergency line directly.</p>
+          <a class="btn btn-lg btn-block" style="background:#fff;color:var(--blue-dark);margin-top:10px;" href="tel:+911234500000">📞 1234‑500‑000</a>
+        </div>
+        <div class="info-card">
+          <div class="info-row"><div class="lbl">OPD Hours</div></div>
+          <div class="info-row"><span class="lbl">Mon – Fri</span><span class="val">9:00 AM – 2:00 PM</span></div>
+          <div class="info-row"><span class="lbl">Saturday</span><span class="val">9:00 AM – 1:00 PM</span></div>
+          <div class="info-row"><span class="lbl">Sunday</span><span class="val">Emergency Only</span></div>
+          <div class="info-row"><span class="lbl">Consultation Fee</span><span class="val">₹500</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ CONTACT ============================================================ -->
+<div class="page" id="page-contact">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb">Home / <span class="cur">Contact</span></div>
+      <h1>Get in Touch</h1>
+      <p>We're here to answer your questions and help you plan your visit.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap contact-grid">
+      <div>
+        <div class="contact-card-list">
+          <div class="contact-item-card">
+            <div class="t-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C.7 8.5 2 5 5.3 4.2 7.5 3.7 9.7 4.6 11 6.4l1 1.4 1-1.4c1.3-1.8 3.5-2.7 5.7-2.2C22 5 23.3 8.5 21.5 12c-2.5 4.5-9.5 9-9.5 9Z" stroke="#0B4F8A" stroke-width="1.6"/></svg></div>
+            <div><h4>Address</h4><p>JAP Hospital, Near Bus Stand Road, Bhogpur, Jalandhar District, Punjab – 144201</p></div>
+          </div>
+          <div class="contact-item-card">
+            <div class="t-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.3 21 3 12.7 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#0B4F8A" stroke-width="1.6"/></svg></div>
+            <div><h4>Phone</h4><p>Appointments: +91 98765‑00000<br>Emergency: 1234‑500‑000</p></div>
+          </div>
+          <div class="contact-item-card">
+            <div class="t-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="#0B4F8A" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="#0B4F8A" stroke-width="1.6"/></svg></div>
+            <div><h4>Email</h4><p>care@japhospital.in</p></div>
+          </div>
+          <div class="contact-item-card">
+            <div class="t-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="#0B4F8A" stroke-width="1.6"/></svg></div>
+            <div><h4>OPD Timings</h4><p>Mon–Fri: 9 AM – 2 PM · Sat: 9 AM – 1 PM · Emergency: 24/7</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps?q=Bhogpur,Punjab,India&output=embed" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="appt-form-card" style="max-width:760px;margin:0 auto;">
+        <h2>Send Us a Message</h2>
+        <form onsubmit="submitContact(event)">
+          <div class="form-row">
+            <div class="form-group"><label>Full Name *</label><input type="text" required></div>
+            <div class="form-group"><label>Phone Number *</label><input type="tel" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group full"><label>Message *</label><textarea required placeholder="How can we help you?"></textarea></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="foot-logo">
+          <span class="logo-mark" style="width:42px;height:42px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 3.5c1.2 0 2 1 2 2.2 0 .9-.4 1.5-.9 2.1L7 10a3 3 0 0 0 0 4l2.1 2.2c.5.6.9 1.2.9 2.1 0 1.2-.8 2.2-2 2.2S6 19.5 6 18.3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M16 3.5c-1.2 0-2 1-2 2.2 0 .9.4 1.5.9 2.1L17 10a3 3 0 0 1 0 4l-2.1 2.2c-.5.6-.9 1.2-.9 2.1 0 1.2.8 2.2 2 2.2s2-1 2-2.2" stroke="#8FD9B4" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <span class="name">JAP Hospital</span>
+        </div>
+        <p>Bhogpur's dedicated orthopedic and spine care hospital — helping every patient move freely again.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#" onclick="goTo('about');return false;">About Hospital</a></li>
+          <li><a href="#" onclick="goTo('doctor');return false;">Doctor Profile</a></li>
+          <li><a href="#" onclick="goTo('services');return false;">Treatments</a></li>
+          <li><a href="#" onclick="goTo('facilities');return false;">Facilities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Patients</h4>
+        <ul>
+          <li><a href="#" onclick="goTo('stories');return false;">Success Stories</a></li>
+          <li><a href="#" onclick="goTo('appointment');return false;">Book Appointment</a></li>
+          <li><a href="#" onclick="goTo('contact');return false;">Contact Us</a></li>
+          <li><a href="tel:+911234500000">Emergency Line</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Near Bus Stand Road, Bhogpur,<br>Jalandhar District, Punjab – 144201</p>
+        <p>+91 98765‑00000<br>care@japhospital.in</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 JAP Hospital, Bhogpur. All rights reserved.</span>
+      <span>Designed for trusted, patient‑first orthopedic care.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function goTo(page){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
+    document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.nav-link[data-page="'+page+'"]').forEach(b => b.classList.add('active'));
+    window.scrollTo({top:0, behavior:'smooth'});
+    toggleMobileMenu(false);
+  }
+  function toggleMobileMenu(open){
+    document.getElementById('mobileMenu').classList.toggle('open', open);
+  }
+  function submitAppointment(e){
+    e.preventDefault();
+    alert('Thank you! Your appointment request has been received. Our team will call you shortly to confirm your visit.');
+    e.target.reset();
+  }
+  function submitContact(e){
+    e.preventDefault();
+    alert('Thank you for reaching out! Our team will get back to you soon.');
+    e.target.reset();
+  }
+  // set initial active nav
+  document.querySelectorAll('.nav-link[data-page="home"]').forEach(b => b.classList.add('active'));
+
+  /* ---------- SCROLL REVEAL ---------- */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+
+  function initReveal(root){
+    (root || document).querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+      revealObserver.observe(el);
+    });
+  }
+  initReveal(document);
+
+  /* ---------- ANIMATED COUNTERS ---------- */
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        animateCounter(entry.target);
+        countObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.4});
+
+  function animateCounter(el){
+    const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+    const duration = 1400;
+    const start = performance.now();
+    function tick(now){
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.floor(eased * target);
+      el.textContent = value.toLocaleString('en-IN');
+      if(progress < 1){ requestAnimationFrame(tick); }
+      else { el.textContent = target.toLocaleString('en-IN'); }
+    }
+    requestAnimationFrame(tick);
+  }
+  document.querySelectorAll('.counter').forEach(el => countObserver.observe(el));
+
+  // Re-run reveal + counters whenever a new page becomes active (in case content was hidden on load)
+  const originalGoTo = goTo;
+  goTo = function(page){
+    originalGoTo(page);
+    const activePage = document.getElementById('page-' + page);
+    if(activePage){
+      activePage.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+        if(!el.classList.contains('in-view')) revealObserver.observe(el);
+      });
+      activePage.querySelectorAll('.counter').forEach(el => {
+        if(el.textContent === '0') countObserver.observe(el);
+      });
+    }
+  };
+
+  /* ---------- HOSPITAL TOUR VIDEO ---------- */
+  function playHospitalVideo(){
+    const panel = document.getElementById('hospitalVideoPanel');
+    const video = document.getElementById('hospitalVideo');
+    panel.classList.add('playing');
+    video.style.display = 'block';
+    video.play().catch(() => {
+      // No real video file provided yet — restore poster so nothing looks broken.
+      panel.classList.remove('playing');
+      alert('Add your hospital tour video file (see the code comment near the video section) to enable playback.');
+    });
+  }
+</script>
+
+</body>
+</html>
