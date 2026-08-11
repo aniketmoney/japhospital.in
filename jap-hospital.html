@@ -10,15 +10,15 @@
 <style>
   :root{
     --blue:#0B4F8A;
-    --blue-dark:#073a68;
-    --blue-tint:#EAF3FA;
-    --green:#2BB673;
-    --green-dark:#1e9159;
-    --bg:#F8FAFC;
-    --ink:#152A3D;
+    --blue-dark:#06355F;
+    --blue-tint:#EDF5FB;
+    --red:#D62828;
+    --red-dark:#A71919;
+    --bg:#FAFCFE;
+    --ink:#14283A;
     --ink-soft:#4B6072;
-    --gold:#C6963A;
-    --line:#E1E9F0;
+    --gold:#D62828;
+    --line:#DCE8F1;
     --card:#FFFFFF;
     --radius-lg:22px;
     --radius-md:14px;
@@ -48,7 +48,7 @@
     font-weight:600;
     letter-spacing:.06em;
     text-transform:uppercase;
-    color:var(--green-dark);
+    color:var(--red-dark);
     font-size:.86rem;
     display:inline-flex;
     align-items:center;
@@ -56,14 +56,14 @@
   }
   .eyebrow::before{
     content:"";
-    width:26px;height:2px;background:var(--green);display:inline-block;border-radius:2px;
+    width:26px;height:2px;background:var(--red);display:inline-block;border-radius:2px;
   }
   a{color:inherit;text-decoration:none;}
   img{max-width:100%;display:block;}
   button{font-family:inherit;cursor:pointer;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
   section{padding:76px 0;}
-  :focus-visible{outline:3px solid var(--green); outline-offset:2px;}
+  :focus-visible{outline:3px solid var(--red); outline-offset:2px;}
 
   /* ---------- ANIMATIONS ---------- */
   @keyframes fadeUp{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
@@ -99,7 +99,7 @@
 
   .t-icon svg{transition:transform .35s ease;}
   .t-card:hover .t-icon svg{transform:rotate(-8deg) scale(1.12);}
-  .t-card:hover .t-icon{background:var(--green);transition:background .3s ease;}
+  .t-card:hover .t-icon{background:var(--red);transition:background .3s ease;}
   .t-card:hover .t-icon svg path, .t-card:hover .t-icon svg circle{stroke:#fff;}
 
   .stat .num{transition:transform .3s ease;}
@@ -107,7 +107,7 @@
 
   .nav-link{position:relative;overflow:hidden;}
   .nav-link::after{
-    content:"";position:absolute;left:15px;right:15px;bottom:6px;height:2px;background:var(--green);
+    content:"";position:absolute;left:15px;right:15px;bottom:6px;height:2px;background:var(--red);
     transform:scaleX(0);transform-origin:left;transition:transform .25s ease;
   }
   .nav-link:hover::after, .nav-link.active::after{transform:scaleX(1);}
@@ -136,7 +136,7 @@
   }
   .logo-text{line-height:1.1;}
   .logo-text .name{font-family:'Poppins';font-weight:800;font-size:1.28rem;color:var(--blue-dark);letter-spacing:.2px;}
-  .logo-text .sub{font-size:.72rem;color:var(--green-dark);font-weight:600;letter-spacing:.14em;text-transform:uppercase;}
+  .logo-text .sub{font-size:.72rem;color:var(--red-dark);font-weight:600;letter-spacing:.14em;text-transform:uppercase;}
   nav.main-nav{display:flex;gap:2px;align-items:center;}
   nav.main-nav button.nav-link{
     background:none;border:none;padding:10px 15px;border-radius:10px;
@@ -153,8 +153,8 @@
     transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
   }
   .btn:active{transform:translateY(1px);}
-  .btn-primary{background:var(--green);color:#fff;box-shadow:0 8px 18px rgba(43,182,115,0.32);}
-  .btn-primary:hover{background:var(--green-dark);box-shadow:0 10px 22px rgba(43,182,115,0.4);}
+  .btn-primary{background:var(--red);color:#fff;box-shadow:0 8px 18px rgba(43,182,115,0.32);}
+  .btn-primary:hover{background:var(--red-dark);box-shadow:0 10px 22px rgba(43,182,115,0.4);}
   .btn-outline{background:#fff;color:var(--blue);border-color:var(--blue);}
   .btn-outline:hover{background:var(--blue);color:#fff;}
   .btn-emergency{background:#fff;color:#C0392B;border-color:#F1D3CE;}
@@ -177,7 +177,7 @@
   }
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;}
   .hero h1{font-size:clamp(2.1rem,4vw,3.05rem);margin-bottom:.4em;}
-  .hero h1 .hl{color:var(--green-dark);}
+  .hero h1 .hl{color:var(--red-dark);}
   .hero p.lead{font-size:1.18rem;color:var(--ink-soft);max-width:520px;margin-bottom:1.7em;}
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
   .hero-trust{display:flex;gap:26px;flex-wrap:wrap;}
@@ -205,7 +205,7 @@
   .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:44px 0;}
   .stat{text-align:center;color:#fff;}
   .stat .num{font-family:'Poppins';font-weight:800;font-size:2.3rem;color:#fff;}
-  .stat .num .plus{color:var(--green);}
+  .stat .num .plus{color:var(--red);}
   .stat .lbl{color:#CFE3F3;font-weight:600;font-size:.95rem;margin-top:2px;}
 
   /* ---------- SECTION HEAD ---------- */
@@ -228,7 +228,7 @@
   }
   .t-card h3{font-size:1.18rem;margin-bottom:.4em;}
   .t-card p{color:var(--ink-soft);font-size:.98rem;margin:0 0 .8em;}
-  .t-link{color:var(--green-dark);font-weight:700;font-size:.94rem;display:inline-flex;align-items:center;gap:6px;}
+  .t-link{color:var(--red-dark);font-weight:700;font-size:.94rem;display:inline-flex;align-items:center;gap:6px;}
 
   /* ---------- DOCTOR INTRO ---------- */
   .doctor-panel{
@@ -238,8 +238,8 @@
   }
   .doctor-photo-wrap{position:relative;background:#0a4478;display:flex;align-items:flex-end;justify-content:center;min-height:340px;}
   .doctor-content{padding:44px 46px;}
-  .doctor-content .eyebrow{color:#8FD9B4;}
-  .doctor-content .eyebrow::before{background:#8FD9B4;}
+  .doctor-content .eyebrow{color:#F4A6A6;}
+  .doctor-content .eyebrow::before{background:#F4A6A6;}
   .doctor-content h2{color:#fff;}
   .doctor-content p{color:#D7E6F2;font-size:1.03rem;}
   .doctor-quals{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 26px;}
@@ -332,7 +332,7 @@
     padding:54px 0 20px;
   }
   .breadcrumb{color:var(--ink-soft);font-size:.92rem;font-weight:600;margin-bottom:10px;}
-  .breadcrumb .cur{color:var(--green-dark);}
+  .breadcrumb .cur{color:var(--red-dark);}
   .page-hero h1{font-size:clamp(1.9rem,3.4vw,2.6rem);max-width:720px;}
   .page-hero p{color:var(--ink-soft);max-width:640px;font-size:1.06rem;}
 
@@ -342,7 +342,7 @@
   .value-list{list-style:none;padding:0;margin:22px 0;display:flex;flex-direction:column;gap:16px;}
   .value-list li{display:flex;gap:14px;align-items:flex-start;color:var(--ink-soft);}
   .value-list .chk{
-    width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;flex-shrink:0;
+    width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;flex-shrink:0;
     display:flex;align-items:center;justify-content:center;font-size:.8rem;margin-top:2px;
   }
   .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px;}
@@ -355,13 +355,13 @@
   .doc-card{background:var(--card);border-radius:var(--radius-lg);padding:30px;box-shadow:var(--shadow-card);border:1px solid var(--line);text-align:center;position:sticky;top:100px;}
   .doc-avatar-lg{width:150px;height:150px;border-radius:50%;background:linear-gradient(155deg,var(--blue),var(--blue-dark));margin:0 auto 18px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-card);}
   .doc-name{font-size:1.4rem;margin-bottom:.2em;}
-  .doc-role{color:var(--green-dark);font-weight:700;margin-bottom:16px;}
+  .doc-role{color:var(--red-dark);font-weight:700;margin-bottom:16px;}
   .doc-meta-row{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line);font-size:.92rem;color:var(--ink-soft);}
   .doc-meta-row span:last-child{color:var(--ink);font-weight:600;}
   .timeline{border-left:3px solid var(--blue-tint);padding-left:26px;margin-left:6px;}
   .timeline-item{position:relative;padding-bottom:30px;}
   .timeline-item:last-child{padding-bottom:0;}
-  .timeline-item::before{content:"";position:absolute;left:-32.5px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--green);border:3px solid #fff;box-shadow:0 0 0 3px var(--blue-tint);}
+  .timeline-item::before{content:"";position:absolute;left:-32.5px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--red);border:3px solid #fff;box-shadow:0 0 0 3px var(--blue-tint);}
   .timeline-item .yr{font-weight:700;color:var(--blue-dark);font-family:'Poppins';font-size:.94rem;}
   .spec-tags{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0;}
   .spec-tag{background:var(--blue-tint);color:var(--blue-dark);padding:9px 16px;border-radius:100px;font-weight:600;font-size:.88rem;}
@@ -391,7 +391,7 @@
   /* ---------- SUCCESS STORIES ---------- */
   .story-feature{display:grid;grid-template-columns:1fr 1fr;gap:40px;background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);border:1px solid var(--line);padding:40px;align-items:center;margin-bottom:40px;}
   .story-stats{display:flex;gap:30px;margin:20px 0;}
-  .story-stat .num{font-family:'Poppins';font-weight:800;color:var(--green-dark);font-size:1.7rem;}
+  .story-stat .num{font-family:'Poppins';font-weight:800;color:var(--red-dark);font-size:1.7rem;}
   .story-stat .lbl{font-size:.82rem;color:var(--ink-soft);font-weight:600;}
   .before-after{display:flex;gap:14px;}
   .ba-box{flex:1;background:var(--blue-tint);border-radius:var(--radius-md);padding:20px;text-align:center;}
@@ -431,13 +431,13 @@
 
   /* ---------- CTA BAND ---------- */
   .cta-band{
-    background:linear-gradient(120deg,var(--green) 0%, var(--green-dark) 100%);
+    background:linear-gradient(120deg,var(--red) 0%, var(--red-dark) 100%);
     border-radius:28px;padding:52px 50px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;color:#fff;
   }
   .cta-band h2{color:#fff;margin-bottom:.2em;}
-  .cta-band p{color:#DDF3E7;margin:0;}
-  .cta-band .btn-primary{background:#fff;color:var(--green-dark);}
-  .cta-band .btn-primary:hover{background:#f0fff6;}
+  .cta-band p{color:#FBE8E8;margin:0;}
+  .cta-band .btn-primary{background:#fff;color:var(--red-dark);}
+  .cta-band .btn-primary:hover{background:#FFF1F1;}
 
   .divider-motif{display:flex;justify-content:center;padding:6px 0 0;opacity:.5;}
 
@@ -499,6 +499,619 @@
     text-align:left;background:none;border:none;padding:15px 12px;font-size:1.05rem;font-weight:700;color:var(--ink);border-bottom:1px solid var(--line);
   }
   .mobile-close{align-self:flex-end;background:none;border:none;font-size:1.6rem;color:var(--ink-soft);margin-bottom:6px;}
+  .doc-avatar-lg {
+    width: 160px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.doc-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+  /* ---------- JAP HOSPITAL RED / BLUE BRAND UPDATES ---------- */
+  .hospital-logo{
+    width:190px;
+    max-width:30vw;
+    height:58px;
+    object-fit:contain;
+    object-position:left center;
+  }
+
+  .hero{
+    background:
+      radial-gradient(circle at 88% 16%, rgba(214,40,40,.08), transparent 28%),
+      linear-gradient(180deg,#EDF5FB 0%, #FFFFFF 74%);
+  }
+
+  .hero-art-card{
+    padding:0;
+    overflow:hidden;
+    border:5px solid #fff;
+    min-height:420px;
+    background:#fff;
+  }
+
+  .hero-hospital-photo{
+    width:100%;
+    height:100%;
+    min-height:420px;
+    object-fit:cover;
+    object-position:center;
+  }
+
+  .btn-primary{
+    background:var(--blue);
+    color:#fff;
+    box-shadow:0 8px 18px rgba(11,79,138,.25);
+  }
+  .btn-primary:hover{
+    background:var(--blue-dark);
+    box-shadow:0 10px 22px rgba(11,79,138,.32);
+  }
+
+  .btn-emergency{
+    background:#fff;
+    color:var(--red);
+    border-color:#F0B8B8;
+  }
+  .btn-emergency:hover{
+    background:var(--red);
+    color:#fff;
+    border-color:var(--red);
+  }
+
+  .stats-bar{
+    background:linear-gradient(110deg,var(--blue-dark),var(--blue) 68%,#174F82);
+    border-top:4px solid var(--red);
+  }
+
+  .doctor-panel{
+    background:linear-gradient(120deg,var(--blue-dark) 0%,var(--blue) 70%,#174F82 100%);
+    border-bottom:5px solid var(--red);
+  }
+
+  .cta-band{
+    background:linear-gradient(120deg,var(--blue-dark) 0%,var(--blue) 72%,#174F82 100%);
+    border-left:6px solid var(--red);
+  }
+
+  .t-card:hover .t-icon{background:var(--red);}
+  .stat .num .plus{color:#FFB3B3;}
+  .stars{color:#D62828;}
+
+  /* ---------- CLICKABLE PATIENT VIDEO REVIEWS ---------- */
+  .patient-video-trigger{
+    border:0;
+    padding:0;
+    background:transparent;
+    border-radius:50%;
+    position:relative;
+    flex-shrink:0;
+    cursor:pointer;
+  }
+  .patient-video-trigger::after{
+    content:"▶";
+    position:absolute;
+    right:-3px;
+    bottom:-3px;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:var(--red);
+    color:#fff;
+    font-size:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.22);
+    border:2px solid #fff;
+  }
+  .patient-video-trigger:hover .testi-photo{
+    transform:scale(1.06);
+    border-color:var(--red);
+  }
+  .testi-photo{transition:.25s ease;}
+
+  .patient-video-modal{
+    position:fixed;
+    inset:0;
+    z-index:5000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:22px;
+    background:rgba(3,18,31,.82);
+    backdrop-filter:blur(6px);
+  }
+  .patient-video-modal.open{display:flex;}
+  .patient-video-dialog{
+    width:min(900px,96vw);
+    background:#fff;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 24px 80px rgba(0,0,0,.35);
+    border-top:5px solid var(--red);
+  }
+  .patient-video-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:15px 18px;
+    border-bottom:1px solid var(--line);
+  }
+  .patient-video-head h3{margin:0;font-size:1.05rem;}
+  .patient-video-close{
+    width:38px;height:38px;border:0;border-radius:50%;
+    background:var(--blue-tint);color:var(--blue-dark);
+    font-size:1.5rem;line-height:1;cursor:pointer;
+  }
+  .patient-video-dialog video{
+    width:100%;
+    max-height:72vh;
+    display:block;
+    background:#000;
+  }
+
+  /* ---------- MOBILE IMPROVEMENTS ---------- */
+  @media (max-width:860px){
+    .nav-row{padding:10px 16px;}
+    .hospital-logo{width:145px;max-width:48vw;height:50px;}
+    .nav-cta-group{margin-left:auto;}
+    .nav-cta-group .btn-emergency{padding:10px 13px;}
+    .hero{padding:26px 0 34px;}
+    .hero-grid{gap:28px;}
+    .hero-visual{order:0;}
+    .hero-art-card{min-height:260px;border-radius:20px;}
+    .hero-hospital-photo{min-height:260px;max-height:360px;}
+    .hero h1{font-size:clamp(2rem,9vw,2.6rem);}
+  }
+
+  @media (max-width:560px){
+    body{font-size:16px;}
+    .hospital-logo{width:125px;height:44px;}
+    .nav-cta-group .btn-emergency .txt{display:none;}
+    .nav-cta-group .btn-emergency{
+      width:44px;height:44px;padding:0;border-radius:50%;
+    }
+    .hero-copy{text-align:left;}
+    .hero-hospital-photo{min-height:230px;}
+    .hero-art-card{min-height:230px;}
+    .testi-card{padding:22px;}
+    .patient-video-dialog{border-radius:16px;}
+    .patient-video-modal{padding:12px;}
+  }
+
+
+  /* ---------- SUBTLE BRAND BACKGROUNDS ----------
+     Soft red/blue tones to add polish without making a hospital website look flashy.
+  */
+  body{
+    background:
+      radial-gradient(circle at 8% 12%, rgba(11,79,138,.045), transparent 24%),
+      radial-gradient(circle at 92% 28%, rgba(214,40,40,.035), transparent 22%),
+      #FAFCFE;
+  }
+
+  section{
+    position:relative;
+  }
+
+  /* Alternate very soft section tones for visual separation */
+  #page-home > section:nth-of-type(2n),
+  #page-about > section:nth-of-type(2n),
+  #page-doctor > section:nth-of-type(2n),
+  #page-services > section:nth-of-type(2n),
+  #page-facilities > section:nth-of-type(2n),
+  #page-stories > section:nth-of-type(2n),
+  #page-contact > section:nth-of-type(2n){
+    background:
+      linear-gradient(135deg, rgba(11,79,138,.035), rgba(255,255,255,.92) 50%, rgba(214,40,40,.025));
+  }
+
+  .hero{
+    background:
+      radial-gradient(circle at 84% 18%, rgba(214,40,40,.08), transparent 26%),
+      radial-gradient(circle at 12% 82%, rgba(11,79,138,.07), transparent 28%),
+      linear-gradient(135deg,#EDF5FB 0%,#FFFFFF 55%,#FFF4F4 100%);
+  }
+
+  .page-hero{
+    background:
+      radial-gradient(circle at 88% 22%, rgba(214,40,40,.055), transparent 24%),
+      linear-gradient(135deg,#EEF6FC 0%,#FFFFFF 58%,#FFF7F7 100%);
+    border-bottom:1px solid rgba(11,79,138,.07);
+  }
+
+  .map-section{
+    background:
+      linear-gradient(135deg, rgba(11,79,138,.08), rgba(255,255,255,.98) 55%, rgba(214,40,40,.045));
+  }
+
+  .testi-card,
+  .t-card,
+  .facility-card,
+  .mv-card,
+  .story-feature,
+  .contact-item-card,
+  .info-card,
+  .appt-form-card{
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(2px);
+  }
+
+  .gallery-item{
+    background:
+      linear-gradient(135deg, rgba(11,79,138,.08), rgba(214,40,40,.04));
+  }
+
+  footer{
+    background:
+      radial-gradient(circle at 12% 10%, rgba(214,40,40,.12), transparent 22%),
+      linear-gradient(135deg,#061F36 0%,#082E50 62%,#0B4F8A 100%);
+  }
+
+  /* Small desktop-only decorative glow, intentionally subtle */
+  @media (min-width:861px){
+    #page-home::before{
+      content:"";
+      position:fixed;
+      width:380px;
+      height:380px;
+      right:-180px;
+      top:180px;
+      border-radius:50%;
+      background:rgba(214,40,40,.025);
+      pointer-events:none;
+      z-index:-1;
+      filter:blur(18px);
+    }
+  }
+
+  @media (max-width:860px){
+    body{
+      background:
+        linear-gradient(180deg,#FAFCFE 0%,#FFFFFF 50%,#FAFCFE 100%);
+    }
+
+    #page-home > section:nth-of-type(2n),
+    #page-about > section:nth-of-type(2n),
+    #page-doctor > section:nth-of-type(2n),
+    #page-services > section:nth-of-type(2n),
+    #page-facilities > section:nth-of-type(2n),
+    #page-stories > section:nth-of-type(2n),
+    #page-contact > section:nth-of-type(2n){
+      background:
+        linear-gradient(180deg, rgba(11,79,138,.025), rgba(255,255,255,.98), rgba(214,40,40,.018));
+    }
+  }
+
+
+  /* ---------- ACCESSIBLE SECTION CONTRAST UPDATE ----------
+     Stronger but still restrained red/blue section backgrounds.
+     Designed to make visual separation noticeable without looking flashy.
+  */
+
+  :root{
+    --section-blue-1:#EAF4FB;
+    --section-blue-2:#DDECF7;
+    --section-red-1:#FFF0F0;
+    --section-red-2:#FBE2E2;
+    --section-neutral:#F7FAFC;
+    --section-border-blue:rgba(11,79,138,.18);
+    --section-border-red:rgba(214,40,40,.16);
+  }
+
+  /* Keep content cards white so text remains highly readable */
+  .t-card,
+  .testi-card,
+  .facility-card,
+  .mv-card,
+  .story-feature,
+  .contact-item-card,
+  .info-card,
+  .appt-form-card,
+  .doc-card{
+    background:#FFFFFF;
+    border-color:rgba(11,79,138,.12);
+  }
+
+  /* Homepage section palette */
+  #page-home > section:nth-of-type(2){
+    background:linear-gradient(135deg,var(--section-blue-1) 0%,#F7FBFE 55%,var(--section-blue-2) 100%);
+    border-top:1px solid var(--section-border-blue);
+    border-bottom:1px solid var(--section-border-blue);
+  }
+
+  #page-home > section:nth-of-type(3){
+    background:linear-gradient(135deg,var(--section-red-1) 0%,#FFF9F9 52%,var(--section-red-2) 100%);
+    border-top:1px solid var(--section-border-red);
+    border-bottom:1px solid var(--section-border-red);
+  }
+
+  #page-home > section:nth-of-type(4){
+    background:linear-gradient(135deg,#EEF6FC 0%,#FFFFFF 48%,#F8E9E9 100%);
+  }
+
+  #page-home > section:nth-of-type(5){
+    background:linear-gradient(135deg,#E5F0F8 0%,#F8FBFD 58%,#FCEBEB 100%);
+    border-top:1px solid rgba(11,79,138,.12);
+  }
+
+  #page-home > section:nth-of-type(6){
+    background:linear-gradient(135deg,#FFF3F3 0%,#FFFFFF 52%,#E8F3FA 100%);
+    border-top:1px solid rgba(214,40,40,.11);
+  }
+
+  /* Inner pages alternate between clearly distinct soft tones */
+  #page-about > section:nth-of-type(odd),
+  #page-doctor > section:nth-of-type(odd),
+  #page-services > section:nth-of-type(odd),
+  #page-facilities > section:nth-of-type(odd),
+  #page-stories > section:nth-of-type(odd),
+  #page-contact > section:nth-of-type(odd){
+    background:linear-gradient(135deg,var(--section-blue-1),#F8FBFD 58%,#FFFFFF);
+  }
+
+  #page-about > section:nth-of-type(even),
+  #page-doctor > section:nth-of-type(even),
+  #page-services > section:nth-of-type(even),
+  #page-facilities > section:nth-of-type(even),
+  #page-stories > section:nth-of-type(even),
+  #page-contact > section:nth-of-type(even){
+    background:linear-gradient(135deg,var(--section-red-1),#FFF9F9 58%,#FFFFFF);
+  }
+
+  /* Hero gets stronger visual identity */
+  .hero{
+    background:
+      radial-gradient(circle at 88% 18%, rgba(214,40,40,.14), transparent 28%),
+      radial-gradient(circle at 10% 82%, rgba(11,79,138,.13), transparent 30%),
+      linear-gradient(135deg,#E4F0F8 0%,#FFFFFF 50%,#FCE8E8 100%);
+  }
+
+  .page-hero{
+    background:
+      linear-gradient(110deg,#DDECF7 0%,#F7FBFD 50%,#FBE5E5 100%);
+    border-bottom:2px solid rgba(11,79,138,.10);
+  }
+
+  /* More visible section headers */
+  .section-head h2{
+    color:var(--blue-dark);
+  }
+
+  .eyebrow{
+    color:var(--red-dark);
+  }
+
+  .eyebrow::before{
+    background:var(--red);
+  }
+
+  /* Give selected content areas a branded edge */
+  .t-card,
+  .testi-card,
+  .facility-card,
+  .contact-item-card{
+    border-top:3px solid rgba(11,79,138,.16);
+  }
+
+  .t-card:nth-child(2n),
+  .testi-card:nth-child(2n),
+  .facility-card:nth-child(2n),
+  .contact-item-card:nth-child(2n){
+    border-top-color:rgba(214,40,40,.20);
+  }
+
+  /* Improve differentiation in stats without becoming loud */
+  .stats-bar{
+    background:
+      linear-gradient(110deg,#06355F 0%,#0B4F8A 58%,#8E1E24 130%);
+  }
+
+  .map-section{
+    background:
+      linear-gradient(135deg,#DCECF7 0%,#F9FBFD 55%,#F8E4E4 100%);
+    border-top:1px solid rgba(11,79,138,.14);
+  }
+
+  /* Accessible footer contrast */
+  footer{
+    background:
+      linear-gradient(135deg,#051B30 0%,#082C4C 62%,#4E1519 125%);
+  }
+
+  /* On small screens use solid-ish tones instead of subtle gradients */
+  @media (max-width:860px){
+    #page-home > section:nth-of-type(2),
+    #page-about > section:nth-of-type(odd),
+    #page-doctor > section:nth-of-type(odd),
+    #page-services > section:nth-of-type(odd),
+    #page-facilities > section:nth-of-type(odd),
+    #page-stories > section:nth-of-type(odd),
+    #page-contact > section:nth-of-type(odd){
+      background:#EEF6FB;
+    }
+
+    #page-home > section:nth-of-type(3),
+    #page-about > section:nth-of-type(even),
+    #page-doctor > section:nth-of-type(even),
+    #page-services > section:nth-of-type(even),
+    #page-facilities > section:nth-of-type(even),
+    #page-stories > section:nth-of-type(even),
+    #page-contact > section:nth-of-type(even){
+      background:#FFF1F1;
+    }
+
+    #page-home > section:nth-of-type(4){
+      background:#F5F8FB;
+    }
+
+    #page-home > section:nth-of-type(5){
+      background:#EAF3F9;
+    }
+
+    #page-home > section:nth-of-type(6){
+      background:#FFF5F5;
+    }
+  }
+
+
+  /* =========================================================
+     MOBILE OVERFLOW FIX
+     Prevent long emergency number / headings from widening page
+     ========================================================= */
+  html, body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
+  .wrap,
+  .nav-row,
+  .hero-grid,
+  .hero-copy,
+  .hero-visual,
+  .hero-ctas,
+  .hero-trust,
+  .section-head,
+  main,
+  .page{
+    min-width:0;
+    max-width:100%;
+  }
+
+  .hero-copy *,
+  .section-head *,
+  .testi-card *,
+  .contact-item-card *{
+    max-width:100%;
+  }
+
+  .hero h1,
+  .hero p.lead,
+  .eyebrow{
+    overflow-wrap:break-word;
+    word-break:normal;
+  }
+
+  @media (max-width:860px){
+    .hero-grid{
+      width:100%;
+      grid-template-columns:minmax(0,1fr);
+    }
+
+    .hero-copy{
+      width:100%;
+      min-width:0;
+    }
+
+    .hero h1{
+      width:100%;
+      max-width:100%;
+      font-size:clamp(2rem,9vw,2.65rem);
+      line-height:1.16;
+    }
+
+    .hero p.lead{
+      width:100%;
+      max-width:100%;
+      font-size:1.06rem;
+      line-height:1.75;
+    }
+
+    .hero-ctas{
+      width:100%;
+    }
+
+    .hero-ctas .btn-emergency{
+      width:100%;
+      max-width:100%;
+      white-space:normal;
+      text-align:center;
+      line-height:1.35;
+      padding:15px 18px;
+      overflow-wrap:anywhere;
+    }
+
+    .hero-ctas .btn-emergency svg{
+      flex:0 0 auto;
+    }
+
+    .eyebrow{
+      display:flex;
+      width:100%;
+      align-items:flex-start;
+      line-height:1.45;
+      font-size:.78rem;
+      letter-spacing:.045em;
+    }
+
+    .eyebrow::before{
+      flex:0 0 26px;
+      margin-top:.65em;
+    }
+  }
+
+  @media (max-width:560px){
+    .wrap{
+      width:100%;
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    .hero{
+      padding-top:34px;
+    }
+
+    .hero h1{
+      font-size:clamp(2rem,10.2vw,2.55rem);
+    }
+
+    .hero p.lead{
+      font-size:1rem;
+    }
+
+    .hero-ctas .btn-emergency{
+      font-size:.96rem;
+      border-radius:22px;
+    }
+
+    .hero-trust{
+      width:100%;
+    }
+
+    .trust-chip{
+      min-width:0;
+      width:100%;
+      line-height:1.35;
+    }
+  }
+
+  /* Logo fallback prevents a broken-image icon/text if the real logo
+     filename has not yet been uploaded to GitHub. */
+  .brand-fallback{
+    display:none;
+    font-family:'Poppins',sans-serif;
+    font-weight:800;
+    color:var(--blue-dark);
+    font-size:1.15rem;
+    line-height:1.1;
+  }
+
+  @media (max-width:560px){
+    .brand-fallback{
+      font-size:1rem;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -506,17 +1119,11 @@
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="nav-row">
-    <a href="#" class="logo" onclick="goTo('home');return false;">
-      <span class="logo-mark">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-          <path d="M8 3.5c1.2 0 2 1 2 2.2 0 .9-.4 1.5-.9 2.1L7 10a3 3 0 0 0 0 4l2.1 2.2c.5.6.9 1.2.9 2.1 0 1.2-.8 2.2-2 2.2S6 19.5 6 18.3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
-          <path d="M16 3.5c-1.2 0-2 1-2 2.2 0 .9.4 1.5.9 2.1L17 10a3 3 0 0 1 0 4l-2.1 2.2c-.5.6-.9 1.2-.9 2.1 0 1.2.8 2.2 2 2.2s2-1 2-2.2" stroke="#8FD9B4" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-      </span>
-      <span class="logo-text">
-        <div class="name">JAP Hospital</div>
-        <div class="sub">Ortho &amp; Spine Care</div>
-      </span>
+    <a href="#" class="logo" onclick="goTo('home');return false;" aria-label="JAP Hospital Home">
+      <!-- CHANGE IMAGE NAME HERE if your logo file has a different name -->
+      <img src="hospital-logo.png" alt="JAP Hospital logo" class="hospital-logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <span class="brand-fallback">JAP Hospital</span>
     </a>
 
     <nav class="main-nav" id="mainNav">
@@ -530,13 +1137,10 @@
     </nav>
 
     <div class="nav-cta-group">
-      <a class="btn btn-emergency" href="tel:+911234500000">
+      <a class="btn btn-emergency emergency-call" href="tel:+01812922063">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.3 21 3 12.7 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#C0392B" stroke-width="1.6"/></svg>
         <span class="txt">Emergency</span>
       </a>
-      <button class="btn btn-primary" onclick="goTo('appointment')">
-        <span class="txt">Book Appointment</span>
-      </button>
       <button class="hamburger" onclick="toggleMobileMenu(true)" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -554,7 +1158,6 @@
     <button class="nav-link" onclick="goTo('services')">Treatments</button>
     <button class="nav-link" onclick="goTo('facilities')">Facilities</button>
     <button class="nav-link" onclick="goTo('stories')">Success Stories</button>
-    <button class="nav-link" onclick="goTo('appointment')">Book Appointment</button>
     <button class="nav-link" onclick="goTo('contact')">Contact</button>
   </div>
 </div>
@@ -572,49 +1175,22 @@
         <h1 style="animation:fadeUp .8s ease .1s both;">Walk Pain‑Free Again with Trusted <span class="hl">Knee Replacement &amp; Spine Care</span></h1>
         <p class="lead" style="animation:fadeUp .8s ease .2s both;">JAP Hospital, Bhogpur brings advanced joint replacement and spine surgery to Punjab — combining experienced surgeons, modern operation theatres and gentle, patient‑first care for every age.</p>
         <div class="hero-ctas" style="animation:fadeUp .8s ease .3s both;">
-          <button class="btn btn-primary btn-lg" onclick="goTo('appointment')">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 2v4M16 2v4M3.5 9h17M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.6"/></svg>
-            Book an Appointment
-          </button>
-          <a class="btn btn-emergency btn-lg" href="tel:+911234500000">
+          <a class="btn btn-emergency btn-lg emergency-call" href="tel:+911234500000">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.3 21 3 12.7 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#C0392B" stroke-width="1.6"/></svg>
-            24/7 Emergency: 1234‑500‑000
+            24/7 Emergency: +91 XXXXX XXXXX
           </a>
         </div>
         <div class="hero-trust" style="animation:fadeUp .8s ease .4s both;">
-          <div class="trust-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z" stroke="#0B4F8A" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="#2BB673" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>NABH‑standard Safety</div>
+          <div class="trust-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z" stroke="#0B4F8A" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="#D62828" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>NABH‑standard Safety</div>
           <div class="trust-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#0B4F8A" stroke-width="1.6"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" stroke="#0B4F8A" stroke-width="1.6" stroke-linecap="round"/></svg>Senior Ortho Surgeons</div>
           <div class="trust-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C.7 8.5 2 5 5.3 4.2 7.5 3.7 9.7 4.6 11 6.4l1 1.4 1-1.4c1.3-1.8 3.5-2.7 5.7-2.2C22 5 23.3 8.5 21.5 12c-2.5 4.5-9.5 9-9.5 9Z" stroke="#0B4F8A" stroke-width="1.6"/></svg>Personalised Recovery Plans</div>
         </div>
       </div>
 
       <div class="hero-visual" style="animation:fadeIn 1s ease .2s both;">
-        <svg class="joint-motif jm1 float-anim slow" viewBox="0 0 200 200" fill="none"><path d="M60 10c15 0 25 12 25 27 0 11-5 18-11 26l-16 20a37 37 0 0 0 0 50l16 20c6 8 11 15 11 26 0 15-10 27-25 27" stroke="#0B4F8A" stroke-width="6"/></svg>
         <div class="hero-art-card">
-          <svg viewBox="0 0 460 400" width="100%" height="auto">
-            <rect x="0" y="0" width="460" height="400" rx="20" fill="#EAF3FA"/>
-            <!-- simple caring illustration: doctor assisting elderly patient walking -->
-            <circle cx="150" cy="120" r="34" fill="#0B4F8A"/>
-            <rect x="122" y="150" width="56" height="110" rx="26" fill="#0B4F8A"/>
-            <rect x="100" y="240" width="24" height="90" rx="10" fill="#0B4F8A"/>
-            <rect x="170" y="240" width="24" height="90" rx="10" fill="#0B4F8A"/>
-            <circle cx="300" cy="130" r="30" fill="#2BB673"/>
-            <rect x="275" y="158" width="50" height="95" rx="24" fill="#2BB673"/>
-            <rect x="255" y="240" width="22" height="80" rx="10" fill="#2BB673"/>
-            <rect x="320" y="240" width="22" height="80" rx="10" fill="#2BB673"/>
-            <path d="M178 210c20-10 62-10 90 5" stroke="#0B4F8A" stroke-width="8" stroke-linecap="round"/>
-            <rect x="60" y="330" width="360" height="14" rx="7" fill="#C7DDEE"/>
-            <circle cx="150" cy="95" r="10" fill="#F8FAFC"/>
-            <circle cx="300" cy="107" r="9" fill="#F8FAFC"/>
-          </svg>
-        </div>
-        <div class="hero-badge b1 float-anim">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z" fill="#2BB673"/></svg>
-          <div><div class="num">98%</div><div class="lbl">Surgery Success</div></div>
-        </div>
-        <div class="hero-badge b2 float-anim delay">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#0B4F8A"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="#0B4F8A"/></svg>
-          <div><div class="num">12+ Yrs</div><div class="lbl">Ortho Experience</div></div>
+          <!-- CHANGE IMAGE NAME HERE if your main hospital photo has a different filename -->
+          <img src="Hospital building.jpeg" alt="JAP Hospital, Bhogpur" class="hero-hospital-photo">
         </div>
       </div>
     </div>
@@ -623,8 +1199,8 @@
   <!-- STATS -->
   <div class="stats-bar">
     <div class="wrap stats-grid">
-      <div class="stat reveal d1"><div class="num"><span class="counter" data-target="12">0</span><span class="plus">+</span></div><div class="lbl">Years of Experience</div></div>
-      <div class="stat reveal d2"><div class="num"><span class="counter" data-target="8000">0</span><span class="plus">+</span></div><div class="lbl">Successful Surgeries</div></div>
+      <div class="stat reveal d1"><div class="num"><span class="counter" data-target="10">0</span><span class="plus">+</span></div><div class="lbl">Years of Experience</div></div>
+      <div class="stat reveal d2"><div class="num"><span class="counter" data-target="6000">0</span><span class="plus">+</span></div><div class="lbl">Successful Surgeries</div></div>
       <div class="stat reveal d3"><div class="num"><span class="counter" data-target="98">0</span><span class="plus">%</span></div><div class="lbl">Patient Satisfaction</div></div>
       <div class="stat reveal d4"><div class="num">24<span class="plus">/7</span></div><div class="lbl">Emergency Care</div></div>
     </div>
@@ -640,7 +1216,7 @@
       </div>
       <div class="card-grid">
         <div class="t-card reveal d1">
-          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.7"/><path d="M12 7v5l3 3" stroke="#2BB673" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.7"/><path d="M12 7v5l3 3" stroke="#D62828" stroke-width="1.7" stroke-linecap="round"/></svg></div>
           <h3>Knee Replacement</h3>
           <p>Total &amp; partial knee replacement using precision implants for lasting, natural movement.</p>
           <a class="t-link" onclick="goTo('services')" href="#">Learn more →</a>
@@ -652,7 +1228,7 @@
           <a class="t-link" onclick="goTo('services')" href="#">Learn more →</a>
         </div>
         <div class="t-card reveal d3">
-          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.7"/><circle cx="12" cy="12" r="3" stroke="#2BB673" stroke-width="1.7"/></svg></div>
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.7"/><circle cx="12" cy="12" r="3" stroke="#D62828" stroke-width="1.7"/></svg></div>
           <h3>Joint Treatments</h3>
           <p>Hip, shoulder and joint pain management from early arthritis to advanced replacement.</p>
           <a class="t-link" onclick="goTo('services')" href="#">Learn more →</a>
@@ -690,32 +1266,29 @@
       <div class="gallery-grid">
         <div class="gallery-item big reveal">
           <!-- REPLACE src BELOW with your hospital's main building photo -->
-          <img src="https://placehold.co/800x800/0B4F8A/FFFFFF?font=poppins&text=Hospital+Building" alt="JAP Hospital building, Bhogpur">
+          <img src="Hospital building.jpeg" alt="JAP Hospital building, Bhogpur">
           <div class="gallery-caption">Hospital Building — Bhogpur</div>
         </div>
         <div class="gallery-item reveal d1">
           <!-- REPLACE src BELOW with your operation theatre photo -->
-          <img src="https://placehold.co/600x400/2BB673/FFFFFF?font=poppins&text=Operation+Theatre" alt="Operation Theatre">
+          <img src="Operation Theatre.jpeg" alt="Operation Theatre">
           <div class="gallery-caption">Operation Theatre</div>
         </div>
         <div class="gallery-item reveal d2">
           <!-- REPLACE src BELOW with your reception / lobby photo -->
-          <img src="https://placehold.co/600x400/0B4F8A/FFFFFF?font=poppins&text=Reception" alt="Hospital Reception">
+          <img src="Reception.jpeg" alt="Hospital Reception">
           <div class="gallery-caption">Reception &amp; Lobby</div>
         </div>
         <div class="gallery-item reveal d3">
           <!-- REPLACE src BELOW with your patient room photo -->
-          <img src="https://placehold.co/600x400/2BB673/FFFFFF?font=poppins&text=Patient+Room" alt="Patient Room">
+          <img src="Patient room.jpeg" alt="Patient Room">
           <div class="gallery-caption">Patient Rooms</div>
         </div>
         <div class="gallery-item reveal d4">
           <!-- REPLACE src BELOW with your physiotherapy area photo -->
-          <img src="https://placehold.co/600x400/0B4F8A/FFFFFF?font=poppins&text=Physiotherapy" alt="Physiotherapy Centre">
+          <img src="Physiotherapy.jpeg" alt="Physiotherapy Centre">
           <div class="gallery-caption">Physiotherapy Centre</div>
         </div>
-      </div>
-      <div class="gallery-note">
-        📷 To use this on your live site: replace each <code>img src="..."</code> above with the path to your own hospital photo (e.g. <code>images/hospital-1.jpg</code>).
       </div>
     </div>
   </section>
@@ -725,22 +1298,17 @@
     <div class="wrap">
       <div class="doctor-panel">
         <div class="doctor-photo-wrap">
-          <svg width="260" height="320" viewBox="0 0 260 320">
-            <circle cx="130" cy="110" r="58" fill="#124f86"/>
-            <rect x="60" y="170" width="140" height="150" rx="40" fill="#0f4a7d"/>
-            <rect x="95" y="150" width="70" height="40" fill="#124f86"/>
-            <path d="M100 260c15 10 45 10 60 0" stroke="#8FD9B4" stroke-width="6" stroke-linecap="round" fill="none"/>
-          </svg>
-        </div>
+            <img src="dr photo.PNG" alt="Dr. Aman Singh" class="doctor-photo">
+</div>
         <div class="doctor-content">
           <div class="eyebrow">Meet Your Surgeon</div>
-          <h2>Dr. Arjun Preet Singh, MS Ortho</h2>
-          <p>Leading our orthopedic team with over 12 years of focused experience in joint replacement and spine surgery, Dr. Singh has helped thousands of patients across Punjab regain pain‑free movement.</p>
+          <h2>Dr. Aman Singh, MS Orthopaedics</h2>
+          <p>Leading our orthopedic team with over 10 years of focused experience in joint replacement and spine surgery, Dr. Singh has helped thousands of patients across Punjab regain pain‑free movement.</p>
           <div class="doctor-quals">
             <span class="qual-pill">MBBS, MS (Ortho)</span>
             <span class="qual-pill">Fellowship in Joint Replacement</span>
             <span class="qual-pill">Spine Surgery Certified</span>
-            <span class="qual-pill">8,000+ Surgeries</span>
+            <span class="qual-pill">6,000+ Surgeries</span>
           </div>
           <button class="btn btn-primary" onclick="goTo('doctor')">View Full Profile</button>
         </div>
@@ -769,7 +1337,7 @@
       </div>
       <div class="video-caption-row">
         <div><h3>Hospital Walkthrough — 2 min</h3><p>Wards · Operation Theatre · Physiotherapy Centre</p></div>
-        <span class="gallery-note" style="margin-top:0;">🎬 Replace the video source with your own file to make this playable.</span>
+       
       </div>
     </div>
   </section>
@@ -780,33 +1348,58 @@
       <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
         <div class="eyebrow" style="justify-content:center;">Patient Voices</div>
         <h2>Real Recoveries, Real Relief</h2>
+        <p>Tap a patient photo to watch their recovery interview without leaving this page.</p>
       </div>
+
       <div class="testi-grid">
         <div class="testi-card reveal d1">
           <div class="stars">★★★★★</div>
           <p class="quote">"After my knee replacement at JAP Hospital, I climbed stairs without pain for the first time in years. The staff treated me like family."</p>
           <div class="testi-person">
-            <!-- REPLACE src below with the patient's real photo -->
-            <img class="testi-photo" src="https://placehold.co/120x120/EAF3FA/0B4F8A?font=poppins&text=RK" alt="Ranjit Kaur">
-            <div><div class="pname">Ranjit Kaur</div><div class="ptag">Knee Replacement, Age 64</div></div>
+            <button class="patient-video-trigger" type="button"
+              onclick="openPatientVideo('videos/ranjit-kaur-interview.mp4','Ranjit Kaur')"
+              aria-label="Watch Ranjit Kaur patient interview">
+              <!-- CHANGE IMAGE NAME HERE -->
+              <img class="testi-photo" src="patient-ranjit-kaur.jpg" alt="Ranjit Kaur">
+            </button>
+            <div>
+              <div class="pname">Ranjit Kaur</div>
+              <div class="ptag">Knee Replacement, Age 64 · Tap photo to watch interview</div>
+            </div>
           </div>
         </div>
+
         <div class="testi-card reveal d2">
           <div class="stars">★★★★★</div>
           <p class="quote">"My chronic back pain is gone after spine surgery here. Dr. Singh explained every step so clearly, my whole family felt at ease."</p>
           <div class="testi-person">
-            <!-- REPLACE src below with the patient's real photo -->
-            <img class="testi-photo" src="https://placehold.co/120x120/EAF3FA/0B4F8A?font=poppins&text=SS" alt="Sukhdev Singh">
-            <div><div class="pname">Sukhdev Singh</div><div class="ptag">Spine Surgery, Age 58</div></div>
+            <button class="patient-video-trigger" type="button"
+              onclick="openPatientVideo('videos/sukhdev-singh-interview.mp4','Sukhdev Singh')"
+              aria-label="Watch Sukhdev Singh patient interview">
+              <!-- CHANGE IMAGE NAME HERE -->
+              <img class="testi-photo" src="patient-sukhdev-singh.jpg" alt="Sukhdev Singh">
+            </button>
+            <div>
+              <div class="pname">Sukhdev Singh</div>
+              <div class="ptag">Spine Surgery, Age 58 · Tap photo to watch interview</div>
+            </div>
           </div>
         </div>
+
         <div class="testi-card reveal d3">
           <div class="stars">★★★★★</div>
           <p class="quote">"The physiotherapy team guided me every day. Within 6 weeks I was walking in the park again without support."</p>
           <div class="testi-person">
-            <!-- REPLACE src below with the patient's real photo -->
-            <img class="testi-photo" src="https://placehold.co/120x120/EAF3FA/0B4F8A?font=poppins&text=GK" alt="Gurpreet Kaur">
-            <div><div class="pname">Gurpreet Kaur</div><div class="ptag">Hip Joint Treatment, Age 71</div></div>
+            <button class="patient-video-trigger" type="button"
+              onclick="openPatientVideo('videos/gurpreet-kaur-interview.mp4','Gurpreet Kaur')"
+              aria-label="Watch Gurpreet Kaur patient interview">
+              <!-- CHANGE IMAGE NAME HERE -->
+              <img class="testi-photo" src="patient-gurpreet-kaur.jpg" alt="Gurpreet Kaur">
+            </button>
+            <div>
+              <div class="pname">Gurpreet Kaur</div>
+              <div class="ptag">Hip Joint Treatment, Age 71 · Tap photo to watch interview</div>
+            </div>
           </div>
         </div>
       </div>
@@ -822,8 +1415,7 @@
         <p>Conveniently located and easy to reach with dedicated patient parking.</p>
       </div>
       <div class="map-wrap">
-        <iframe src="https://www.google.com/maps?q=Bhogpur,Punjab,India&output=embed" loading="lazy" allowfullscreen></iframe>
-      </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2488.3367225185725!2d75.63720297561237!3d31.539765674205167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391bab41a41102d1%3A0x72575e8e207c7b97!2sJAP%20HOSPITAL-BEST%20ORTHOPAEDIC%20AND%20MULTISPECIALITY%2CJOINT%20REPLACEMENT!5e1!3m2!1sen!2sin!4v1783936059710!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>      </div>
     </div>
   </section>
 
@@ -832,9 +1424,9 @@
       <div class="cta-band">
         <div>
           <h2>Ready to move without pain?</h2>
-          <p>Book a consultation with our orthopedic team today.</p>
+          <p>Speak directly with our hospital team for consultation and treatment guidance.</p>
         </div>
-        <button class="btn btn-primary btn-lg" onclick="goTo('appointment')" style="background:#fff;color:var(--green-dark);">Book Appointment</button>
+        <a class="btn btn-emergency btn-lg emergency-call" href="tel:+911234500000" style="background:#fff;">Call Hospital</a>
       </div>
     </div>
   </section>
@@ -857,10 +1449,10 @@
         <svg viewBox="0 0 460 360" width="100%">
           <rect width="460" height="360" rx="16" fill="#fff"/>
           <rect x="30" y="40" width="180" height="130" rx="14" fill="#0B4F8A"/>
-          <rect x="230" y="40" width="200" height="60" rx="14" fill="#2BB673"/>
+          <rect x="230" y="40" width="200" height="60" rx="14" fill="#D62828"/>
           <rect x="230" y="112" width="200" height="58" rx="14" fill="#0B4F8A"/>
           <rect x="30" y="188" width="400" height="130" rx="14" fill="#EAF3FA" stroke="#0B4F8A" stroke-width="1.5"/>
-          <path d="M60 300c15-10 45-10 60 0M340 300c15-10 45-10 60 0" stroke="#2BB673" stroke-width="5" stroke-linecap="round"/>
+          <path d="M60 300c15-10 45-10 60 0M340 300c15-10 45-10 60 0" stroke="#D62828" stroke-width="5" stroke-linecap="round"/>
         </svg>
       </div>
       <div>
@@ -904,7 +1496,7 @@
     <div class="wrap">
       <div class="cta-band">
         <div><h2>Want to know more about our team?</h2><p>Meet the surgeon leading your care.</p></div>
-        <button class="btn btn-primary btn-lg" style="background:#fff;color:var(--green-dark);" onclick="goTo('doctor')">Meet the Doctor</button>
+        <button class="btn btn-primary btn-lg" style="background:#fff;color:var(--red-dark);" onclick="goTo('doctor')">Meet the Doctor</button>
       </div>
     </div>
   </section>
@@ -915,8 +1507,8 @@
   <div class="page-hero">
     <div class="wrap">
       <div class="breadcrumb">Home / <span class="cur">Doctor Profile</span></div>
-      <h1>Dr. Arjun Preet Singh</h1>
-      <p>Chief Orthopedic &amp; Spine Surgeon — 12+ years dedicated to joint replacement and spine care.</p>
+      <h1>Dr. Aman Singh</h1>
+      <p>Chief Orthopaedic Surgeon  CEO &amp; Spine Surgeon — 10+ years dedicated to joint replacement and spine care.</p>
     </div>
   </div>
 
@@ -924,15 +1516,15 @@
     <div class="wrap doc-profile-grid">
       <div class="doc-card">
         <div class="doc-avatar-lg">
-          <svg width="80" height="90" viewBox="0 0 80 90"><circle cx="40" cy="30" r="24" fill="#fff" opacity="0.9"/><rect x="12" y="52" width="56" height="38" rx="18" fill="#fff" opacity="0.9"/></svg>
+            <img src="dr photo.PNG" alt="Dr. Aman Singh" class="doc-image">
         </div>
-        <div class="doc-name">Dr. Arjun Preet Singh</div>
-        <div class="doc-role">MS Orthopedics, Spine Fellowship</div>
-        <div class="doc-meta-row"><span>Experience</span><span>12+ Years</span></div>
-        <div class="doc-meta-row"><span>Surgeries Performed</span><span>8,000+</span></div>
+        <div class="doc-name">Dr. Aman Singh</div>
+        <div class="doc-role">MS Orthopaedics, Spine Fellowship</div>
+        <div class="doc-meta-row"><span>Experience</span><span>10+ Years</span></div>
+        <div class="doc-meta-row"><span>Surgeries Performed</span><span>6,000+</span></div>
         <div class="doc-meta-row"><span>Languages</span><span>Punjabi, Hindi, English</span></div>
         <div class="doc-meta-row"><span>Consultation Fee</span><span>₹500</span></div>
-        <button class="btn btn-primary btn-block" style="margin-top:22px;" onclick="goTo('appointment')">Book Consultation</button>
+        <button class="btn btn-primary btn-block" style="margin-top:22px;" onclick="goTo('contact')">Book Consultation</button>
       </div>
 
       <div>
@@ -1021,7 +1613,7 @@
           </div>
         </div>
         <div class="service-row">
-          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.7"/><circle cx="12" cy="12" r="3" stroke="#2BB673" stroke-width="1.7"/></svg></div>
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.7"/><circle cx="12" cy="12" r="3" stroke="#D62828" stroke-width="1.7"/></svg></div>
           <div>
             <h3>Hip Replacement</h3>
             <p>Restoring hip mobility for patients with arthritis, fractures or long‑standing joint damage.</p>
@@ -1067,8 +1659,8 @@
   <section style="padding-top:0;">
     <div class="wrap">
       <div class="cta-band">
-        <div><h2>Not sure which treatment you need?</h2><p>Book a consultation and let our specialists guide you.</p></div>
-        <button class="btn btn-primary btn-lg" style="background:#fff;color:var(--green-dark);" onclick="goTo('appointment')">Book Appointment</button>
+        <div><h2>Not sure which treatment you need?</h2><p>Call our hospital team and let our specialists guide you.</p></div>
+        <a class="btn btn-emergency btn-lg emergency-call" href="tel:+911234500000" style="background:#fff;">Call Hospital</a>
       </div>
     </div>
   </section>
@@ -1174,70 +1766,6 @@
   </section>
 </div>
 
-<!-- ============================================================ APPOINTMENT ============================================================ -->
-<div class="page" id="page-appointment">
-  <div class="page-hero">
-    <div class="wrap">
-      <div class="breadcrumb">Home / <span class="cur">Appointment Booking</span></div>
-      <h1>Book Your Appointment</h1>
-      <p>Fill in your details and our care team will confirm your visit by phone within a few hours.</p>
-    </div>
-  </div>
-
-  <section>
-    <div class="wrap appt-grid">
-      <div class="appt-form-card">
-        <h2 style="margin-bottom:.2em;">Patient Details</h2>
-        <p style="color:var(--ink-soft);margin-bottom:24px;">All fields marked with * are required.</p>
-        <form onsubmit="submitAppointment(event)">
-          <div class="form-row">
-            <div class="form-group"><label for="fname">Full Name *</label><input id="fname" type="text" placeholder="e.g. Ranjit Kaur" required></div>
-            <div class="form-group"><label for="fage">Age *</label><input id="fage" type="number" placeholder="e.g. 62" min="1" required></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label for="fphone">Phone Number *</label><input id="fphone" type="tel" placeholder="+91 98xxxxxxx0" required></div>
-            <div class="form-group"><label for="femail">Email Address</label><input id="femail" type="email" placeholder="you@email.com"></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group"><label for="ftreat">Treatment Required *</label>
-              <select id="ftreat" required>
-                <option value="">Select a treatment</option>
-                <option>Knee Replacement</option>
-                <option>Spine Surgery</option>
-                <option>Hip Replacement</option>
-                <option>Arthroscopy</option>
-                <option>Fracture / Trauma Care</option>
-                <option>Physiotherapy</option>
-                <option>General Consultation</option>
-              </select>
-            </div>
-            <div class="form-group"><label for="fdate">Preferred Date *</label><input id="fdate" type="date" required></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group full"><label for="fmsg">Additional Notes</label><textarea id="fmsg" placeholder="Describe your symptoms or concerns (optional)"></textarea></div>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Confirm Appointment Request</button>
-        </form>
-      </div>
-
-      <div>
-        <div class="appt-side-card">
-          <h3>Emergency? Skip the Form.</h3>
-          <p>For urgent fractures or acute pain, call our 24/7 emergency line directly.</p>
-          <a class="btn btn-lg btn-block" style="background:#fff;color:var(--blue-dark);margin-top:10px;" href="tel:+911234500000">📞 1234‑500‑000</a>
-        </div>
-        <div class="info-card">
-          <div class="info-row"><div class="lbl">OPD Hours</div></div>
-          <div class="info-row"><span class="lbl">Mon – Fri</span><span class="val">9:00 AM – 2:00 PM</span></div>
-          <div class="info-row"><span class="lbl">Saturday</span><span class="val">9:00 AM – 1:00 PM</span></div>
-          <div class="info-row"><span class="lbl">Sunday</span><span class="val">Emergency Only</span></div>
-          <div class="info-row"><span class="lbl">Consultation Fee</span><span class="val">₹500</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
 <!-- ============================================================ CONTACT ============================================================ -->
 <div class="page" id="page-contact">
   <div class="page-hero">
@@ -1258,7 +1786,7 @@
           </div>
           <div class="contact-item-card">
             <div class="t-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.3 21 3 12.7 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#0B4F8A" stroke-width="1.6"/></svg></div>
-            <div><h4>Phone</h4><p>Appointments: +91 98765‑00000<br>Emergency: 1234‑500‑000</p></div>
+            <div><h4>Phone</h4><p>Hospital: +91 9909916112<br>Emergency: 0181 2922063</p></div>
           </div>
           <div class="contact-item-card">
             <div class="t-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="#0B4F8A" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="#0B4F8A" stroke-width="1.6"/></svg></div>
@@ -1297,16 +1825,30 @@
 
 </main>
 
+
+<!-- ============ PATIENT VIDEO POPUP ============ -->
+<div class="patient-video-modal" id="patientVideoModal" aria-hidden="true"
+     onclick="if(event.target===this) closePatientVideo()">
+  <div class="patient-video-dialog" role="dialog" aria-modal="true" aria-labelledby="patientVideoTitle">
+    <div class="patient-video-head">
+      <h3 id="patientVideoTitle">Patient Recovery Interview</h3>
+      <button class="patient-video-close" type="button" onclick="closePatientVideo()" aria-label="Close video">&times;</button>
+    </div>
+    <video id="patientVideo" controls playsinline preload="metadata">
+      <source id="patientVideoSource" src="" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+</div>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-col">
         <div class="foot-logo">
-          <span class="logo-mark" style="width:42px;height:42px;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 3.5c1.2 0 2 1 2 2.2 0 .9-.4 1.5-.9 2.1L7 10a3 3 0 0 0 0 4l2.1 2.2c.5.6.9 1.2.9 2.1 0 1.2-.8 2.2-2 2.2S6 19.5 6 18.3" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M16 3.5c-1.2 0-2 1-2 2.2 0 .9.4 1.5.9 2.1L17 10a3 3 0 0 1 0 4l-2.1 2.2c-.5.6-.9 1.2-.9 2.1 0 1.2.8 2.2 2 2.2s2-1 2-2.2" stroke="#8FD9B4" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </span>
-          <span class="name">JAP Hospital</span>
+          <!-- CHANGE IMAGE NAME HERE if needed -->
+          <img src="hospital-logo.png" alt="JAP Hospital logo" style="width:150px;height:52px;object-fit:contain;object-position:left center;">
         </div>
         <p>Bhogpur's dedicated orthopedic and spine care hospital — helping every patient move freely again.</p>
       </div>
@@ -1323,15 +1865,14 @@
         <h4>Patients</h4>
         <ul>
           <li><a href="#" onclick="goTo('stories');return false;">Success Stories</a></li>
-          <li><a href="#" onclick="goTo('appointment');return false;">Book Appointment</a></li>
           <li><a href="#" onclick="goTo('contact');return false;">Contact Us</a></li>
-          <li><a href="tel:+911234500000">Emergency Line</a></li>
+          <li><a href="tel:+911234500000" class="emergency-call">Emergency Line</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <p>Near Bus Stand Road, Bhogpur,<br>Jalandhar District, Punjab – 144201</p>
-        <p>+91 98765‑00000<br>care@japhospital.in</p>
+        <p>+91 7589100737<br>japhospital@gmail.com</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1352,11 +1893,6 @@
   }
   function toggleMobileMenu(open){
     document.getElementById('mobileMenu').classList.toggle('open', open);
-  }
-  function submitAppointment(e){
-    e.preventDefault();
-    alert('Thank you! Your appointment request has been received. Our team will call you shortly to confirm your visit.');
-    e.target.reset();
   }
   function submitContact(e){
     e.preventDefault();
@@ -1436,6 +1972,54 @@
       alert('Add your hospital tour video file (see the code comment near the video section) to enable playback.');
     });
   }
+
+  /* ---------- PATIENT INTERVIEW VIDEO POPUP ---------- */
+  function openPatientVideo(videoSrc, patientName){
+    const modal = document.getElementById('patientVideoModal');
+    const video = document.getElementById('patientVideo');
+    const source = document.getElementById('patientVideoSource');
+    const title = document.getElementById('patientVideoTitle');
+
+    title.textContent = patientName + ' — Recovery Interview';
+    source.src = videoSrc;
+    video.load();
+
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+
+    video.play().catch(() => {
+      // Autoplay may be blocked; controls remain available for the user.
+    });
+  }
+
+  function closePatientVideo(){
+    const modal = document.getElementById('patientVideoModal');
+    const video = document.getElementById('patientVideo');
+
+    video.pause();
+    video.currentTime = 0;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if(event.key === 'Escape'){
+      closePatientVideo();
+    }
+  });
+
+  /* ---------- EMERGENCY PHONE NUMBER ----------
+     Replace ONLY the value below with JAP Hospital's real mobile number.
+     Example format: +919876543210
+  */
+  const HOSPITAL_EMERGENCY_NUMBER = '+911234500000';
+
+  document.querySelectorAll('.emergency-call').forEach(link => {
+    link.href = 'tel:' + HOSPITAL_EMERGENCY_NUMBER;
+  });
+
 </script>
 
 </body>
