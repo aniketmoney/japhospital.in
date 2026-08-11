@@ -963,6 +963,155 @@
     }
   }
 
+
+  /* =========================================================
+     MOBILE OVERFLOW FIX
+     Prevent long emergency number / headings from widening page
+     ========================================================= */
+  html, body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
+  .wrap,
+  .nav-row,
+  .hero-grid,
+  .hero-copy,
+  .hero-visual,
+  .hero-ctas,
+  .hero-trust,
+  .section-head,
+  main,
+  .page{
+    min-width:0;
+    max-width:100%;
+  }
+
+  .hero-copy *,
+  .section-head *,
+  .testi-card *,
+  .contact-item-card *{
+    max-width:100%;
+  }
+
+  .hero h1,
+  .hero p.lead,
+  .eyebrow{
+    overflow-wrap:break-word;
+    word-break:normal;
+  }
+
+  @media (max-width:860px){
+    .hero-grid{
+      width:100%;
+      grid-template-columns:minmax(0,1fr);
+    }
+
+    .hero-copy{
+      width:100%;
+      min-width:0;
+    }
+
+    .hero h1{
+      width:100%;
+      max-width:100%;
+      font-size:clamp(2rem,9vw,2.65rem);
+      line-height:1.16;
+    }
+
+    .hero p.lead{
+      width:100%;
+      max-width:100%;
+      font-size:1.06rem;
+      line-height:1.75;
+    }
+
+    .hero-ctas{
+      width:100%;
+    }
+
+    .hero-ctas .btn-emergency{
+      width:100%;
+      max-width:100%;
+      white-space:normal;
+      text-align:center;
+      line-height:1.35;
+      padding:15px 18px;
+      overflow-wrap:anywhere;
+    }
+
+    .hero-ctas .btn-emergency svg{
+      flex:0 0 auto;
+    }
+
+    .eyebrow{
+      display:flex;
+      width:100%;
+      align-items:flex-start;
+      line-height:1.45;
+      font-size:.78rem;
+      letter-spacing:.045em;
+    }
+
+    .eyebrow::before{
+      flex:0 0 26px;
+      margin-top:.65em;
+    }
+  }
+
+  @media (max-width:560px){
+    .wrap{
+      width:100%;
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    .hero{
+      padding-top:34px;
+    }
+
+    .hero h1{
+      font-size:clamp(2rem,10.2vw,2.55rem);
+    }
+
+    .hero p.lead{
+      font-size:1rem;
+    }
+
+    .hero-ctas .btn-emergency{
+      font-size:.96rem;
+      border-radius:22px;
+    }
+
+    .hero-trust{
+      width:100%;
+    }
+
+    .trust-chip{
+      min-width:0;
+      width:100%;
+      line-height:1.35;
+    }
+  }
+
+  /* Logo fallback prevents a broken-image icon/text if the real logo
+     filename has not yet been uploaded to GitHub. */
+  .brand-fallback{
+    display:none;
+    font-family:'Poppins',sans-serif;
+    font-weight:800;
+    color:var(--blue-dark);
+    font-size:1.15rem;
+    line-height:1.1;
+  }
+
+  @media (max-width:560px){
+    .brand-fallback{
+      font-size:1rem;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -972,7 +1121,9 @@
   <div class="nav-row">
     <a href="#" class="logo" onclick="goTo('home');return false;" aria-label="JAP Hospital Home">
       <!-- CHANGE IMAGE NAME HERE if your logo file has a different name -->
-      <img src="hospital-logo.png" alt="JAP Hospital logo" class="hospital-logo">
+      <img src="hospital-logo.png" alt="JAP Hospital logo" class="hospital-logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <span class="brand-fallback">JAP Hospital</span>
     </a>
 
     <nav class="main-nav" id="mainNav">
@@ -986,7 +1137,7 @@
     </nav>
 
     <div class="nav-cta-group">
-      <a class="btn btn-emergency emergency-call" href="tel:+911234500000">
+      <a class="btn btn-emergency emergency-call" href="tel:+01812922063">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.3 21 3 12.7 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#C0392B" stroke-width="1.6"/></svg>
         <span class="txt">Emergency</span>
       </a>
@@ -1026,7 +1177,7 @@
         <div class="hero-ctas" style="animation:fadeUp .8s ease .3s both;">
           <a class="btn btn-emergency btn-lg emergency-call" href="tel:+911234500000">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.3 21 3 12.7 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#C0392B" stroke-width="1.6"/></svg>
-            24/7 Emergency: +91 75891 00737
+            24/7 Emergency: +91 XXXXX XXXXX
           </a>
         </div>
         <div class="hero-trust" style="animation:fadeUp .8s ease .4s both;">
@@ -1039,7 +1190,7 @@
       <div class="hero-visual" style="animation:fadeIn 1s ease .2s both;">
         <div class="hero-art-card">
           <!-- CHANGE IMAGE NAME HERE if your main hospital photo has a different filename -->
-          <img src="Hospital-building.jpeg" alt="JAP Hospital, Bhogpur" class="hero-hospital-photo">
+          <img src="Hospital building.jpeg" alt="JAP Hospital, Bhogpur" class="hero-hospital-photo">
         </div>
       </div>
     </div>
@@ -1635,7 +1786,7 @@
           </div>
           <div class="contact-item-card">
             <div class="t-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.3 21 3 12.7 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#0B4F8A" stroke-width="1.6"/></svg></div>
-            <div><h4>Phone</h4><p>Hospital: +91 XXXXX XXXXX<br>Emergency: +91 XXXXX XXXXX</p></div>
+            <div><h4>Phone</h4><p>Hospital: +91 9909916112<br>Emergency: 0181 2922063</p></div>
           </div>
           <div class="contact-item-card">
             <div class="t-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="#0B4F8A" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="#0B4F8A" stroke-width="1.6"/></svg></div>
@@ -1721,7 +1872,7 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <p>Near Bus Stand Road, Bhogpur,<br>Jalandhar District, Punjab – 144201</p>
-        <p>+91 XXXXX XXXXX<br>care@japhospital.in</p>
+        <p>+91 7589100737<br>japhospital@gmail.com</p>
       </div>
     </div>
     <div class="footer-bottom">
