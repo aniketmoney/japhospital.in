@@ -398,7 +398,7 @@
   .ba-box .lbl{font-weight:700;color:var(--blue-dark);font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
   .ba-box .val{font-family:'Poppins';font-weight:800;font-size:1.5rem;color:var(--ink);}
 
-  /* ---------- APPOINTMENT PAGE ---------- */
+  /* ---------- CONTACT / ENQUIRY PAGE ---------- */
   .appt-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:flex-start;}
   .appt-form-card{background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow-soft);border:1px solid var(--line);padding:40px;}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
@@ -1112,9 +1112,286 @@
     }
   }
 
+
+
+  /* =========================================================
+     JAP HOSPITAL V2 — PREMIUM MEDICAL TECH EXPERIENCE
+     Added for stronger first impression, scroll depth & mobile UX
+     ========================================================= */
+  :root{
+    --tech-cyan:#28B8E8;
+    --tech-blue:#1177B9;
+    --tech-navy:#041F37;
+    --soft-red:#FFEBEC;
+    --soft-cyan:#EAF9FE;
+  }
+
+  /* ultra-thin scroll progress reinforces the premium app-like feel */
+  .scroll-progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--red),#ff6a6a,var(--tech-cyan),var(--blue));z-index:9999;box-shadow:0 0 12px rgba(40,184,232,.55);pointer-events:none;}
+
+  header.site-header{transition:box-shadow .3s ease, background .3s ease, transform .3s ease;}
+  header.site-header.scrolled{background:rgba(255,255,255,.96);box-shadow:0 12px 35px rgba(4,31,55,.10);}
+
+  .hero-premium{
+    min-height:min(760px,calc(100vh - 80px));
+    display:flex;align-items:center;
+    padding:52px 0 42px;
+    isolation:isolate;
+  }
+  .hero-premium::before{
+    content:"";position:absolute;inset:0;z-index:-3;pointer-events:none;
+    background-image:linear-gradient(rgba(11,79,138,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(11,79,138,.045) 1px,transparent 1px);
+    background-size:44px 44px;
+    mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),transparent 92%);
+  }
+  .hero-premium::after{
+    content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-170px;top:-180px;z-index:-2;
+    background:radial-gradient(circle,rgba(40,184,232,.14),rgba(11,79,138,.04) 52%,transparent 72%);filter:blur(2px);
+  }
+  .hero-premium .hero-grid{grid-template-columns:1.02fr .98fr;gap:58px;}
+  .hero-status{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.72);border:1px solid rgba(11,79,138,.14);box-shadow:0 8px 24px rgba(11,79,138,.08);color:var(--blue-dark);font-weight:800;font-size:.76rem;letter-spacing:.055em;text-transform:uppercase;margin-bottom:18px;backdrop-filter:blur(10px);}
+  .hero-status-dot{width:8px;height:8px;border-radius:50%;background:#22b573;box-shadow:0 0 0 5px rgba(34,181,115,.12);animation:softPulse 2s infinite;}
+  .hero-premium h1{font-size:clamp(2.45rem,4.7vw,4.25rem);line-height:1.04;letter-spacing:-.035em;max-width:700px;margin-bottom:20px;}
+  .hero-premium h1 .tech-word{background:linear-gradient(100deg,var(--red-dark),var(--red) 44%,#F15C5C);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero-premium .lead{font-size:1.08rem!important;line-height:1.75;max-width:650px!important;margin-bottom:24px!important;}
+  .hero-cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 26px;}
+  .hero-cta-row .btn{min-height:52px;}
+  .btn-tech{background:linear-gradient(120deg,var(--blue),#1177B9);color:#fff;border:none;box-shadow:0 12px 28px rgba(11,79,138,.22);position:relative;overflow:hidden;}
+  .btn-tech::after{content:"";position:absolute;top:-100%;left:-45%;width:32%;height:300%;transform:rotate(22deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transition:left .55s ease;}
+  .btn-tech:hover::after{left:125%;}
+  .btn-tech:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(11,79,138,.30);}
+  .btn-ghost-red{background:#fff;color:var(--red-dark);border:1.5px solid rgba(214,40,40,.28);box-shadow:0 8px 22px rgba(214,40,40,.08);}
+  .btn-ghost-red:hover{background:var(--red);color:#fff;border-color:var(--red);transform:translateY(-2px);}
+
+  .hero-proof-row{display:flex;flex-wrap:wrap;gap:9px;}
+  .hero-proof{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border-radius:10px;background:rgba(255,255,255,.68);border:1px solid rgba(11,79,138,.10);color:#41586B;font-size:.82rem;font-weight:700;backdrop-filter:blur(8px);}
+  .hero-proof svg{flex:0 0 auto;}
+
+  .hero-visual-shell{position:relative;padding:20px;}
+  .hero-visual-shell::before{content:"";position:absolute;inset:5% 2% 0 8%;border-radius:34px;background:linear-gradient(135deg,rgba(11,79,138,.22),rgba(40,184,232,.08) 52%,rgba(214,40,40,.14));transform:rotate(3deg);z-index:0;}
+  .hero-premium .hero-art-card{position:relative;min-height:510px;border-radius:32px;border:1px solid rgba(255,255,255,.9);box-shadow:0 28px 70px rgba(4,31,55,.18);overflow:hidden;z-index:1;background:#fff;}
+  .hero-premium .hero-hospital-photo{min-height:510px;height:100%;object-fit:cover;}
+  .hero-tech-overlay{position:absolute;left:18px;right:18px;bottom:18px;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:9px;}
+  .hero-tech-card{background:rgba(4,31,55,.82);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(12px);border-radius:14px;padding:12px 10px;color:#fff;box-shadow:0 10px 24px rgba(0,0,0,.15);}
+  .hero-tech-card strong{display:block;font-family:'Poppins';font-size:.9rem;line-height:1.2;color:#fff;}
+  .hero-tech-card span{display:block;color:#CDEBFA;font-size:.68rem;margin-top:3px;}
+  .orbit-dot{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--tech-cyan);box-shadow:0 0 0 7px rgba(40,184,232,.14),0 0 25px rgba(40,184,232,.45);z-index:3;animation:softPulse 2.4s infinite;}
+  .orbit-dot.o1{right:1%;top:17%;}.orbit-dot.o2{left:2%;bottom:23%;background:var(--red);box-shadow:0 0 0 7px rgba(214,40,40,.12),0 0 22px rgba(214,40,40,.32);animation-delay:.8s;}
+
+  .trust-ribbon{background:#fff;border-top:1px solid rgba(11,79,138,.08);border-bottom:1px solid rgba(11,79,138,.08);}
+  .trust-ribbon-inner{min-height:58px;display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;padding:12px 0;color:var(--blue-dark);font-weight:800;font-size:.83rem;text-transform:uppercase;letter-spacing:.04em;}
+  .trust-ribbon-item{display:flex;align-items:center;gap:8px;}
+  .trust-ribbon-item::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(214,40,40,.08);}
+
+  .stats-bar{position:relative;overflow:hidden;}
+  .stats-bar::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;}
+  .stats-grid{position:relative;z-index:1;}
+  .stat{padding:18px 12px;border-right:1px solid rgba(255,255,255,.13);}
+  .stat:last-child{border-right:none;}
+  .stat .num{font-size:clamp(1.9rem,4vw,2.7rem);letter-spacing:-.03em;}
+
+  .tech-section{overflow:hidden;background:linear-gradient(135deg,#041F37 0%,#073A63 56%,#0B4F8A 100%)!important;color:#fff;border:none!important;}
+  .tech-section::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 88% 15%,rgba(40,184,232,.22),transparent 25%),radial-gradient(circle at 10% 86%,rgba(214,40,40,.19),transparent 24%);pointer-events:none;}
+  .tech-section .section-head h2,.tech-section .section-head p{color:#fff;}
+  .tech-section .section-head p{color:#CBE0EE;}
+  .tech-section .eyebrow{color:#FFB1B5;}.tech-section .eyebrow::before{background:#FF6A72;}
+  .tech-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:34px;align-items:stretch;position:relative;z-index:1;}
+  .tech-visual{min-height:460px;border-radius:28px;position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.17);box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 28px 70px rgba(0,0,0,.18);display:grid;place-items:center;}
+  .tech-visual::before{content:"";position:absolute;width:290px;height:290px;border:1px solid rgba(40,184,232,.22);border-radius:50%;box-shadow:0 0 0 55px rgba(40,184,232,.035),0 0 0 110px rgba(40,184,232,.025);animation:spinSlow 24s linear infinite;}
+  .tech-knee-svg{width:min(300px,72%);filter:drop-shadow(0 20px 30px rgba(0,0,0,.25));position:relative;z-index:2;}
+  .scan-line{position:absolute;left:12%;right:12%;height:2px;background:linear-gradient(90deg,transparent,var(--tech-cyan),transparent);box-shadow:0 0 18px var(--tech-cyan);animation:scanMove 3.8s ease-in-out infinite;z-index:3;}
+  @keyframes scanMove{0%,100%{top:18%;opacity:.35}50%{top:80%;opacity:1}}
+  .tech-mini-label{position:absolute;z-index:4;background:rgba(2,21,37,.78);border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:9px 11px;color:#fff;font-weight:700;font-size:.72rem;backdrop-filter:blur(10px);}
+  .tech-mini-label.t1{left:18px;top:22px}.tech-mini-label.t2{right:18px;bottom:22px;color:#BFEAFF;}
+  .tech-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .tech-feature-card{position:relative;padding:24px;border-radius:20px;background:rgba(255,255,255,.085);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(8px);transition:.28s ease;overflow:hidden;}
+  .tech-feature-card::after{content:"";position:absolute;inset:auto -35px -55px auto;width:100px;height:100px;border-radius:50%;background:rgba(40,184,232,.09);transition:.3s ease;}
+  .tech-feature-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.12);border-color:rgba(40,184,232,.42);box-shadow:0 18px 38px rgba(0,0,0,.14);}
+  .tech-feature-card:hover::after{transform:scale(1.55);}
+  .tech-feature-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(40,184,232,.24),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.15);margin-bottom:14px;}
+  .tech-feature-card h3{color:#fff;font-size:1.02rem;margin-bottom:7px;}.tech-feature-card p{color:#CBE0EE;font-size:.88rem;margin:0;line-height:1.6;}
+  .tech-feature-card .micro-tag{display:inline-block;margin-top:12px;color:#9FE5FA;font-weight:800;font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;}
+
+  /* More dimensional cards throughout */
+  .t-card{position:relative;overflow:hidden;transition:transform .32s ease,box-shadow .32s ease,border-color .32s ease;}
+  .t-card::after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-65px;bottom:-70px;background:radial-gradient(circle,rgba(40,184,232,.13),transparent 68%);transition:.35s ease;pointer-events:none;}
+  .t-card:hover{transform:translateY(-9px);box-shadow:0 24px 48px rgba(4,31,55,.14);border-color:rgba(17,119,185,.27);}
+  .t-card:hover::after{transform:scale(1.55);}
+  .t-card:nth-child(2n)::after{background:radial-gradient(circle,rgba(214,40,40,.11),transparent 68%);}
+
+  .doctor-panel{box-shadow:0 26px 70px rgba(4,31,55,.20);position:relative;}
+  .doctor-panel::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 0 65%,rgba(255,255,255,.055));}
+  .qual-pill{backdrop-filter:blur(7px);}
+
+  .section-head.center{max-width:720px;}
+  .section-head h2{letter-spacing:-.02em;}
+
+  /* Mobile action dock */
+  .mobile-action-dock{display:none;}
+
+  @media (max-width:860px){
+    .hero-premium{min-height:auto;padding:24px 0 30px;}
+    .hero-premium .hero-grid{grid-template-columns:1fr;gap:22px;}
+    .hero-premium .hero-copy{order:1;text-align:left;}
+    .hero-premium .hero-visual{order:2;}
+    .hero-status{margin-bottom:12px;font-size:.68rem;padding:7px 10px;}
+    .hero-premium h1{font-size:clamp(2rem,8.8vw,3rem);line-height:1.08;margin-bottom:13px;}
+    .hero-premium .lead{font-size:.98rem!important;line-height:1.62;margin-bottom:17px!important;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+    .hero-cta-row{margin-bottom:16px;gap:9px;}
+    .hero-cta-row .btn{padding:12px 16px;min-height:46px;font-size:.91rem;}
+    .hero-proof-row{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+    .hero-proof{font-size:.73rem;padding:7px 8px;}
+    .hero-visual-shell{padding:5px 0 0;}
+    .hero-visual-shell::before{display:none;}
+    .hero-premium .hero-art-card{min-height:235px;max-height:310px;border-radius:22px;}
+    .hero-premium .hero-hospital-photo{min-height:235px;max-height:310px;}
+    .hero-tech-overlay{left:9px;right:9px;bottom:9px;gap:5px;}
+    .hero-tech-card{padding:8px 7px;border-radius:10px;}.hero-tech-card strong{font-size:.7rem}.hero-tech-card span{font-size:.58rem;}
+    .orbit-dot{display:none;}
+    .trust-ribbon-inner{justify-content:flex-start;gap:13px;overflow-x:auto;flex-wrap:nowrap;padding:10px 18px;scrollbar-width:none;}
+    .trust-ribbon-inner::-webkit-scrollbar{display:none}.trust-ribbon-item{white-space:nowrap;font-size:.72rem;}
+    .stats-grid{grid-template-columns:1fr 1fr!important;gap:0!important;padding:16px 0!important;}
+    .stat{padding:16px 6px;border-right:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12);}
+    .stat:nth-child(2n){border-right:0}.stat:nth-child(n+3){border-bottom:0}.stat .num{font-size:1.7rem}.stat .lbl{font-size:.74rem;padding:0 6px;}
+    .tech-grid{grid-template-columns:1fr;gap:18px;}.tech-visual{min-height:300px;}.tech-card-grid{grid-template-columns:1fr 1fr;gap:10px;}.tech-feature-card{padding:17px 14px;}.tech-feature-card h3{font-size:.9rem}.tech-feature-card p{font-size:.78rem;}.tech-knee-svg{width:200px;}
+    body{padding-bottom:66px;}
+    .mobile-action-dock{position:fixed;display:grid;grid-template-columns:1fr 1fr 1.15fr;left:10px;right:10px;bottom:10px;z-index:3500;background:rgba(4,31,55,.94);border:1px solid rgba(255,255,255,.14);border-radius:17px;padding:6px;box-shadow:0 16px 40px rgba(0,0,0,.28);backdrop-filter:blur(15px);}
+    .mobile-action-dock a,.mobile-action-dock button{border:0;background:transparent;color:#fff;min-height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:6px;font-family:inherit;font-size:.72rem;font-weight:800;}
+    .mobile-action-dock a:nth-child(2){border-left:1px solid rgba(255,255,255,.12);border-right:1px solid rgba(255,255,255,.12);}
+    .mobile-action-dock .dock-primary{background:linear-gradient(135deg,var(--red),#B71E25);box-shadow:0 8px 20px rgba(214,40,40,.25);}
+  }
+
+  @media (max-width:560px){
+    .hero-premium{padding-top:18px;}
+    .hero-premium h1{font-size:clamp(1.88rem,9.7vw,2.42rem);}
+    .hero-premium .lead{-webkit-line-clamp:2;}
+    .hero-cta-row{display:grid;grid-template-columns:1.2fr .8fr;}
+    .hero-cta-row .btn{width:100%;padding-left:10px;padding-right:10px;font-size:.82rem;}
+    .hero-proof-row{grid-template-columns:1fr 1fr;}
+    .tech-card-grid{grid-template-columns:1fr;}
+    .tech-visual{min-height:270px;}
+    section{padding-top:46px;padding-bottom:46px;}
+  }
+
+
+
+  /* =========================================================
+     JAP HOSPITAL V3 — BOLDER MODERN FIRST IMPRESSION
+     ========================================================= */
+  header.site-header{
+    background:rgba(3,25,45,.82)!important;
+    border-bottom:1px solid rgba(255,255,255,.11)!important;
+    backdrop-filter:blur(18px) saturate(140%);
+  }
+  header.site-header.scrolled{background:rgba(3,25,45,.95)!important;box-shadow:0 14px 40px rgba(0,0,0,.24)!important;}
+  header.site-header .nav-link{color:#dbe9f3!important;}
+  header.site-header .nav-link:hover,header.site-header .nav-link.active{background:rgba(255,255,255,.09)!important;color:#fff!important;}
+  header.site-header .hamburger{border-color:rgba(255,255,255,.18)!important;background:rgba(255,255,255,.05)!important;}
+  header.site-header .hamburger span{background:#fff!important;}
+  header.site-header .btn-emergency{background:rgba(255,255,255,.08)!important;color:#fff!important;border-color:rgba(255,255,255,.18)!important;box-shadow:none!important;}
+
+  .hero-premium{
+    min-height:clamp(650px,calc(100vh - 70px),860px)!important;
+    padding:62px 0 54px!important;
+    background:
+      radial-gradient(circle at 82% 25%,rgba(24,137,201,.33),transparent 24%),
+      radial-gradient(circle at 11% 78%,rgba(214,40,40,.25),transparent 24%),
+      linear-gradient(125deg,#031a2f 0%,#052b4b 45%,#0a4f82 78%,#102f4b 100%)!important;
+    color:#fff;
+  }
+  .hero-premium::before{
+    background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px)!important;
+    background-size:36px 36px!important;
+    mask-image:linear-gradient(to bottom,black,transparent 96%)!important;
+  }
+  .hero-premium::after{
+    width:650px!important;height:650px!important;right:-210px!important;top:-280px!important;
+    background:conic-gradient(from 210deg,rgba(40,184,232,.18),rgba(255,255,255,.025),rgba(214,40,40,.14),rgba(40,184,232,.18))!important;
+    border:1px solid rgba(255,255,255,.08);filter:blur(.2px)!important;animation:spinSlow 30s linear infinite;
+  }
+  .hero-premium .hero-grid{grid-template-columns:1.02fr .98fr!important;gap:48px!important;align-items:center!important;}
+  .hero-premium .hero-copy{position:relative;z-index:3;}
+  .hero-status{background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.16)!important;color:#eaf7ff!important;box-shadow:none!important;}
+  .hero-status-dot{background:#4ee0a2!important;box-shadow:0 0 0 5px rgba(78,224,162,.13),0 0 24px rgba(78,224,162,.45)!important;}
+  .hero-kicker-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;}
+  .hero-kicker{display:inline-flex;align-items:center;min-height:32px;padding:6px 10px;border-radius:9px;font-size:.69rem;font-weight:800;letter-spacing:.045em;text-transform:uppercase;border:1px solid rgba(255,255,255,.13);}
+  .hero-kicker.blue{background:rgba(40,184,232,.15);color:#bcefff;}
+  .hero-kicker.red{background:rgba(214,40,40,.18);color:#ffc1c4;}
+  .hero-kicker.ghost{background:rgba(255,255,255,.07);color:#eef7fb;}
+  .hero-premium h1{color:#fff!important;font-size:clamp(3rem,5.25vw,5rem)!important;line-height:.98!important;letter-spacing:-.055em!important;margin-bottom:22px!important;text-wrap:balance;}
+  .hero-premium h1 .tech-word{background:linear-gradient(95deg,#ff555d 0%,#ff8a8f 42%,#ffffff 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;filter:drop-shadow(0 8px 22px rgba(214,40,40,.22));}
+  .hero-premium .lead{color:#c8dceb!important;font-size:1.08rem!important;max-width:640px!important;}
+  .hero-cta-row{margin-bottom:24px!important;}
+  .btn-tech{background:linear-gradient(120deg,#e42831,#b81720)!important;box-shadow:0 14px 32px rgba(214,40,40,.30)!important;border:1px solid rgba(255,255,255,.12)!important;}
+  .btn-tech:hover{box-shadow:0 18px 38px rgba(214,40,40,.38)!important;}
+  .btn-ghost-red{background:rgba(255,255,255,.075)!important;color:#fff!important;border-color:rgba(255,255,255,.18)!important;backdrop-filter:blur(12px);box-shadow:none!important;}
+  .btn-ghost-red:hover{background:#fff!important;color:#06355f!important;}
+  .hero-proof{background:rgba(255,255,255,.065)!important;border-color:rgba(255,255,255,.12)!important;color:#d9e7f0!important;}
+  .hero-proof svg path,.hero-proof svg circle{stroke:#82dfff!important;}
+  .hero-proof:nth-child(2n) svg path,.hero-proof:nth-child(2n) svg circle{stroke:#ff7f86!important;}
+
+  .hero-visual-shell{padding:22px 8px 22px 24px!important;}
+  .hero-visual-shell::before{inset:1% -2% 3% 8%!important;background:linear-gradient(135deg,rgba(40,184,232,.35),rgba(255,255,255,.04) 55%,rgba(214,40,40,.28))!important;border:1px solid rgba(255,255,255,.11);transform:rotate(2.2deg)!important;box-shadow:0 30px 80px rgba(0,0,0,.2);}
+  .hero-premium .hero-art-card{min-height:560px!important;border-radius:34px!important;border:1px solid rgba(255,255,255,.24)!important;box-shadow:0 35px 90px rgba(0,0,0,.33)!important;background:#072d4a!important;}
+  .hero-premium .hero-art-card::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(3,26,47,.06),rgba(3,26,47,.03) 52%,rgba(3,26,47,.82));}
+  .hero-premium .hero-hospital-photo{min-height:560px!important;filter:saturate(1.05) contrast(1.02);}
+  .hero-tech-overlay{z-index:3!important;left:16px!important;right:16px!important;bottom:16px!important;}
+  .hero-tech-card{background:rgba(3,25,45,.72)!important;border-color:rgba(255,255,255,.15)!important;box-shadow:none!important;}
+  .hero-floating-metric{position:absolute;z-index:5;display:flex;flex-direction:column;gap:2px;padding:13px 15px;border-radius:15px;background:rgba(255,255,255,.92);box-shadow:0 16px 36px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.8);animation:floatY 5.8s ease-in-out infinite;}
+  .hero-floating-metric.metric-a{left:-12px;top:13%;}
+  .hero-floating-metric.metric-b{right:-15px;top:52%;animation-delay:1.3s;}
+  .metric-num{font-family:'Poppins';font-weight:800;color:var(--blue-dark);font-size:1.15rem;line-height:1;}
+  .metric-label{font-size:.67rem;font-weight:800;color:#657789;text-transform:uppercase;letter-spacing:.035em;}
+  .orbit-dot{z-index:6!important;}
+
+  .trust-ribbon{background:#041f37!important;border-color:rgba(255,255,255,.08)!important;}
+  .trust-ribbon-inner{color:#e6f3fb!important;min-height:66px!important;gap:34px!important;}
+  .trust-ribbon-item::before{background:#38c7ef!important;box-shadow:0 0 0 4px rgba(56,199,239,.11),0 0 16px rgba(56,199,239,.38)!important;}
+  .trust-ribbon-item:nth-child(even)::before{background:#ff5059!important;box-shadow:0 0 0 4px rgba(255,80,89,.10),0 0 16px rgba(255,80,89,.34)!important;}
+
+  .mobile-action-dock{grid-template-columns:1fr 1fr!important;max-width:430px;margin:0 auto;}
+  .mobile-action-dock a:nth-child(2){border-right:0!important;}
+  .mobile-action-dock .dock-primary{display:none!important;}
+
+  @media (max-width:860px){
+    header.site-header{background:rgba(3,25,45,.94)!important;}
+    .hero-premium{min-height:auto!important;padding:28px 0 32px!important;}
+    .hero-premium .hero-grid{grid-template-columns:1fr!important;gap:26px!important;}
+    .hero-premium .hero-copy{order:1!important;}
+    .hero-premium .hero-visual{order:2!important;}
+    .hero-premium h1{font-size:clamp(2.55rem,11.2vw,4rem)!important;line-height:1!important;margin-bottom:16px!important;}
+    .hero-premium .lead{display:block!important;-webkit-line-clamp:unset!important;overflow:visible!important;color:#d2e2ed!important;line-height:1.55!important;margin-bottom:18px!important;}
+    .hero-kicker-row{margin-bottom:14px;}
+    .hero-proof-row{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important;}
+    .hero-proof{justify-content:flex-start!important;padding:9px!important;}
+    .hero-visual-shell{padding:8px 2px 8px!important;}
+    .hero-premium .hero-art-card{min-height:330px!important;max-height:none!important;border-radius:25px!important;}
+    .hero-premium .hero-hospital-photo{min-height:330px!important;max-height:380px!important;}
+    .hero-floating-metric{display:none!important;}
+    .hero-tech-overlay{grid-template-columns:repeat(3,1fr)!important;gap:6px!important;left:10px!important;right:10px!important;bottom:10px!important;}
+    .hero-tech-card{padding:9px 7px!important;border-radius:11px!important;}
+    .hero-tech-card strong{font-size:.75rem!important;}.hero-tech-card span{font-size:.58rem!important;}
+    .trust-ribbon-inner{min-height:52px!important;}
+  }
+
+  @media (max-width:560px){
+    .hero-premium{padding-top:22px!important;}
+    .hero-status{font-size:.62rem!important;margin-bottom:10px!important;}
+    .hero-kicker{font-size:.6rem;padding:5px 8px;min-height:28px;}
+    .hero-premium h1{font-size:clamp(2.25rem,12vw,3.15rem)!important;}
+    .hero-premium .lead{font-size:.95rem!important;}
+    .hero-cta-row{display:grid!important;grid-template-columns:1fr 1fr!important;gap:9px!important;}
+    .hero-cta-row .btn{width:100%!important;padding:12px 10px!important;font-size:.82rem!important;min-height:48px!important;}
+    .hero-proof{font-size:.72rem!important;}
+    .hero-premium .hero-art-card{min-height:290px!important;}
+    .hero-premium .hero-hospital-photo{min-height:290px!important;max-height:330px!important;}
+    .mobile-action-dock{left:12px!important;right:12px!important;}
+  }
+
 </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <!-- ============ HEADER ============ -->
 <header class="site-header">
@@ -1168,43 +1445,103 @@
 <div class="page active" id="page-home">
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero hero-premium">
     <div class="wrap hero-grid">
-      <div class="hero-copy" style="animation:fadeUp .8s ease both;">
-        <div class="eyebrow" style="animation:fadeUp .6s ease both;">Orthopedic &amp; Spine Specialty Hospital</div>
-        <h1 style="animation:fadeUp .8s ease .1s both;">Walk Pain‑Free Again with Trusted <span class="hl">Knee Replacement &amp; Spine Care</span></h1>
-        <p class="lead" style="animation:fadeUp .8s ease .2s both;">JAP Hospital, Bhogpur brings advanced joint replacement and spine surgery to Punjab — combining experienced surgeons, modern operation theatres and gentle, patient‑first care for every age.</p>
-        <div class="hero-ctas" style="animation:fadeUp .8s ease .3s both;">
-          <a class="btn btn-emergency btn-lg emergency-call" href="tel:+911234500000">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.3 21 3 12.7 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#C0392B" stroke-width="1.6"/></svg>
-            24/7 Emergency: 0181 2922063
+      <div class="hero-copy">
+        <div class="hero-status"><span class="hero-status-dot"></span> Advanced Orthopaedic &amp; Spine Care · Bhogpur</div>
+        <div class="hero-kicker-row" aria-label="Hospital highlights">
+          <span class="hero-kicker blue">ROSA® Robotic Knee</span>
+          <span class="hero-kicker red">Endoscopic Spine</span>
+          <span class="hero-kicker ghost">NABH Approved</span>
+        </div>
+        <h1>Move Better With <span class="tech-word">Robotic Precision</span> &amp; Advanced Spine Care</h1>
+        <p class="lead">JAP Hospital combines experienced surgical care with modern robotic knee replacement, endoscopic spine surgery and patient-focused recovery — close to home in Punjab.</p>
+        <div class="hero-cta-row">
+          <button class="btn btn-tech" onclick="goTo('services')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M14 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Explore Treatments
+          </button>
+          <a class="btn btn-ghost-red emergency-call" href="tel:+917589100737">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.3 21 3 12.7 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="currentColor" stroke-width="1.7"/></svg>
+            Call Hospital
           </a>
         </div>
-        <div class="hero-trust" style="animation:fadeUp .8s ease .4s both;">
-          <div class="trust-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z" stroke="#0B4F8A" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="#D62828" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>NABH‑standard Safety</div>
-          <div class="trust-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#0B4F8A" stroke-width="1.6"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" stroke="#0B4F8A" stroke-width="1.6" stroke-linecap="round"/></svg>Senior Ortho Surgeons</div>
-          <div class="trust-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C.7 8.5 2 5 5.3 4.2 7.5 3.7 9.7 4.6 11 6.4l1 1.4 1-1.4c1.3-1.8 3.5-2.7 5.7-2.2C22 5 23.3 8.5 21.5 12c-2.5 4.5-9.5 9-9.5 9Z" stroke="#0B4F8A" stroke-width="1.6"/></svg>Personalised Recovery Plans</div>
+        <div class="hero-proof-row">
+          <div class="hero-proof"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6l-9-4Z" stroke="#0B4F8A" stroke-width="1.7"/><path d="m9 12 2 2 4-4" stroke="#D62828" stroke-width="1.8"/></svg>NABH Approved</div>
+          <div class="hero-proof"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.7"/><path d="M8 12h8M12 8v8" stroke="#D62828" stroke-width="1.8"/></svg>ECHS Empanelled</div>
+          <div class="hero-proof"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 12h4l2-6 4 12 2-6h4" stroke="#0B4F8A" stroke-width="1.8"/></svg>Advanced OT</div>
+          <div class="hero-proof"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C.7 8.5 2 5 5.3 4.2 7.5 3.7 9.7 4.6 11 6.4l1 1.4 1-1.4c1.3-1.8 3.5-2.7 5.7-2.2C22 5 23.3 8.5 21.5 12c-2.5 4.5-9.5 9-9.5 9Z" stroke="#D62828" stroke-width="1.7"/></svg>Patient-First Recovery</div>
         </div>
       </div>
 
-      <div class="hero-visual" style="animation:fadeIn 1s ease .2s both;">
+      <div class="hero-visual hero-visual-shell">
+        <div class="hero-floating-metric metric-a"><span class="metric-num">600+</span><span class="metric-label">Robotic Surgeries</span></div>
+        <div class="hero-floating-metric metric-b"><span class="metric-num">2,750+</span><span class="metric-label">Spine Surgeries</span></div>
+        <span class="orbit-dot o1"></span><span class="orbit-dot o2"></span>
         <div class="hero-art-card">
-          <!-- CHANGE IMAGE NAME HERE if your main hospital photo has a different filename -->
           <img src="Main image.png" alt="JAP Hospital, Bhogpur" class="hero-hospital-photo">
+          <div class="hero-tech-overlay">
+            <div class="hero-tech-card"><strong>ROSA® Knee</strong><span>Robotic assisted</span></div>
+            <div class="hero-tech-card"><strong>Endoscopic</strong><span>Minimal access spine</span></div>
+            <div class="hero-tech-card"><strong>24 Hr</strong><span>Early mobilisation</span></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <div class="trust-ribbon">
+    <div class="wrap trust-ribbon-inner">
+      <div class="trust-ribbon-item">10+ Years of Excellence</div>
+      <div class="trust-ribbon-item">Imported Implants</div>
+      <div class="trust-ribbon-item">Robotic Knee Surgery</div>
+      <div class="trust-ribbon-item">Endoscopic Spine Surgery</div>
+    </div>
+  </div>
+
   <!-- STATS -->
   <div class="stats-bar">
     <div class="wrap stats-grid">
-      <div class="stat reveal d1"><div class="num"><span class="counter" data-target="10">0</span><span class="plus">+</span></div><div class="lbl">Years of Experience</div></div>
-      <div class="stat reveal d2"><div class="num"><span class="counter" data-target="6000">0</span><span class="plus">+</span></div><div class="lbl">Successful Surgeries</div></div>
-      <div class="stat reveal d3"><div class="num"><span class="counter" data-target="98">0</span><span class="plus">%</span></div><div class="lbl">Patient Satisfaction</div></div>
-      <div class="stat reveal d4"><div class="num">24<span class="plus">/7</span></div><div class="lbl">Emergency Care</div></div>
+      <div class="stat reveal d1"><div class="num"><span class="counter" data-target="10">0</span><span class="plus">+</span></div><div class="lbl">Years of Excellence</div></div>
+      <div class="stat reveal d2"><div class="num"><span class="counter" data-target="6000">0</span><span class="plus">+</span></div><div class="lbl">Joint Replacements</div></div>
+      <div class="stat reveal d3"><div class="num"><span class="counter" data-target="600">0</span><span class="plus">+</span></div><div class="lbl">Robotic Surgeries</div></div>
+      <div class="stat reveal d4"><div class="num"><span class="counter" data-target="2750">0</span><span class="plus">+</span></div><div class="lbl">Spine Surgeries</div></div>
     </div>
   </div>
+
+  <!-- ADVANCED TECHNOLOGY -->
+  <section class="tech-section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Technology That Moves With You</div>
+        <h2>Advanced Surgery. Smaller Incisions. Smarter Recovery.</h2>
+        <p>Modern orthopaedic and spine care is not only about operating — it is about precision, tissue preservation and helping patients return to movement with confidence.</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-visual reveal-left">
+          <div class="tech-mini-label t1">PRECISION SURGERY / LIVE</div>
+          <div class="scan-line"></div>
+          <svg class="tech-knee-svg" viewBox="0 0 280 360" fill="none" aria-hidden="true">
+            <defs><linearGradient id="boneG" x1="0" x2="1"><stop stop-color="#EAF9FE"/><stop offset="1" stop-color="#8FD9F1"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            <path d="M99 22c18 5 34 7 42 33 8 26 2 73-9 103-6 17-7 38 2 52" stroke="url(#boneG)" stroke-width="25" stroke-linecap="round"/>
+            <path d="M180 22c-18 5-34 7-42 33-8 26-2 73 9 103 6 17 7 38-2 52" stroke="url(#boneG)" stroke-width="25" stroke-linecap="round"/>
+            <path d="M110 199c22-12 43-12 62 0" stroke="#FF6670" stroke-width="11" stroke-linecap="round" filter="url(#glow)"/>
+            <path d="M121 219c-12 25-13 61-17 110M159 219c12 25 13 61 17 110" stroke="url(#boneG)" stroke-width="23" stroke-linecap="round"/>
+            <circle cx="140" cy="206" r="57" stroke="#28B8E8" stroke-width="1.4" stroke-dasharray="7 8" opacity=".9"/>
+            <circle cx="140" cy="206" r="76" stroke="#28B8E8" stroke-width="1" stroke-dasharray="2 10" opacity=".45"/>
+            <path d="M81 206h118M140 147v118" stroke="#28B8E8" stroke-width="1" opacity=".65"/>
+          </svg>
+          <div class="tech-mini-label t2">ALIGNMENT • ACCURACY • RECOVERY</div>
+        </div>
+        <div class="tech-card-grid">
+          <article class="tech-feature-card reveal d1"><div class="tech-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="#9FE5FA" stroke-width="1.7"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#FF8D94" stroke-width="1.7"/></svg></div><h3>ROSA® Robotic Knee</h3><p>Computer-assisted planning and alignment support for precise knee replacement procedures.</p><span class="micro-tag">Precision focused</span></article>
+          <article class="tech-feature-card reveal d2"><div class="tech-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M8 6h8M8 10h8M8 14h8M8 18h8" stroke="#9FE5FA" stroke-width="1.7" stroke-linecap="round"/></svg></div><h3>Endoscopic Spine Surgery</h3><p>Minimal-access techniques designed for smaller cuts, reduced tissue disruption and faster mobilisation.</p><span class="micro-tag">Minimally invasive</span></article>
+          <article class="tech-feature-card reveal d3"><div class="tech-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 15h16M6 15V9h12v6M8 9V6h8v3" stroke="#9FE5FA" stroke-width="1.7"/><path d="M9 19h6" stroke="#FF8D94" stroke-width="1.7"/></svg></div><h3>Modern Operation Theatre</h3><p>Purpose-built surgical environment supporting advanced orthopaedic and spine procedures.</p><span class="micro-tag">Technology enabled</span></article>
+          <article class="tech-feature-card reveal d4"><div class="tech-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 20c4-1 6-4 7-8 1 4 3 7 7 8" stroke="#9FE5FA" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="6" r="3" stroke="#FF8D94" stroke-width="1.7"/></svg></div><h3>Recovery-First Protocol</h3><p>Structured pain control, physiotherapy and early movement designed around each patient's recovery.</p><span class="micro-tag">Patient centred</span></article>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- TREATMENTS -->
   <section>
@@ -1825,6 +2162,13 @@
 
 </main>
 
+<!-- ============ MOBILE QUICK ACTIONS ============ -->
+<div class="mobile-action-dock" aria-label="Quick hospital actions">
+  <a class="emergency-call" href="tel:+917589100737" aria-label="Call JAP Hospital"><span>☎</span> Call</a>
+  <a href="https://wa.me/917589100737?text=Hello%20JAP%20Hospital%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener" aria-label="WhatsApp JAP Hospital"><span>◉</span> WhatsApp</a>
+</div>
+
+
 
 <!-- ============ PATIENT VIDEO POPUP ============ -->
 <div class="patient-video-modal" id="patientVideoModal" aria-hidden="true"
@@ -2014,11 +2358,24 @@
      Replace ONLY the value below with JAP Hospital's real mobile number.
      Example format: +919876543210
   */
-  const HOSPITAL_EMERGENCY_NUMBER = '+911234500000';
+  const HOSPITAL_EMERGENCY_NUMBER = '+917589100737';
 
   document.querySelectorAll('.emergency-call').forEach(link => {
     link.href = 'tel:' + HOSPITAL_EMERGENCY_NUMBER;
   });
+
+
+  /* ---------- PREMIUM SCROLL DETAILS ---------- */
+  const scrollProgress = document.getElementById('scrollProgress');
+  const siteHeader = document.querySelector('header.site-header');
+  function updatePremiumScrollUI(){
+    const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+    const progress = Math.min((window.scrollY / maxScroll) * 100, 100);
+    if(scrollProgress) scrollProgress.style.width = progress + '%';
+    if(siteHeader) siteHeader.classList.toggle('scrolled', window.scrollY > 16);
+  }
+  window.addEventListener('scroll', updatePremiumScrollUI, {passive:true});
+  updatePremiumScrollUI();
 
 </script>
 
