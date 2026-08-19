@@ -2222,22 +2222,30 @@
 
 <style id="jap-requested-fixes-2026-08-19">
   /* =========================================================
-     TOP CREDENTIAL BAR — LEFT LOGOS / CENTER NAME / RIGHT REVIEW
+     CLIENT HEADER UPDATE — 2026-08-19
+     Desktop: logos LEFT / hospital identity CENTER / rating RIGHT.
+     Mobile: keep the SAME horizontal order instead of stacking
+     logos underneath the hospital name.
      ========================================================= */
+  .credential-topbar{
+    background:#FFF9E8!important;
+    border-bottom:1px solid rgba(11,79,138,.14)!important;
+  }
+
   .credential-topbar-inner{
     display:grid!important;
     grid-template-columns:minmax(300px,1fr) auto minmax(300px,1fr)!important;
     align-items:center!important;
     gap:22px!important;
     padding:12px 24px!important;
-    min-height:96px!important;
+    min-height:118px!important;
   }
 
   .credential-logos-left{
     display:flex;
     align-items:center;
     justify-content:flex-start;
-    gap:10px;
+    gap:12px;
     min-width:0;
   }
 
@@ -2250,13 +2258,9 @@
   }
 
   .credential-logo{
-    width:76px!important;
-    height:42px!important;
+    width:78px!important;
+    height:58px!important;
     object-fit:contain;
-    background:#fff;
-    border:1px solid var(--line);
-    border-radius:9px;
-    padding:4px 7px;
   }
 
   .credential-brand{
@@ -2266,7 +2270,7 @@
     align-items:center;
     justify-content:center;
     text-align:center;
-    line-height:1.08;
+    line-height:1.03;
     min-width:max-content;
   }
 
@@ -2278,25 +2282,49 @@
     text-align:center;
   }
 
+  /* Match the order from the client's hospital board. */
+  .credential-brand-top{
+    font-family:'Poppins',sans-serif;
+    font-size:clamp(.82rem,1.18vw,1.08rem);
+    font-weight:800;
+    letter-spacing:.075em;
+    color:var(--blue-dark);
+    white-space:nowrap;
+    line-height:1.05;
+    margin-bottom:5px;
+  }
+
   .credential-brand-en{
     font-family:'Poppins',sans-serif;
-    font-size:clamp(2rem,2.55vw,2.65rem);
+    font-size:clamp(2.25rem,3vw,3.15rem);
     font-weight:800;
     letter-spacing:.035em;
     color:var(--blue-dark);
     white-space:nowrap;
-    line-height:1.02;
+    line-height:.98;
   }
 
   .credential-brand-pa{
     font-family:'Noto Sans Gurmukhi',sans-serif;
-    font-size:clamp(1.35rem,1.8vw,1.72rem);
+    font-size:clamp(1.45rem,1.95vw,1.9rem);
     font-weight:700;
     color:var(--red-dark);
-    margin-top:8px;
+    margin-top:7px;
     white-space:nowrap;
     text-align:center;
     align-self:center;
+    line-height:1.06;
+  }
+
+  .credential-brand-sub{
+    font-family:'Poppins',sans-serif;
+    font-size:clamp(.72rem,.92vw,.92rem);
+    font-weight:800;
+    letter-spacing:.045em;
+    color:var(--blue-dark);
+    white-space:nowrap;
+    line-height:1.08;
+    margin-top:6px;
   }
 
   .credential-rating{
@@ -2319,8 +2347,6 @@
 
   /* =========================================================
      HERO — CARDS ON THE RIGHT ON DESKTOP / TABLET
-     The generated images keep their subjects to the left, so the
-     right-side card now uses the intended blank/negative space.
      ========================================================= */
   .jap-slide-content{
     left:auto!important;
@@ -2339,41 +2365,65 @@
 
   @media (max-width:1100px){
     .credential-topbar-inner{
-      grid-template-columns:minmax(235px,1fr) auto minmax(235px,1fr)!important;
+      grid-template-columns:minmax(215px,1fr) auto minmax(215px,1fr)!important;
       gap:14px!important;
       padding:10px 18px!important;
+      min-height:104px!important;
     }
-    .credential-main-logo{width:68px;height:54px;}
-    .credential-logo{width:61px!important;height:36px!important;}
-    .credential-brand-en{font-size:1.75rem;}
-    .credential-brand-pa{font-size:1.2rem;}
+    .credential-logo{width:62px!important;height:48px!important;}
+    .credential-brand-top{font-size:.76rem;}
+    .credential-brand-en{font-size:1.95rem;}
+    .credential-brand-pa{font-size:1.28rem;}
+    .credential-brand-sub{font-size:.66rem;}
     .google-proof{font-size:.79rem!important;padding:8px 10px!important;}
     .google-proof small{font-size:.66rem;}
   }
 
+  /* Mobile keeps desktop-style order: LOGOS | NAME | RATING */
   @media (max-width:820px){
     .credential-topbar-inner{
-      grid-template-columns:1fr 1fr!important;
-      grid-template-areas:
-        "brand brand"
-        "logos rating"!important;
-      gap:8px 12px!important;
-      min-height:auto!important;
-      padding:9px 16px 10px!important;
+      grid-template-columns:84px minmax(0,1fr) 105px!important;
+      grid-template-areas:"logos brand rating"!important;
+      gap:6px!important;
+      min-height:76px!important;
+      padding:8px 10px!important;
     }
-    .credential-brand{grid-area:brand;justify-self:center;min-width:0;width:100%;}
-    .credential-logos-left{grid-area:logos;justify-self:start;}
-    .credential-rating{grid-area:rating;justify-self:end;}
-    .credential-brand-en{font-size:1.62rem;}
-    .credential-brand-pa{font-size:1.14rem;margin-top:5px;}
-    .credential-main-logo{width:55px;height:44px;}
-    .credential-logo{width:52px!important;height:31px!important;}
-    .google-proof{font-size:.71rem!important;padding:6px 8px!important;}
-    .google-proof small{font-size:.61rem;}
+    .credential-logos-left{
+      grid-area:logos;
+      justify-self:start;
+      gap:5px;
+      width:84px;
+    }
+    .credential-brand{
+      grid-area:brand;
+      justify-self:center;
+      min-width:0;
+      width:100%;
+      overflow:visible;
+    }
+    .credential-rating{
+      grid-area:rating;
+      justify-self:end;
+      width:105px;
+    }
+    .credential-logo{width:38px!important;height:36px!important;}
+    .credential-brand-top{font-size:.58rem;letter-spacing:.04em;margin-bottom:3px;}
+    .credential-brand-en{font-size:1.14rem;letter-spacing:.02em;}
+    .credential-brand-pa{font-size:.84rem;margin-top:3px;}
+    .credential-brand-sub{font-size:.49rem;letter-spacing:.015em;margin-top:3px;}
+    .google-proof{
+      font-size:.66rem!important;
+      padding:6px 7px!important;
+      gap:4px!important;
+      justify-content:center;
+      width:100%;
+    }
+    .google-proof .star{font-size:.9rem!important;}
+    .google-proof small{display:none;}
   }
 
-  /* Preserve the earlier mobile behavior: complete image first,
-     then a readable left-aligned text card below the image. */
+  /* Preserve the earlier mobile hero behavior: full image first,
+     then readable left-aligned text card below the image. */
   @media (max-width:700px){
     .jap-slide-content{
       left:14px!important;
@@ -2387,16 +2437,36 @@
   }
 
   @media (max-width:500px){
-    .credential-topbar-inner{padding:8px 12px 9px!important;gap:7px 8px!important;}
-    .credential-brand-en{font-size:1.38rem;}
-    .credential-brand-pa{font-size:1.04rem;}
-    .credential-main-logo{width:48px;height:39px;}
-    .credential-logo{width:44px!important;height:28px!important;padding:3px 5px;}
-    .google-proof{font-size:.65rem!important;padding:5px 7px!important;}
+    .credential-topbar-inner{
+      grid-template-columns:72px minmax(0,1fr) 70px!important;
+      gap:4px!important;
+      padding:7px 8px!important;
+      min-height:72px!important;
+    }
+    .credential-logos-left{width:72px;gap:4px;}
+    .credential-rating{width:70px;}
+    .credential-logo{width:34px!important;height:33px!important;}
+    .credential-brand-top{font-size:.5rem;margin-bottom:2px;}
+    .credential-brand-en{font-size:1.03rem;}
+    .credential-brand-pa{font-size:.76rem;margin-top:2px;}
+    .credential-brand-sub{font-size:.43rem;margin-top:2px;}
+    .google-proof{font-size:.62rem!important;padding:5px 5px!important;}
+    .google-proof .rating-label{display:none;}
     .google-proof small{display:none;}
   }
 
   @media (max-width:430px){
+    .credential-topbar-inner{
+      grid-template-columns:68px minmax(0,1fr) 64px!important;
+      padding:7px 6px!important;
+    }
+    .credential-logos-left{width:68px;gap:3px;}
+    .credential-rating{width:64px;}
+    .credential-logo{width:32px!important;height:31px!important;}
+    .credential-brand-en{font-size:.96rem;}
+    .credential-brand-pa{font-size:.71rem;}
+    .credential-brand-top{font-size:.47rem;}
+    .credential-brand-sub{font-size:.4rem;}
     .jap-slide-content{
       left:11px!important;
       right:11px!important;
@@ -2432,16 +2502,18 @@
       <img src="nabh.png" class="credential-logo" alt="NABH logo placeholder">
     </div>
 
-    <div class="credential-brand" aria-label="JAP Hospital name in English and Punjabi">
+    <div class="credential-brand" aria-label="ECHS empanelled JAP Hospital, Orthopaedic and Multispeciality Centre">
       <div class="credential-brand-copy">
+        <div class="credential-brand-top">ECHS EMPANELLED</div>
         <div class="credential-brand-en">JAP HOSPITAL</div>
         <div class="credential-brand-pa" lang="pa">ਜਪ ਹਸਪਤਾਲ</div>
+        <div class="credential-brand-sub">ORTHOPAEDIC &amp; MULTISPECIALITY CENTRE</div>
       </div>
     </div>
 
     <div class="credential-rating">
       <a class="google-proof" href="https://www.google.com/maps/search/?api=1&amp;query=JAP+Hospital+Bhogpur" target="_blank" rel="noopener" aria-label="View JAP Hospital Google reviews">
-        <span class="star">★</span> 4.9 Google Rating <small>306 reviews</small>
+        <span class="star">★</span> <span class="rating-score">4.9</span> <span class="rating-label">Google Rating</span> <small>306 reviews</small>
       </a>
     </div>
   </div>
