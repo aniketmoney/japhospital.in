@@ -2757,6 +2757,33 @@
   }
 </style>
 
+
+<style id="doctor-image-alignment-fix-2026-08-19">
+  /* Keep Dr. Aman Singh visually centred instead of showing only the top of the photo. */
+  .doctor-first-photo img{
+    object-position:center 28%!important;
+  }
+  @media (max-width:860px){
+    .doctor-first-photo{
+      min-height:410px!important;
+      display:flex!important;
+      align-items:center!important;
+      justify-content:center!important;
+      background:linear-gradient(160deg,#DCECF7,#F5FAFD)!important;
+    }
+    .doctor-first-photo img{
+      position:absolute!important;
+      inset:0!important;
+      width:100%!important;
+      height:100%!important;
+      object-fit:contain!important;
+      object-position:center center!important;
+    }
+  }
+  @media (max-width:430px){
+    .doctor-first-photo{min-height:350px!important;}
+  }
+</style>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -2791,7 +2818,7 @@
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="nav-row">
-    <a href="#" class="logo" onclick="goTo('home');return false;" aria-label="JAP Hospital Home">
+    <a href="#home" class="logo" onclick="window.goTo('home');return false;" aria-label="JAP Hospital Home">
       <!-- CHANGE IMAGE NAME HERE if your logo file has a different name -->
       <img src="Logo.png" alt="JAP Hospital logo" class="hospital-logo"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -2799,13 +2826,13 @@
     </a>
 
     <nav class="main-nav" id="mainNav">
-      <button class="nav-link" data-page="home" onclick="goTo('home')">Home</button>
-      <button class="nav-link" data-page="about" onclick="goTo('about')">About</button>
-      <button class="nav-link" data-page="doctor" onclick="goTo('doctor')">Doctor</button>
-      <button class="nav-link" data-page="services" onclick="goTo('services')">Treatments</button>
-      <button class="nav-link" data-page="facilities" onclick="goTo('facilities')">Facilities</button>
-      <button class="nav-link" data-page="stories" onclick="goTo('stories')">Success Stories</button>
-      <button class="nav-link" data-page="contact" onclick="goTo('contact')">Contact</button>
+      <button class="nav-link" data-page="home" onclick="window.goTo('home')">Home</button>
+      <button class="nav-link" data-page="about" onclick="window.goTo('about')">About</button>
+      <button class="nav-link" data-page="doctor" onclick="window.goTo('doctor')">Doctor</button>
+      <button class="nav-link" data-page="services" onclick="window.goTo('services')">Treatments</button>
+      <button class="nav-link" data-page="facilities" onclick="window.goTo('facilities')">Facilities</button>
+      <button class="nav-link" data-page="stories" onclick="window.goTo('stories')">Success Stories</button>
+      <button class="nav-link" data-page="contact" onclick="window.goTo('contact')">Contact</button>
     </nav>
 
     <div class="nav-cta-group">
@@ -2824,13 +2851,13 @@
 <div id="mobileMenu">
   <div class="mobile-panel">
     <button class="mobile-close" onclick="toggleMobileMenu(false)">&times;</button>
-    <button class="nav-link" onclick="goTo('home')">Home</button>
-    <button class="nav-link" onclick="goTo('about')">About</button>
-    <button class="nav-link" onclick="goTo('doctor')">Doctor</button>
-    <button class="nav-link" onclick="goTo('services')">Treatments</button>
-    <button class="nav-link" onclick="goTo('facilities')">Facilities</button>
-    <button class="nav-link" onclick="goTo('stories')">Success Stories</button>
-    <button class="nav-link" onclick="goTo('contact')">Contact</button>
+    <button class="nav-link" data-page="home" onclick="window.goTo('home')">Home</button>
+    <button class="nav-link" data-page="about" onclick="window.goTo('about')">About</button>
+    <button class="nav-link" data-page="doctor" onclick="window.goTo('doctor')">Doctor</button>
+    <button class="nav-link" data-page="services" onclick="window.goTo('services')">Treatments</button>
+    <button class="nav-link" data-page="facilities" onclick="window.goTo('facilities')">Facilities</button>
+    <button class="nav-link" data-page="stories" onclick="window.goTo('stories')">Success Stories</button>
+    <button class="nav-link" data-page="contact" onclick="window.goTo('contact')">Contact</button>
   </div>
 </div>
 
@@ -2893,7 +2920,7 @@
         <div class="jap-slide-content">
           <div class="jap-slide-eyebrow">Meet Your Orthopaedic &amp; Spine Surgeon</div>
           <h2>Dr. Aman Singh</h2>
-          <p>MS Orthopaedics | Fellowship in Joint Replacement &amp; Spine Surgery</p>
+          <p>D.N.B ORTHOPAEDIC SURGERY | Fellowship in Joint Replacement &amp; Spine Surgery</p>
           <div class="jap-hero-doctor-line">10+ Years Experience • 6,000+ Joint Replacements</div>
           <div class="jap-slide-actions">
             <button class="btn btn-tech" onclick="goTo('doctor')">View Doctor Profile</button>
@@ -3013,6 +3040,11 @@
       </div>
     </div>
 
+    <div class="imported-implants-band">
+      <span class="imported-implants-check" aria-hidden="true">✓</span>
+      <span>We Only Use Imported Implants In Our Hospital</span>
+    </div>
+  </div>
 
   <!-- VERIFIED / PUBLISHED CREDIBILITY STATS. Final values are visible even if JavaScript fails. -->
   <div class="stats-bar">
@@ -3034,8 +3066,8 @@
         <div class="doctor-first-copy">
           <div class="eyebrow">Meet Your Surgeon</div>
           <h2>Dr. Aman Singh</h2>
-          <div class="doctor-first-qual">MS Orthopaedics | Fellowship in Joint Replacement &amp; Spine Surgery</div>
-          <p>Consult for knee replacement, robotic-assisted joint replacement, spine conditions, arthroscopy and trauma care at JAP Hospital, Bhogpur.</p>
+          <div class="doctor-first-qual">D.N.B ORTHOPAEDIC SURGERY | Fellowship in Joint Replacement &amp; Spine Surgery</div>
+          <p>Consult for knee replacement, robotic-assisted joint replacement, spine conditions, pediatric orthopaedics, arthroscopy and trauma care at JAP Hospital, Bhogpur.</p>
           <div class="doctor-first-metrics">
             <span>10+ Years Experience</span>
             <span>6,000+ Joint Replacements</span>
@@ -3181,7 +3213,7 @@
         <div class="gallery-item reveal d4">
           <!-- REPLACE src BELOW with your physiotherapy area photo -->
           <img src="Physiotherapy1.png" alt="Physiotherapy Centre">
-          <div class="gallery-caption">Operation Theatre</div>
+          <div class="gallery-caption">Physiotherapy Centre</div>
         </div>
       </div>
     </div>
@@ -3397,7 +3429,7 @@
     <div class="wrap">
       <div class="breadcrumb">Home / <span class="cur">Doctor Profile</span></div>
       <h1>Dr. Aman Singh</h1>
-      <p>MS Orthopaedics | Fellowship in Joint Replacement &amp; Spine Surgery — focused care for knee, joint, spine and trauma conditions.</p>
+      <p>D.N.B ORTHOPAEDIC SURGERY | Fellowship in Joint Replacement &amp; Spine Surgery — focused care for knee, joint, spine, pediatric orthopaedics and trauma conditions.</p>
     </div>
   </div>
 
@@ -3408,7 +3440,7 @@
             <img src="dr photo.PNG" alt="Dr. Aman Singh" class="doc-image">
         </div>
         <div class="doc-name">Dr. Aman Singh</div>
-        <div class="doc-role">MS Orthopaedics | Fellowship in Joint Replacement &amp; Spine Surgery</div>
+        <div class="doc-role">D.N.B ORTHOPAEDIC SURGERY | Fellowship in Joint Replacement &amp; Spine Surgery</div>
         <div class="doc-meta-row"><span>Experience</span><span>10+ Years</span></div>
         <div class="doc-meta-row"><span>Published Joint Replacement Figure</span><span>6,000+</span></div>
         <div class="doc-meta-row"><span>Languages</span><span>Punjabi, Hindi, English</span></div>
@@ -3429,6 +3461,7 @@
           <span class="spec-tag">Hip Replacement</span>
           <span class="spec-tag">Arthroscopy</span>
           <span class="spec-tag">Fracture Care</span>
+          <span class="spec-tag">Pediatric Orthopaedics</span>
         </div>
         <p style="color:var(--ink-soft);">Dr. Singh trained in advanced joint replacement techniques and has led the orthopedic programme at JAP Hospital since its founding. Known among patients for taking time to explain every procedure in simple Punjabi and Hindi, he is especially attentive to the needs of elderly patients and their families.</p>
 
@@ -3440,7 +3473,7 @@
           </div>
           <div class="timeline-item">
             <div class="yr">2013</div>
-            <p style="margin:.3em 0 0;color:var(--ink-soft);">MS in Orthopedics, PGIMER Chandigarh</p>
+            <p style="margin:.3em 0 0;color:var(--ink-soft);">D.N.B Orthopaedic Surgery</p>
           </div>
           <div class="timeline-item">
             <div class="yr">2015</div>
@@ -3534,6 +3567,14 @@
             <h3>Fracture &amp; Trauma Care</h3>
             <p>Round‑the‑clock treatment for bone fractures, dislocations and sports‑related injuries.</p>
             <div class="tags"><span>24/7 availability</span></div>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="3" stroke="#0B4F8A" stroke-width="1.7"/><path d="M7 21v-5a5 5 0 0 1 10 0v5M9 13l3 3 3-3" stroke="#0B4F8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div>
+            <h3>Pediatric Orthopaedics</h3>
+            <p>Orthopaedic assessment and treatment for children and adolescents with bone, joint, growth-related and injury-related conditions.</p>
+            <div class="tags"><span>Children &amp; adolescents</span><span>Bone &amp; joint care</span></div>
           </div>
         </div>
         <div class="service-row">
@@ -3685,7 +3726,6 @@
           <p style="color:var(--ink-soft);">Ranjit Kaur, 64, had suffered from knee pain for over a decade before her total knee replacement at JAP Hospital. Within three months, she was walking without support and dancing at a family wedding.</p>
           <div class="story-stats">
             <div class="story-stat"><div class="num">3 Months</div><div class="lbl">To Full Recovery</div></div>
-            <div class="story-stat"><div class="num">Zero</div><div class="lbl">Post‑op Complications</div></div>
           </div>
         </div>
         <div class="before-after">
@@ -3705,7 +3745,6 @@
           <p style="color:var(--ink-soft);">Sukhdev Singh, 58, was unable to stand for more than a few minutes due to a slipped disc. After spine surgery and dedicated physiotherapy, he now manages his farm daily without pain.</p>
           <div class="story-stats">
             <div class="story-stat"><div class="num">6 Weeks</div><div class="lbl">Recovery Time</div></div>
-            <div class="story-stat"><div class="num">100%</div><div class="lbl">Pain Relief Reported</div></div>
           </div>
         </div>
       </div>
@@ -3756,7 +3795,7 @@
         <div class="contact-card-list">
           <div class="contact-item-card">
             <div class="t-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C.7 8.5 2 5 5.3 4.2 7.5 3.7 9.7 4.6 11 6.4l1 1.4 1-1.4c1.3-1.8 3.5-2.7 5.7-2.2C22 5 23.3 8.5 21.5 12c-2.5 4.5-9.5 9-9.5 9Z" stroke="#0B4F8A" stroke-width="1.6"/></svg></div>
-            <div><h4>Address</h4><p>JAP Hospital, G.T road, Jalandhar-Pathankot Highway, Dalli, Bhogpur, Punjab – 144201</p></div>
+            <div><h4>Address</h4><p>JAP Hospital, Near Bus Stand Road, Bhogpur, Jalandhar District, Punjab – 144201</p></div>
           </div>
           <div class="contact-item-card">
             <div class="t-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.3 21 3 12.7 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#0B4F8A" stroke-width="1.6"/></svg></div>
@@ -3845,24 +3884,24 @@
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#" onclick="goTo('about');return false;">About Hospital</a></li>
-          <li><a href="#" onclick="goTo('doctor');return false;">Doctor Profile</a></li>
-          <li><a href="#" onclick="goTo('services');return false;">Treatments</a></li>
-          <li><a href="#" onclick="goTo('facilities');return false;">Facilities</a></li>
+          <li><a href="#about" onclick="window.goTo('about');return false;">About Hospital</a></li>
+          <li><a href="#doctor" onclick="window.goTo('doctor');return false;">Doctor Profile</a></li>
+          <li><a href="#services" onclick="window.goTo('services');return false;">Treatments</a></li>
+          <li><a href="#facilities" onclick="window.goTo('facilities');return false;">Facilities</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Patients</h4>
         <ul>
-          <li><a href="#" onclick="goTo('stories');return false;">Success Stories</a></li>
-          <li><a href="#" onclick="goTo('contact');return false;">Contact Us</a></li>
+          <li><a href="#stories" onclick="window.goTo('stories');return false;">Success Stories</a></li>
+          <li><a href="#contact" onclick="window.goTo('contact');return false;">Contact Us</a></li>
           <li><a href="tel:+917589100737" class="emergency-call">Emergency Line</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>Jalandhar-Pathankot highway,<br>Dalli, Bhogpur,<br>Jalandhar District, Punjab – 144201</p>
-        <p>+91 75891 00737, +91 99099 16112<br>japhospital@gmail.com</p>
+        <p>Near Bus Stand Road, Bhogpur,<br>Jalandhar District, Punjab – 144201</p>
+        <p>+91 75891 00737<br>japhospital@gmail.com</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -3875,25 +3914,35 @@
 <script>
   function goTo(page, options = {}){
     const targetPage = document.getElementById('page-' + page);
-    if(!targetPage) return;
+    if(!targetPage) return false;
 
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     targetPage.classList.add('active');
     document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active'));
     document.querySelectorAll('.nav-link[data-page="'+page+'"]').forEach(b => b.classList.add('active'));
 
+    /* Close the mobile menu BEFORE touching browser history so navigation
+       still visibly completes even if a mobile browser blocks a history call. */
+    toggleMobileMenu(false);
+    window.scrollTo({top:0, behavior:options.instant ? 'auto' : 'smooth'});
+
     if(options.updateHistory !== false){
-      const currentStatePage = history.state && history.state.page;
-      if(currentStatePage !== page){
-        history.pushState({page}, '', '#' + page);
-      }else if(location.hash !== '#' + page){
-        history.replaceState({page}, '', '#' + page);
+      try{
+        const currentStatePage = history.state && history.state.page;
+        if(currentStatePage !== page){
+          history.pushState({page}, '', '#' + page);
+        }else if(location.hash !== '#' + page){
+          history.replaceState({page}, '', '#' + page);
+        }
+      }catch(err){
+        /* Page switching is more important than history support. */
+        try{ location.hash = page; }catch(_ignored){}
       }
     }
 
-    window.scrollTo({top:0, behavior:options.instant ? 'auto' : 'smooth'});
-    toggleMobileMenu(false);
+    return false;
   }
+  window.goTo = goTo;
   function toggleMobileMenu(open){
     document.getElementById('mobileMenu').classList.toggle('open', open);
   }
@@ -3974,8 +4023,8 @@ ${message}`;
   document.querySelectorAll('.counter').forEach(el => countObserver.observe(el));
 
   // Re-run reveal + counters whenever a new page becomes active (in case content was hidden on load)
-  const originalGoTo = goTo;
-  goTo = function(page, options = {}){
+  const originalGoTo = window.goTo;
+  window.goTo = function(page, options = {}){
     originalGoTo(page, options);
     const activePage = document.getElementById('page-' + page);
     if(activePage){
@@ -3987,6 +4036,15 @@ ${message}`;
       });
     }
   };
+
+
+  /* Extra mobile-browser navigation fallback. */
+  document.addEventListener('click', function(event){
+    const control = event.target.closest && event.target.closest('.nav-link[data-page]');
+    if(!control) return;
+    event.preventDefault();
+    window.goTo(control.dataset.page);
+  });
 
   /* Browser history support: Back/Forward now restores the previous JAP page. */
   const JAP_PAGES = new Set(['home','about','doctor','services','facilities','stories','contact']);
@@ -4007,7 +4065,7 @@ ${message}`;
 
 
   function goToTreatment(id){
-    goTo('services');
+    window.goTo('services');
     window.setTimeout(() => {
       const target = document.getElementById(id);
       if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
@@ -4183,4 +4241,4 @@ ${message}`;
 </script>
 
 </body>
-</html>s
+</html>
