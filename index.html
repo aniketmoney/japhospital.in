@@ -2221,31 +2221,159 @@
 
 
 <style id="jap-requested-fixes-2026-08-19">
-  /* Bilingual hospital identity replaces the old Credentials & Patient Access label. */
-  .credential-brand{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;line-height:1.12;min-width:190px;}
-  .credential-brand-en{font-family:'Poppins',sans-serif;font-size:1.12rem;font-weight:800;letter-spacing:.035em;color:var(--blue-dark);}
-  .credential-brand-pa{font-family:'Noto Sans Gurmukhi',sans-serif;font-size:.84rem;font-weight:700;color:var(--red-dark);margin-top:3px;}
+  /* =========================================================
+     TOP CREDENTIAL BAR — LEFT LOGOS / CENTER NAME / RIGHT REVIEW
+     ========================================================= */
+  .credential-topbar-inner{
+    display:grid!important;
+    grid-template-columns:minmax(300px,1fr) auto minmax(300px,1fr)!important;
+    align-items:center!important;
+    gap:22px!important;
+    padding:12px 24px!important;
+    min-height:96px!important;
+  }
 
-  /* Final hero placement: text card is always on the LEFT on desktop/tablet. */
+  .credential-logos-left{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:10px;
+    min-width:0;
+  }
+
+  .credential-main-logo{
+    width:82px;
+    height:64px;
+    object-fit:contain;
+    object-position:center;
+    flex:0 0 auto;
+  }
+
+  .credential-logo{
+    width:76px!important;
+    height:42px!important;
+    object-fit:contain;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:9px;
+    padding:4px 7px;
+  }
+
+  .credential-brand{
+    justify-self:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    line-height:1.08;
+    min-width:max-content;
+  }
+
+  .credential-brand-copy{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+
+  .credential-brand-en{
+    font-family:'Poppins',sans-serif;
+    font-size:clamp(2rem,2.55vw,2.65rem);
+    font-weight:800;
+    letter-spacing:.035em;
+    color:var(--blue-dark);
+    white-space:nowrap;
+    line-height:1.02;
+  }
+
+  .credential-brand-pa{
+    font-family:'Noto Sans Gurmukhi',sans-serif;
+    font-size:clamp(1.35rem,1.8vw,1.72rem);
+    font-weight:700;
+    color:var(--red-dark);
+    margin-top:8px;
+    white-space:nowrap;
+    text-align:center;
+    align-self:center;
+  }
+
+  .credential-rating{
+    justify-self:end;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    min-width:0;
+  }
+
+  .google-proof{
+    margin:0!important;
+    padding:10px 15px!important;
+    font-size:.94rem!important;
+    white-space:nowrap;
+    box-shadow:0 4px 14px rgba(11,79,138,.08);
+  }
+  .google-proof .star{font-size:1.12rem!important;}
+  .google-proof small{font-size:.76rem;}
+
+  /* =========================================================
+     HERO — CARDS ON THE RIGHT ON DESKTOP / TABLET
+     The generated images keep their subjects to the left, so the
+     right-side card now uses the intended blank/negative space.
+     ========================================================= */
   .jap-slide-content{
-    left:clamp(24px,4.2vw,64px)!important;
-    right:auto!important;
-    transform:translate(-42px,-50%)!important;
+    left:auto!important;
+    right:clamp(24px,4.2vw,64px)!important;
+    transform:translate(42px,-50%)!important;
     text-align:left!important;
     transition:opacity .72s ease .14s, transform .9s cubic-bezier(.18,.72,.2,1) .14s!important;
   }
   .jap-slide.active .jap-slide-content{transform:translate(0,-50%)!important;}
-  .jap-slide{transition:opacity 1s cubic-bezier(.22,.61,.36,1),transform 1s cubic-bezier(.22,.61,.36,1),visibility 1s ease!important;}
-  .jap-slide img{transition:transform 5s cubic-bezier(.18,.7,.22,1),opacity .95s ease,filter .95s ease!important;}
-
-  @media (max-width:860px){
-    .credential-topbar-inner{flex-wrap:wrap;justify-content:center;padding:8px 16px;}
-    .credential-brand{width:100%;min-width:0;align-items:center;text-align:center;}
-    .credential-brand-en{font-size:1rem;}
-    .credential-brand-pa{font-size:.78rem;}
-    .credential-items{width:100%;justify-content:center;}
+  .jap-slide{
+    transition:opacity 1s cubic-bezier(.22,.61,.36,1),transform 1s cubic-bezier(.22,.61,.36,1),visibility 1s ease!important;
+  }
+  .jap-slide img{
+    transition:transform 5s cubic-bezier(.18,.7,.22,1),opacity .95s ease,filter .95s ease!important;
   }
 
+  @media (max-width:1100px){
+    .credential-topbar-inner{
+      grid-template-columns:minmax(235px,1fr) auto minmax(235px,1fr)!important;
+      gap:14px!important;
+      padding:10px 18px!important;
+    }
+    .credential-main-logo{width:68px;height:54px;}
+    .credential-logo{width:61px!important;height:36px!important;}
+    .credential-brand-en{font-size:1.75rem;}
+    .credential-brand-pa{font-size:1.2rem;}
+    .google-proof{font-size:.79rem!important;padding:8px 10px!important;}
+    .google-proof small{font-size:.66rem;}
+  }
+
+  @media (max-width:820px){
+    .credential-topbar-inner{
+      grid-template-columns:1fr 1fr!important;
+      grid-template-areas:
+        "brand brand"
+        "logos rating"!important;
+      gap:8px 12px!important;
+      min-height:auto!important;
+      padding:9px 16px 10px!important;
+    }
+    .credential-brand{grid-area:brand;justify-self:center;min-width:0;width:100%;}
+    .credential-logos-left{grid-area:logos;justify-self:start;}
+    .credential-rating{grid-area:rating;justify-self:end;}
+    .credential-brand-en{font-size:1.62rem;}
+    .credential-brand-pa{font-size:1.14rem;margin-top:5px;}
+    .credential-main-logo{width:55px;height:44px;}
+    .credential-logo{width:52px!important;height:31px!important;}
+    .google-proof{font-size:.71rem!important;padding:6px 8px!important;}
+    .google-proof small{font-size:.61rem;}
+  }
+
+  /* Preserve the earlier mobile behavior: complete image first,
+     then a readable left-aligned text card below the image. */
   @media (max-width:700px){
     .jap-slide-content{
       left:14px!important;
@@ -2258,10 +2386,22 @@
     .jap-slide.active .jap-slide-content{transform:translateY(0)!important;}
   }
 
+  @media (max-width:500px){
+    .credential-topbar-inner{padding:8px 12px 9px!important;gap:7px 8px!important;}
+    .credential-brand-en{font-size:1.38rem;}
+    .credential-brand-pa{font-size:1.04rem;}
+    .credential-main-logo{width:48px;height:39px;}
+    .credential-logo{width:44px!important;height:28px!important;padding:3px 5px;}
+    .google-proof{font-size:.65rem!important;padding:5px 7px!important;}
+    .google-proof small{display:none;}
+  }
+
   @media (max-width:430px){
-    .jap-slide-content{left:11px!important;right:11px!important;top:calc(var(--mobile-hero-image-h) + 9px)!important;}
-    .credential-logo{width:52px;height:28px;}
-    .google-proof{font-size:.66rem;}
+    .jap-slide-content{
+      left:11px!important;
+      right:11px!important;
+      top:calc(var(--mobile-hero-image-h) + 9px)!important;
+    }
   }
 </style>
 
@@ -2270,17 +2410,24 @@
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 
-<!-- CLIENT UPDATE: top credibility / accreditation area. Replace the two SVG files with official artwork when supplied by the hospital. -->
+<!-- CLIENT UPDATE: left logos, centered bilingual hospital name, Google rating on the right. -->
 <div class="credential-topbar" aria-label="Hospital credentials and Google rating">
   <div class="credential-topbar-inner">
-    <div class="credential-brand" aria-label="JAP Hospital name in English and Punjabi">
-      <div class="credential-brand-en">JAP HOSPITAL</div>
-      <div class="credential-brand-pa" lang="pa">ਜੇ.ਏ.ਪੀ. ਹਸਪਤਾਲ, ਭੋਗਪੁਰ</div>
-    </div>
-    <div class="credential-items">
+    <div class="credential-logos-left" aria-label="JAP Hospital and accreditation logos">
+      <img src="Logo.png" alt="JAP Hospital logo" class="credential-main-logo" onerror="this.style.display='none';">
       <img src="echs-placeholder.svg" class="credential-logo" alt="ECHS logo placeholder">
       <img src="nabh-placeholder.svg" class="credential-logo" alt="NABH logo placeholder">
-      <a class="google-proof" href="https://www.google.com/maps/search/?api=1&amp;query=JAP+Hospital+Bhogpur" target="_blank" rel="noopener">
+    </div>
+
+    <div class="credential-brand" aria-label="JAP Hospital name in English and Punjabi">
+      <div class="credential-brand-copy">
+        <div class="credential-brand-en">JAP HOSPITAL</div>
+        <div class="credential-brand-pa" lang="pa">ਜਪ ਹਸਪਤਾਲ</div>
+      </div>
+    </div>
+
+    <div class="credential-rating">
+      <a class="google-proof" href="https://www.google.com/maps/search/?api=1&amp;query=JAP+Hospital+Bhogpur" target="_blank" rel="noopener" aria-label="View JAP Hospital Google reviews">
         <span class="star">★</span> 4.9 Google Rating <small>306 reviews</small>
       </a>
     </div>
