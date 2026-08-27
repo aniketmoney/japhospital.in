@@ -2756,6 +2756,155 @@
     .doctor-first-photo{min-height:350px!important;}
   }
 </style>
+
+<style id="client-update-2026-08-27">
+  /* =========================================================
+     JAP HOSPITAL — CLIENT REVISION 27 AUG 2026
+     ========================================================= */
+
+  /* Top WhatsApp CTA: visible beside Call / menu, compact on phones. */
+  .top-whatsapp{
+    min-height:48px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:10px 15px;
+    border-radius:999px;
+    background:#1FAF62;
+    color:#fff;
+    border:2px solid #1FAF62;
+    font-weight:800;
+    font-size:.9rem;
+    box-shadow:0 7px 18px rgba(31,175,98,.20);
+    transition:transform .2s ease,background .2s ease,box-shadow .2s ease;
+  }
+  .top-whatsapp:hover{background:#178b4e;border-color:#178b4e;box-shadow:0 9px 22px rgba(31,175,98,.28);}
+  .top-whatsapp:active{transform:translateY(1px);}
+  .top-whatsapp svg{flex:0 0 auto;}
+
+  /* New location of Other Specialities: after main treatments, before gallery. */
+  .other-specialities-strip{
+    padding:28px 0 54px!important;
+    background:linear-gradient(180deg,#F7FBFE 0%,#EEF6FB 100%)!important;
+  }
+  .other-specialities-grid{border-radius:18px!important;}
+  .other-specialities-strip + .stats-bar{margin-top:initial!important;}
+
+  .treatment-title-extra{
+    white-space:nowrap;
+    font-size:.82em;
+    color:var(--red-dark);
+  }
+
+  .echs-info-note{
+    margin:18px 0 0;
+    max-width:880px;
+    padding:14px 17px;
+    border:1px solid rgba(11,79,138,.13);
+    border-left:4px solid var(--blue);
+    border-radius:12px;
+    background:#fff;
+    color:var(--ink-soft);
+    font-size:.92rem;
+    box-shadow:var(--shadow-card);
+  }
+  .echs-info-note strong{color:var(--blue-dark);}
+
+  /* Secondary doctor: full profile treatment, intentionally less dominant than Dr. Aman Singh. */
+  .secondary-doctor-section{
+    padding-top:18px;
+    background:linear-gradient(135deg,#F7FBFE 0%,#FFFFFF 55%,#FFF3F3 100%)!important;
+  }
+  .secondary-doctor-section .section-head{margin-bottom:28px;}
+  .secondary-doctor-card{
+    display:grid;
+    grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);
+    overflow:hidden;
+    border:1px solid rgba(11,79,138,.13);
+    border-radius:26px;
+    background:#fff;
+    box-shadow:0 18px 48px rgba(4,31,55,.10);
+  }
+  .secondary-doctor-photo{
+    position:relative;
+    min-height:390px;
+    background:linear-gradient(155deg,#DDECF7,#EEF7FB);
+    overflow:hidden;
+  }
+  .secondary-doctor-photo img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+  }
+  .secondary-doctor-placeholder{
+    display:none;
+    position:absolute;
+    inset:0;
+    place-items:center;
+    font-family:'Poppins',sans-serif;
+    font-size:5rem;
+    font-weight:800;
+    color:rgba(6,53,95,.72);
+    background:
+      radial-gradient(circle at 50% 35%,rgba(255,255,255,.9),transparent 28%),
+      linear-gradient(155deg,#D9EAF6,#F5FAFD);
+  }
+  .secondary-doctor-copy{padding:42px 46px;display:flex;flex-direction:column;justify-content:center;}
+  .secondary-doctor-copy h3{font-size:clamp(1.8rem,3vw,2.6rem);margin:.15em 0 .2em;}
+  .secondary-doctor-qual{font-weight:800;color:var(--red-dark);font-size:1rem;margin-bottom:10px;}
+  .secondary-doctor-badge{
+    align-self:flex-start;
+    padding:7px 12px;
+    border-radius:999px;
+    background:var(--blue-tint);
+    color:var(--blue-dark);
+    font-weight:800;
+    font-size:.78rem;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+  }
+  .secondary-doctor-copy > p{color:var(--ink-soft);max-width:720px;}
+  .secondary-doctor-photo-note{
+    margin-top:18px!important;
+    padding-top:14px;
+    border-top:1px solid var(--line);
+    font-size:.78rem!important;
+  }
+
+  @media (max-width:860px){
+    .top-whatsapp{
+      width:48px;
+      height:48px;
+      min-height:48px;
+      padding:0;
+      border-radius:50%;
+    }
+    .top-whatsapp-text{display:none;}
+    .secondary-doctor-card{grid-template-columns:1fr;}
+    .secondary-doctor-photo{min-height:320px;}
+    .secondary-doctor-copy{padding:30px 26px;}
+  }
+
+  @media (max-width:560px){
+    .nav-row{gap:8px;}
+    .nav-cta-group{gap:7px;}
+    .top-whatsapp{
+      width:44px;
+      height:44px;
+      min-height:44px;
+    }
+    .top-whatsapp svg{width:18px;height:18px;}
+    .treatment-title-extra{white-space:normal;display:inline;}
+    .secondary-doctor-photo{min-height:290px;}
+    .secondary-doctor-copy{padding:26px 20px;}
+    .other-specialities-strip{padding:18px 0 42px!important;}
+  }
+</style>
+
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -2808,6 +2957,13 @@
     </nav>
 
     <div class="nav-cta-group">
+      <a class="top-whatsapp" href="https://wa.me/917589100737?text=Hello%20JAP%20Hospital%2C%20I%20would%20like%20to%20get%20a%20consultation." target="_blank" rel="noopener" aria-label="WhatsApp JAP Hospital" title="WhatsApp JAP Hospital">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.45L3.5 20.5l1.42-4.2A8.5 8.5 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M8.3 7.8c.25-.28.52-.2.7-.2h.52c.17 0 .38.02.52.36.16.38.55 1.34.6 1.44.05.1.08.23.02.36-.06.13-.1.2-.2.31-.1.11-.21.25-.3.33-.1.1-.2.2-.09.4.11.2.5.83 1.08 1.34.74.66 1.36.87 1.56.97.2.1.32.09.44-.05.12-.14.5-.58.63-.78.13-.2.27-.17.45-.1.18.06 1.16.55 1.36.65.2.1.33.15.38.23.05.08.05.47-.11.92-.16.45-.93.86-1.28.91-.33.05-.75.08-1.21-.07-.28-.09-.64-.21-1.1-.41-.48-.2-2.08-.77-3.59-2.2-1.2-1.13-2-2.52-2.23-2.95-.23-.43-.02-1.66.85-2.46Z" fill="currentColor"/>
+        </svg>
+        <span class="top-whatsapp-text">WhatsApp</span>
+      </a>
       <a class="btn btn-emergency emergency-call" href="tel:+01812922063">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.3 21 3 12.7 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="#C0392B" stroke-width="1.6"/></svg>
         <span class="txt">Emergency</span>
@@ -2868,6 +3024,7 @@
           <div class="jap-hero-doctor-line">Consult Dr. Aman Singh — Orthopaedic &amp; Spine Surgeon</div>
           <div class="jap-slide-actions">
             <button class="btn btn-tech" onclick="goTo('contact')">Get Consultation</button>
+            <button class="btn btn-outline" onclick="goTo('services')">All Treatments</button>
             <a class="btn btn-whatsapp" href="https://wa.me/917589100737?text=Hello%20JAP%20Hospital%2C%20I%20would%20like%20to%20get%20a%20consultation." target="_blank" rel="noopener">WhatsApp</a>
             <a class="btn btn-outline emergency-call" href="tel:+917589100737">Call Now</a>
           </div>
@@ -2950,14 +3107,129 @@
       <div class="trust-ribbon-item">Orthopaedic + Spine Focus</div>
       <div class="trust-ribbon-item">ROSA® Robotic Knee Technology</div>
       <div class="trust-ribbon-item">Modern Operation Theatre</div>
-      <div class="trust-ribbon-item">Physiotherapy &amp; Recovery Support</div>
-      <div class="trust-ribbon-item">Cashless / Insurance Support</div>
+      <div class="trust-ribbon-item">Hip &amp; Knee Replacement Recovery</div>
+      <div class="trust-ribbon-item" title="ECHS empanelled support for eligible beneficiaries, subject to applicable referral, authorisation and documentation requirements.">ECHS Empanelled Support</div>
       <div class="trust-ribbon-item">24×7 Hospital Access</div>
     </div>
   </div>
 
 
-  <!-- CLIENT UPDATE: Other Specialities strip positioned between the trust ribbon and credibility stats. -->
+  <!-- VERIFIED / PUBLISHED CREDIBILITY STATS. Final values are visible even if JavaScript fails. -->
+  <div class="stats-bar">
+    <div class="wrap stats-grid jap-stats-5">
+      <div class="stat reveal d1"><div class="num"><span class="counter" data-target="10">10</span><span class="plus">+</span></div><div class="lbl">Years Experience</div></div>
+      <div class="stat reveal d2"><div class="num"><span class="counter" data-target="6000">6,000</span><span class="plus">+</span></div><div class="lbl">Joint Replacements</div></div>
+      <div class="stat reveal d3"><div class="num"><span class="counter" data-target="600">600</span><span class="plus">+</span></div><div class="lbl">Robotic Surgeries</div></div>
+      <div class="stat reveal d4"><div class="num"><span class="counter" data-target="2750">2,750</span><span class="plus">+</span></div><div class="lbl">Spine Surgeries</div></div>
+      <div class="stat stat-rating reveal"><div class="num">4.9<span class="rating-star">★</span></div><div class="lbl">Google Rating · 310 Reviews</div></div>
+    </div>
+  </div>
+  <!-- DOCTOR-FIRST SELLING POINT -->
+  <section class="doctor-first-section">
+    <div class="wrap">
+      <div class="doctor-first-card reveal">
+        <div class="doctor-first-photo">
+          <img src="dr photo.PNG" alt="Dr. Aman Singh, orthopaedic and spine surgeon at JAP Hospital">
+        </div>
+        <div class="doctor-first-copy">
+          <div class="eyebrow">Meet Your Surgeon</div>
+          <h2>Dr. Aman Singh</h2>
+          <div class="doctor-first-qual">D.N.B ORTHOPAEDIC SURGERY | Fellowship in Joint Replacement &amp; Spine Surgery</div>
+          <p>Consult for knee replacement, robotic-assisted joint replacement, spine conditions, pediatric orthopaedics, arthroscopy and trauma care at JAP Hospital, Bhogpur.</p>
+          <div class="doctor-first-metrics">
+            <span>10+ Years Experience</span>
+            <span>6,000+ Joint Replacements</span>
+            <span>600+ Robotic Surgeries</span>
+            <span>2,750+ Spine Surgeries</span>
+          </div>
+          <div class="doctor-action-row">
+            <button class="btn btn-primary" onclick="goTo('contact')">Get Consultation</button>
+            <a class="btn btn-wa" href="https://wa.me/917589100737?text=Hello%20JAP%20Hospital%2C%20I%20would%20like%20to%20get%20a%20consultation%20with%20Dr.%20Aman%20Singh." target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-call emergency-call" href="tel:+917589100737">Call Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANCED TECHNOLOGY -->
+  <section class="tech-section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Technology That Moves With You</div>
+        <h2>Advanced Surgery. Smaller Incisions. Smarter Recovery.</h2>
+        <p>Modern orthopaedic and spine care is not only about operating — it is about precision, tissue preservation and helping patients return to movement with confidence.</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-visual reveal-left">
+          <div class="tech-mini-label t1">PRECISION SURGERY / LIVE</div>
+          <div class="scan-line"></div>
+          <svg class="tech-knee-svg" viewBox="0 0 280 360" fill="none" aria-hidden="true">
+            <defs><linearGradient id="boneG" x1="0" x2="1"><stop stop-color="#EAF9FE"/><stop offset="1" stop-color="#8FD9F1"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            <path d="M99 22c18 5 34 7 42 33 8 26 2 73-9 103-6 17-7 38 2 52" stroke="url(#boneG)" stroke-width="25" stroke-linecap="round"/>
+            <path d="M180 22c-18 5-34 7-42 33-8 26-2 73 9 103 6 17 7 38-2 52" stroke="url(#boneG)" stroke-width="25" stroke-linecap="round"/>
+            <path d="M110 199c22-12 43-12 62 0" stroke="#FF6670" stroke-width="11" stroke-linecap="round" filter="url(#glow)"/>
+            <path d="M121 219c-12 25-13 61-17 110M159 219c12 25 13 61 17 110" stroke="url(#boneG)" stroke-width="23" stroke-linecap="round"/>
+            <circle cx="140" cy="206" r="57" stroke="#28B8E8" stroke-width="1.4" stroke-dasharray="7 8" opacity=".9"/>
+            <circle cx="140" cy="206" r="76" stroke="#28B8E8" stroke-width="1" stroke-dasharray="2 10" opacity=".45"/>
+            <path d="M81 206h118M140 147v118" stroke="#28B8E8" stroke-width="1" opacity=".65"/>
+          </svg>
+          <div class="tech-mini-label t2">ALIGNMENT • ACCURACY • RECOVERY</div>
+        </div>
+        <div class="tech-card-grid">
+          <article class="tech-feature-card reveal d1"><div class="tech-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="#9FE5FA" stroke-width="1.7"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#FF8D94" stroke-width="1.7"/></svg></div><h3>ROSA® Robotic Knee</h3><p>Computer-assisted planning and alignment support for precise knee replacement procedures.</p><span class="micro-tag">Precision focused</span></article>
+          <article class="tech-feature-card reveal d2"><div class="tech-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M8 6h8M8 10h8M8 14h8M8 18h8" stroke="#9FE5FA" stroke-width="1.7" stroke-linecap="round"/></svg></div><h3>Endoscopic Spine Surgery</h3><p>Minimal-access techniques designed for smaller cuts, reduced tissue disruption and faster mobilisation.</p><span class="micro-tag">Minimally invasive</span></article>
+          <article class="tech-feature-card reveal d3"><div class="tech-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 15h16M6 15V9h12v6M8 9V6h8v3" stroke="#9FE5FA" stroke-width="1.7"/><path d="M9 19h6" stroke="#FF8D94" stroke-width="1.7"/></svg></div><h3>Modern Operation Theatre</h3><p>Purpose-built surgical environment supporting advanced orthopaedic and spine procedures.</p><span class="micro-tag">Technology enabled</span></article>
+          <article class="tech-feature-card reveal d4"><div class="tech-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 20c4-1 6-4 7-8 1 4 3 7 7 8" stroke="#9FE5FA" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="6" r="3" stroke="#FF8D94" stroke-width="1.7"/></svg></div><h3>Recovery-First Protocol</h3><p>Structured pain control, physiotherapy and early movement designed around each patient's recovery.</p><span class="micro-tag">Patient centred</span></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+        <div class="eyebrow" style="justify-content:center;">What We Treat</div>
+        <h2>Focused Orthopedic &amp; Spine Treatments <span class="treatment-title-extra">(Hip, Knee &amp; Joint)</span></h2>
+        <p>From joint pain to complex spine conditions, our specialists design a care plan around your mobility goals.</p>
+      </div>
+      <div class="card-grid">
+        <div class="t-card reveal d1">
+          <div class="t-icon">01</div><h3>Knee Replacement</h3>
+          <p>Total and partial knee replacement for advanced joint damage, with rehabilitation planning from the start.</p>
+          <a class="t-link" href="#" onclick="goToTreatment('total-knee');return false;">Detailed guide →</a>
+        </div>
+        <div class="t-card reveal d2">
+          <div class="t-icon">02</div><h3>Robotic Knee Replacement</h3>
+          <p>ROSA®-supported planning and navigation for technology-assisted knee replacement.</p>
+          <a class="t-link" href="#" onclick="goToTreatment('robotic-knee');return false;">Detailed guide →</a>
+        </div>
+        <div class="t-card reveal d3">
+          <div class="t-icon">03</div><h3>Spine Surgery</h3>
+          <p>Assessment and modern surgical options for disc disease, stenosis and nerve compression.</p>
+          <a class="t-link" href="#" onclick="goToTreatment('spine');return false;">Detailed guide →</a>
+        </div>
+        <div class="t-card reveal d1">
+          <div class="t-icon">04</div><h3>Hip Replacement</h3>
+          <p>Joint replacement planning for painful hip arthritis, fractures and advanced joint damage.</p>
+          <a class="t-link" href="#" onclick="goToTreatment('hip');return false;">Detailed guide →</a>
+        </div>
+        <div class="t-card reveal d2">
+          <div class="t-icon">05</div><h3>Arthroscopy</h3>
+          <p>Keyhole procedures used to diagnose and treat selected joint injuries and conditions.</p>
+          <a class="t-link" href="#" onclick="goToTreatment('arthroscopy');return false;">Detailed guide →</a>
+        </div>
+        <div class="t-card reveal d3">
+          <div class="t-icon">06</div><h3>Fracture &amp; Trauma Care</h3>
+          <p>Assessment and treatment for fractures, dislocations and orthopaedic injuries.</p>
+          <a class="t-link" href="#" onclick="goToTreatment('trauma');return false;">Detailed guide →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT UPDATE: Other Specialities moved below the main treatment cards, before the hospital gallery. -->
   <div class="other-specialities-strip" aria-label="Other hospital specialities">
     <div class="other-specialities-wrap">
       <div class="other-specialities-title-row">
@@ -3013,140 +3285,6 @@
     </div>
   </div>
 
-  <!-- VERIFIED / PUBLISHED CREDIBILITY STATS. Final values are visible even if JavaScript fails. -->
-  <div class="stats-bar">
-    <div class="wrap stats-grid jap-stats-5">
-      <div class="stat reveal d1"><div class="num"><span class="counter" data-target="10">10</span><span class="plus">+</span></div><div class="lbl">Years Experience</div></div>
-      <div class="stat reveal d2"><div class="num"><span class="counter" data-target="6000">6,000</span><span class="plus">+</span></div><div class="lbl">Joint Replacements</div></div>
-      <div class="stat reveal d3"><div class="num"><span class="counter" data-target="600">600</span><span class="plus">+</span></div><div class="lbl">Robotic Surgeries</div></div>
-      <div class="stat reveal d4"><div class="num"><span class="counter" data-target="2750">2,750</span><span class="plus">+</span></div><div class="lbl">Spine Surgeries</div></div>
-      <div class="stat stat-rating reveal"><div class="num">4.9<span class="rating-star">★</span></div><div class="lbl">Google Rating · 310 Reviews</div></div>
-    </div>
-  </div>
-  <!-- DOCTOR-FIRST SELLING POINT -->
-  <section class="doctor-first-section">
-    <div class="wrap">
-      <div class="doctor-first-card reveal">
-        <div class="doctor-first-photo">
-          <img src="dr photo.PNG" alt="Dr. Aman Singh, orthopaedic and spine surgeon at JAP Hospital">
-        </div>
-        <div class="doctor-first-copy">
-          <div class="eyebrow">Meet Your Surgeon</div>
-          <h2>Dr. Aman Singh</h2>
-          <div class="doctor-first-qual">D.N.B ORTHOPAEDIC SURGERY | Fellowship in Joint Replacement &amp; Spine Surgery</div>
-          <p>Consult for knee replacement, robotic-assisted joint replacement, spine conditions, pediatric orthopaedics, arthroscopy and trauma care at JAP Hospital, Bhogpur.</p>
-          <div class="doctor-first-metrics">
-            <span>10+ Years Experience</span>
-            <span>6,000+ Joint Replacements</span>
-            <span>600+ Robotic Surgeries</span>
-            <span>2,750+ Spine Surgeries</span>
-          </div>
-          <div class="doctor-action-row">
-            <button class="btn btn-primary" onclick="goTo('contact')">Get Consultation</button>
-            <a class="btn btn-wa" href="https://wa.me/917589100737?text=Hello%20JAP%20Hospital%2C%20I%20would%20like%20to%20get%20a%20consultation%20with%20Dr.%20Aman%20Singh." target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btn btn-call emergency-call" href="tel:+917589100737">Call Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY JAP HOSPITAL -->
-  <section class="why-jap-section">
-    <div class="wrap">
-      <div class="section-head center reveal">
-        <div class="eyebrow" style="justify-content:center;">Why JAP Hospital</div>
-        <h2>Specialist Care, Modern Technology, Patient-First Support</h2>
-        <p>Built around orthopaedic and spine care, with treatment planning, surgical technology and rehabilitation available as one connected patient journey.</p>
-      </div>
-      <div class="why-jap-grid">
-        <article class="why-jap-card reveal d1"><div class="why-jap-icon">01</div><h3>Specialist Orthopaedic &amp; Spine Focus</h3><p>Focused consultation and surgical care for joints, knees, spine and trauma.</p></article>
-        <article class="why-jap-card reveal d2"><div class="why-jap-icon">02</div><h3>ROSA® Robotic Knee Technology</h3><p>Technology-assisted planning and navigation to support precise knee replacement execution.</p></article>
-        <article class="why-jap-card reveal d3"><div class="why-jap-icon">03</div><h3>Modern Operation Theatre</h3><p>A contemporary surgical environment designed for orthopaedic and spine procedures.</p></article>
-        <article class="why-jap-card reveal d1"><div class="why-jap-icon">04</div><h3>Physiotherapy &amp; Recovery</h3><p>Structured rehabilitation support to help patients rebuild mobility and confidence.</p></article>
-        <article class="why-jap-card reveal d2"><div class="why-jap-icon">05</div><h3>Cashless / Insurance Support</h3><p>Clear assistance for eligible cashless, insurance and panel-related patient processes.</p></article>
-        <article class="why-jap-card reveal d3"><div class="why-jap-icon">06</div><h3>24×7 Hospital Access</h3><p>Direct call access for urgent hospital guidance and trauma-related enquiries.</p></article>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ADVANCED TECHNOLOGY -->
-  <section class="tech-section">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Technology That Moves With You</div>
-        <h2>Advanced Surgery. Smaller Incisions. Smarter Recovery.</h2>
-        <p>Modern orthopaedic and spine care is not only about operating — it is about precision, tissue preservation and helping patients return to movement with confidence.</p>
-      </div>
-      <div class="tech-grid">
-        <div class="tech-visual reveal-left">
-          <div class="tech-mini-label t1">PRECISION SURGERY / LIVE</div>
-          <div class="scan-line"></div>
-          <svg class="tech-knee-svg" viewBox="0 0 280 360" fill="none" aria-hidden="true">
-            <defs><linearGradient id="boneG" x1="0" x2="1"><stop stop-color="#EAF9FE"/><stop offset="1" stop-color="#8FD9F1"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-            <path d="M99 22c18 5 34 7 42 33 8 26 2 73-9 103-6 17-7 38 2 52" stroke="url(#boneG)" stroke-width="25" stroke-linecap="round"/>
-            <path d="M180 22c-18 5-34 7-42 33-8 26-2 73 9 103 6 17 7 38-2 52" stroke="url(#boneG)" stroke-width="25" stroke-linecap="round"/>
-            <path d="M110 199c22-12 43-12 62 0" stroke="#FF6670" stroke-width="11" stroke-linecap="round" filter="url(#glow)"/>
-            <path d="M121 219c-12 25-13 61-17 110M159 219c12 25 13 61 17 110" stroke="url(#boneG)" stroke-width="23" stroke-linecap="round"/>
-            <circle cx="140" cy="206" r="57" stroke="#28B8E8" stroke-width="1.4" stroke-dasharray="7 8" opacity=".9"/>
-            <circle cx="140" cy="206" r="76" stroke="#28B8E8" stroke-width="1" stroke-dasharray="2 10" opacity=".45"/>
-            <path d="M81 206h118M140 147v118" stroke="#28B8E8" stroke-width="1" opacity=".65"/>
-          </svg>
-          <div class="tech-mini-label t2">ALIGNMENT • ACCURACY • RECOVERY</div>
-        </div>
-        <div class="tech-card-grid">
-          <article class="tech-feature-card reveal d1"><div class="tech-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="#9FE5FA" stroke-width="1.7"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#FF8D94" stroke-width="1.7"/></svg></div><h3>ROSA® Robotic Knee</h3><p>Computer-assisted planning and alignment support for precise knee replacement procedures.</p><span class="micro-tag">Precision focused</span></article>
-          <article class="tech-feature-card reveal d2"><div class="tech-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M8 6h8M8 10h8M8 14h8M8 18h8" stroke="#9FE5FA" stroke-width="1.7" stroke-linecap="round"/></svg></div><h3>Endoscopic Spine Surgery</h3><p>Minimal-access techniques designed for smaller cuts, reduced tissue disruption and faster mobilisation.</p><span class="micro-tag">Minimally invasive</span></article>
-          <article class="tech-feature-card reveal d3"><div class="tech-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 15h16M6 15V9h12v6M8 9V6h8v3" stroke="#9FE5FA" stroke-width="1.7"/><path d="M9 19h6" stroke="#FF8D94" stroke-width="1.7"/></svg></div><h3>Modern Operation Theatre</h3><p>Purpose-built surgical environment supporting advanced orthopaedic and spine procedures.</p><span class="micro-tag">Technology enabled</span></article>
-          <article class="tech-feature-card reveal d4"><div class="tech-feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 20c4-1 6-4 7-8 1 4 3 7 7 8" stroke="#9FE5FA" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="6" r="3" stroke="#FF8D94" stroke-width="1.7"/></svg></div><h3>Recovery-First Protocol</h3><p>Structured pain control, physiotherapy and early movement designed around each patient's recovery.</p><span class="micro-tag">Patient centred</span></article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TREATMENTS -->
-  <section>
-    <div class="wrap">
-      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
-        <div class="eyebrow" style="justify-content:center;">What We Treat</div>
-        <h2>Focused Orthopedic &amp; Spine Treatments</h2>
-        <p>From joint pain to complex spine conditions, our specialists design a care plan around your mobility goals.</p>
-      </div>
-      <div class="card-grid">
-        <div class="t-card reveal d1">
-          <div class="t-icon">01</div><h3>Knee Replacement</h3>
-          <p>Total and partial knee replacement for advanced joint damage, with rehabilitation planning from the start.</p>
-          <a class="t-link" href="#" onclick="goToTreatment('total-knee');return false;">Detailed guide →</a>
-        </div>
-        <div class="t-card reveal d2">
-          <div class="t-icon">02</div><h3>Robotic Knee Replacement</h3>
-          <p>ROSA®-supported planning and navigation for technology-assisted knee replacement.</p>
-          <a class="t-link" href="#" onclick="goToTreatment('robotic-knee');return false;">Detailed guide →</a>
-        </div>
-        <div class="t-card reveal d3">
-          <div class="t-icon">03</div><h3>Spine Surgery</h3>
-          <p>Assessment and modern surgical options for disc disease, stenosis and nerve compression.</p>
-          <a class="t-link" href="#" onclick="goToTreatment('spine');return false;">Detailed guide →</a>
-        </div>
-        <div class="t-card reveal d1">
-          <div class="t-icon">04</div><h3>Hip Replacement</h3>
-          <p>Joint replacement planning for painful hip arthritis, fractures and advanced joint damage.</p>
-          <a class="t-link" href="#" onclick="goToTreatment('hip');return false;">Detailed guide →</a>
-        </div>
-        <div class="t-card reveal d2">
-          <div class="t-icon">05</div><h3>Arthroscopy</h3>
-          <p>Keyhole procedures used to diagnose and treat selected joint injuries and conditions.</p>
-          <a class="t-link" href="#" onclick="goToTreatment('arthroscopy');return false;">Detailed guide →</a>
-        </div>
-        <div class="t-card reveal d3">
-          <div class="t-icon">06</div><h3>Fracture &amp; Trauma Care</h3>
-          <p>Assessment and treatment for fractures, dislocations and orthopaedic injuries.</p>
-          <a class="t-link" href="#" onclick="goToTreatment('trauma');return false;">Detailed guide →</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- HOSPITAL GALLERY -->
   <section>
@@ -3332,7 +3470,7 @@
   <div class="page-hero">
     <div class="wrap">
       <div class="breadcrumb">Home / <span class="cur">About Hospital</span></div>
-      <h1>Caring for Punjab's Joints &amp; Spines Since 2013</h1>
+      <h1>Caring for Patients' Joints &amp; Spines Since 2013</h1>
       <p>JAP Hospital is Bhogpur's dedicated orthopedic and spine centre, built around one goal: helping patients of every age move, work and live without pain.</p>
     </div>
   </div>
@@ -3372,11 +3510,12 @@
         </div>
       </div>
       <div class="accred-strip">
-        <span class="accred-chip">NABH Entry Level Certified</span>
-        <span class="accred-chip">ISO 9001:2015</span>
+        <span class="accred-chip">NABH Certified</span>
+        <span class="accred-chip">ECHS Empanelled</span>
         <span class="accred-chip">Ayushman Bharat Empanelled</span>
         <span class="accred-chip">Cashless Insurance Tie‑ups</span>
       </div>
+      <p class="echs-info-note"><strong>ECHS:</strong> JAP Hospital provides empanelled support for eligible ECHS beneficiaries, subject to applicable referral, authorisation and documentation requirements.</p>
     </div>
   </section>
 
@@ -3458,10 +3597,49 @@
 
         <h3 style="margin-top:34px;">Consultation Timings</h3>
         <table class="timing-table">
-          <tr><td>Monday – Friday</td><td>9:00 AM – 2:00 PM</td></tr>
-          <tr><td>Saturday</td><td>9:00 AM – 1:00 PM</td></tr>
+          <tr><td>Monday – Saturday</td><td>11:00 AM – 6:00 PM</td></tr>
           <tr><td>Sunday</td><td>Emergency Only</td></tr>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECONDARY DOCTOR PROFILE — Dr. Aman Singh remains the primary surgeon/profile above. -->
+  <section class="secondary-doctor-section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Also Consulting at JAP Hospital</div>
+        <h2>Dr. Mohammad Aftab</h2>
+        <p>General medicine support alongside JAP Hospital's primary orthopaedic and spine care programme.</p>
+      </div>
+
+      <div class="secondary-doctor-card reveal">
+        <div class="secondary-doctor-photo">
+          <img src="dr-mohammad-aftab.png" alt="Dr. Mohammad Aftab"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <div class="secondary-doctor-placeholder" aria-label="Dr. Mohammad Aftab photo placeholder">MA</div>
+        </div>
+
+        <div class="secondary-doctor-copy">
+          <div class="secondary-doctor-badge">General Medicine</div>
+          <h3>Dr. Mohammad Aftab</h3>
+          <div class="secondary-doctor-qual">MBBS, MD (General Medicine)</div>
+          <p>Consultation support in general medicine, with the additional areas noted by the hospital: neurology and rheumatology.</p>
+
+          <div class="spec-tags">
+            <span class="spec-tag">General Medicine</span>
+            <span class="spec-tag">Neurology</span>
+            <span class="spec-tag">Rheumatology</span>
+          </div>
+
+          <div class="doctor-action-row">
+            <button class="btn btn-primary" onclick="goTo('contact')">Get Consultation</button>
+            <a class="btn btn-wa" href="https://wa.me/917589100737?text=Hello%20JAP%20Hospital%2C%20I%20would%20like%20to%20consult%20Dr.%20Mohammad%20Aftab." target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-call emergency-call" href="tel:+917589100737">Call Now</a>
+          </div>
+
+          <p class="secondary-doctor-photo-note">Photo file expected: <strong>dr-mohammad-aftab.png</strong>. Until it is added, the initials placeholder is shown instead of a broken image.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -3663,12 +3841,13 @@
       <div class="facility-grid">
         <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>Modular Operation Theatres</h3><p>Laminar‑flow OTs with advanced surgical equipment.</p></div>
         <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9C.7 8.5 2 5 5.3 4.2 7.5 3.7 9.7 4.6 11 6.4l1 1.4 1-1.4c1.3-1.8 3.5-2.7 5.7-2.2C22 5 23.3 8.5 21.5 12c-2.5 4.5-9.5 9-9.5 9Z" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>ICU &amp; Post‑Op Care</h3><p>24/7 monitored recovery units for surgical patients.</p></div>
-        <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>Physiotherapy Centre</h3><p>Dedicated rehab gym with guided exercise plans.</p></div>
+        <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>Physiotherapy, Hip &amp; Knee Replacement Recovery</h3><p>Dedicated rehabilitation support with guided exercise plans for hip and knee replacement recovery.</p></div>
         <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 12h16M12 4v16" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>Digital Diagnostic Lab</h3><p>On‑site X‑ray, MRI referral &amp; pathology services.</p></div>
         <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 3h6l1 4H8l1-4Z" stroke="#0B4F8A" stroke-width="1.6"/><path d="M6 7h12l-1 14H7L6 7Z" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>In‑house Pharmacy</h3><p>All prescribed medicines available on premises.</p></div>
         <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 13l2-6h10l3 6M3 13v5h2m14-5v5h-2M5 18h10" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>24/7 Ambulance Service</h3><p>Rapid emergency response across Bhogpur &amp; nearby areas.</p></div>
         <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="#0B4F8A" stroke-width="1.6"/><path d="M4 10h16" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>Comfortable Patient Rooms</h3><p>Elderly‑friendly rooms with attached washrooms &amp; support rails.</p></div>
         <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#0B4F8A" stroke-width="1.6"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" stroke="#0B4F8A" stroke-width="1.6"/></svg></div><h3>Wheelchair Accessibility</h3><p>Ramps, rails and wide corridors throughout the hospital.</p></div>
+        <div class="facility-card"><div class="t-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 4h14v16H5z" stroke="#0B4F8A" stroke-width="1.6"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#D62828" stroke-width="1.6" stroke-linecap="round"/></svg></div><h3>ECHS Empanelled Support</h3><p>Assistance for eligible ECHS beneficiaries with applicable referral, authorisation and documentation processes.</p></div>
       </div>
     </div>
   </section>
