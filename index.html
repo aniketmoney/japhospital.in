@@ -2905,6 +2905,180 @@
   }
 </style>
 
+
+<style id="jap-update-2026-08-28">
+  /* =========================================================
+     CLIENT UPDATE — 28 AUG 2026
+     1) Surgeon credentials
+     2) Clickable Other Specialities
+     3) Image-led "What We Treat" cards
+     ========================================================= */
+
+  /* Meet Your Surgeon: reference-board credentials in hospital red */
+  .doctor-first-credentials{
+    display:grid;
+    gap:7px;
+    margin:2px 0 16px;
+  }
+  .doctor-first-credentials span{
+    position:relative;
+    padding-left:18px;
+    color:var(--red-dark);
+    font-family:'Poppins',sans-serif;
+    font-weight:800;
+    font-size:.96rem;
+    line-height:1.42;
+  }
+  .doctor-first-credentials span::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.62em;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--red);
+    box-shadow:0 0 0 3px rgba(214,40,40,.10);
+  }
+
+  /* Doctor profile uses the same verified credential set. */
+  .doc-credentials-list{
+    display:grid;
+    gap:6px;
+    margin:10px 0 18px;
+  }
+  .doc-credentials-list span{
+    color:var(--red-dark);
+    font-weight:750;
+    line-height:1.45;
+  }
+
+  /* Keep Other Specialities visually identical, but make each tile interactive. */
+  button.other-speciality-item{
+    width:100%;
+    border:0;
+    margin:0;
+    background:transparent;
+    color:inherit;
+    font:inherit;
+    text-align:left;
+    cursor:pointer;
+    appearance:none;
+    -webkit-appearance:none;
+    transition:background .22s ease, transform .22s ease, box-shadow .22s ease;
+  }
+  button.other-speciality-item:hover{
+    background:linear-gradient(135deg,rgba(11,79,138,.055),rgba(214,40,40,.035));
+  }
+  button.other-speciality-item:active{transform:scale(.992);}
+  button.other-speciality-item:focus-visible{
+    outline:3px solid rgba(214,40,40,.55);
+    outline-offset:-4px;
+    z-index:2;
+  }
+  button.other-speciality-item:hover .other-speciality-icon{
+    transform:translateY(-2px) scale(1.04);
+    box-shadow:0 10px 22px rgba(6,53,95,.23);
+  }
+  .other-speciality-icon{transition:transform .22s ease, box-shadow .22s ease;}
+
+  /* Homepage treatment cards: replace number icon with photographic media. */
+  .home-treatment-card{
+    padding:0!important;
+    overflow:hidden;
+    position:relative;
+    min-height:100%;
+    display:flex;
+    flex-direction:column;
+  }
+  .treatment-card-media{
+    position:relative;
+    height:172px;
+    overflow:hidden;
+    background:linear-gradient(135deg,#DDECF7,#EEF6FB);
+    border-bottom:1px solid rgba(11,79,138,.10);
+  }
+  .treatment-card-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .48s ease, filter .35s ease;
+    filter:saturate(.96) contrast(1.03);
+  }
+  .treatment-card-media::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,rgba(3,27,47,0) 44%,rgba(3,27,47,.34) 100%);
+    pointer-events:none;
+  }
+  .treatment-card-number{
+    position:absolute;
+    top:14px;
+    left:14px;
+    z-index:2;
+    min-width:48px;
+    height:48px;
+    padding:0 12px;
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    background:rgba(255,255,255,.94);
+    border:1px solid rgba(255,255,255,.9);
+    box-shadow:0 8px 22px rgba(4,31,55,.16);
+    color:var(--blue-dark);
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:.92rem;
+    backdrop-filter:blur(8px);
+  }
+  .treatment-card-body{
+    padding:23px 24px 25px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+  .treatment-card-body h3{margin-bottom:.42em;}
+  .treatment-card-body p{flex:1;}
+  .home-treatment-card:hover .treatment-card-media img{
+    transform:scale(1.055);
+    filter:saturate(1.04) contrast(1.04);
+  }
+  .home-treatment-card.image-top .treatment-card-media img{object-position:center 28%;}
+  .home-treatment-card.image-center .treatment-card-media img{object-position:center center;}
+  .home-treatment-card.image-left .treatment-card-media img{object-position:32% center;}
+
+  /* Other-speciality detail section on Treatments page */
+  .other-speciality-guides-head{
+    margin-top:44px;
+    padding-top:8px;
+    border-top:1px solid rgba(11,79,138,.10);
+  }
+  .other-speciality-guides-head h2{margin-top:.18em;}
+  .treatment-detail.other-speciality-detail{
+    border-top:4px solid rgba(214,40,40,.72);
+    background:linear-gradient(135deg,#fff 0%,#FFF9F9 100%);
+  }
+
+  @media (max-width:860px){
+    .treatment-card-media{height:190px;}
+  }
+  @media (max-width:560px){
+    .doctor-first-credentials span{font-size:.87rem;}
+    .treatment-card-media{height:158px;}
+    .treatment-card-body{padding:20px 20px 22px;}
+    .treatment-card-number{
+      top:11px;
+      left:11px;
+      min-width:43px;
+      height:43px;
+      border-radius:12px;
+      font-size:.84rem;
+    }
+  }
+</style>
+
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -3134,7 +3308,12 @@
         <div class="doctor-first-copy">
           <div class="eyebrow">Meet Your Surgeon</div>
           <h2>Dr. Aman Singh</h2>
-          <div class="doctor-first-qual">D.N.B ORTHOPAEDIC SURGERY | Fellowship in Joint Replacement &amp; Spine Surgery</div>
+          <div class="doctor-first-credentials" aria-label="Dr. Aman Singh qualifications">
+            <span>MBBS, DNB (Orthopaedic Surgery)</span>
+            <span>Fellowship in Arthroscopy &amp; Arthroplasty (UK)</span>
+            <span>Paediatric Orthopaedics (Wadia Hospital, Mumbai)</span>
+            <span>Fellowship in Endoscopic Spine (Germany)</span>
+          </div>
           <p>Consult for knee replacement, robotic-assisted joint replacement, spine conditions, pediatric orthopaedics, arthroscopy and trauma care at JAP Hospital, Bhogpur.</p>
           <div class="doctor-first-metrics">
             <span>10+ Years Experience</span>
@@ -3195,35 +3374,76 @@
         <p>From joint pain to complex spine conditions, our specialists design a care plan around your mobility goals.</p>
       </div>
       <div class="card-grid">
-        <div class="t-card reveal d1">
-          <div class="t-icon">01</div><h3>Knee Replacement</h3>
-          <p>Total and partial knee replacement for advanced joint damage, with rehabilitation planning from the start.</p>
-          <a class="t-link" href="#" onclick="goToTreatment('total-knee');return false;">Detailed guide →</a>
+        <div class="t-card home-treatment-card image-center reveal d1">
+          <div class="treatment-card-media">
+            <img src="Knee.png" alt="Knee replacement care at JAP Hospital" loading="lazy">
+            <span class="treatment-card-number">01</span>
+          </div>
+          <div class="treatment-card-body">
+            <h3>Knee Replacement</h3>
+            <p>Total and partial knee replacement for advanced joint damage, with rehabilitation planning from the start.</p>
+            <a class="t-link" href="#" onclick="goToTreatment('total-knee');return false;">Detailed guide →</a>
+          </div>
         </div>
-        <div class="t-card reveal d2">
-          <div class="t-icon">02</div><h3>Robotic Knee Replacement</h3>
-          <p>ROSA®-supported planning and navigation for technology-assisted knee replacement.</p>
-          <a class="t-link" href="#" onclick="goToTreatment('robotic-knee');return false;">Detailed guide →</a>
+
+        <div class="t-card home-treatment-card image-center reveal d2">
+          <div class="treatment-card-media">
+            <img src="Rosa.png" alt="ROSA robotic knee replacement technology at JAP Hospital" loading="lazy">
+            <span class="treatment-card-number">02</span>
+          </div>
+          <div class="treatment-card-body">
+            <h3>Robotic Knee Replacement</h3>
+            <p>ROSA®-supported planning and navigation for technology-assisted knee replacement.</p>
+            <a class="t-link" href="#" onclick="goToTreatment('robotic-knee');return false;">Detailed guide →</a>
+          </div>
         </div>
-        <div class="t-card reveal d3">
-          <div class="t-icon">03</div><h3>Spine Surgery</h3>
-          <p>Assessment and modern surgical options for disc disease, stenosis and nerve compression.</p>
-          <a class="t-link" href="#" onclick="goToTreatment('spine');return false;">Detailed guide →</a>
+
+        <div class="t-card home-treatment-card image-left reveal d3">
+          <div class="treatment-card-media">
+            <img src="Spine.png" alt="Modern spine surgery care at JAP Hospital" loading="lazy">
+            <span class="treatment-card-number">03</span>
+          </div>
+          <div class="treatment-card-body">
+            <h3>Spine Surgery</h3>
+            <p>Assessment and modern surgical options for disc disease, stenosis and nerve compression.</p>
+            <a class="t-link" href="#" onclick="goToTreatment('spine');return false;">Detailed guide →</a>
+          </div>
         </div>
-        <div class="t-card reveal d1">
-          <div class="t-icon">04</div><h3>Hip Replacement</h3>
-          <p>Joint replacement planning for painful hip arthritis, fractures and advanced joint damage.</p>
-          <a class="t-link" href="#" onclick="goToTreatment('hip');return false;">Detailed guide →</a>
+
+        <div class="t-card home-treatment-card image-center reveal d1">
+          <div class="treatment-card-media">
+            <img src="Operation Theatre1.png" alt="Modern operation theatre supporting hip replacement surgery" loading="lazy">
+            <span class="treatment-card-number">04</span>
+          </div>
+          <div class="treatment-card-body">
+            <h3>Hip Replacement</h3>
+            <p>Joint replacement planning for painful hip arthritis, fractures and advanced joint damage.</p>
+            <a class="t-link" href="#" onclick="goToTreatment('hip');return false;">Detailed guide →</a>
+          </div>
         </div>
-        <div class="t-card reveal d2">
-          <div class="t-icon">05</div><h3>Arthroscopy</h3>
-          <p>Keyhole procedures used to diagnose and treat selected joint injuries and conditions.</p>
-          <a class="t-link" href="#" onclick="goToTreatment('arthroscopy');return false;">Detailed guide →</a>
+
+        <div class="t-card home-treatment-card image-center reveal d2">
+          <div class="treatment-card-media">
+            <img src="About hospital.png" alt="JAP Hospital surgical care environment" loading="lazy">
+            <span class="treatment-card-number">05</span>
+          </div>
+          <div class="treatment-card-body">
+            <h3>Arthroscopy</h3>
+            <p>Keyhole procedures used to diagnose and treat selected joint injuries and conditions.</p>
+            <a class="t-link" href="#" onclick="goToTreatment('arthroscopy');return false;">Detailed guide →</a>
+          </div>
         </div>
-        <div class="t-card reveal d3">
-          <div class="t-icon">06</div><h3>Fracture &amp; Trauma Care</h3>
-          <p>Assessment and treatment for fractures, dislocations and orthopaedic injuries.</p>
-          <a class="t-link" href="#" onclick="goToTreatment('trauma');return false;">Detailed guide →</a>
+
+        <div class="t-card home-treatment-card image-top reveal d3">
+          <div class="treatment-card-media">
+            <img src="Testing.png" alt="Clinical assessment and diagnostic support for fracture and trauma care" loading="lazy">
+            <span class="treatment-card-number">06</span>
+          </div>
+          <div class="treatment-card-body">
+            <h3>Fracture &amp; Trauma Care</h3>
+            <p>Assessment and treatment for fractures, dislocations and orthopaedic injuries.</p>
+            <a class="t-link" href="#" onclick="goToTreatment('trauma');return false;">Detailed guide →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -3237,7 +3457,7 @@
       </div>
 
       <div class="other-specialities-grid">
-        <div class="other-speciality-item reveal d1">
+        <button type="button" class="other-speciality-item reveal d1" onclick="goToTreatment('general-medicine')" aria-label="View General Medicine treatment information">
           <span class="other-speciality-icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none">
               <path d="M8 5v7a6 6 0 0 0 12 0V5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
@@ -3246,9 +3466,9 @@
             </svg>
           </span>
           <span class="other-speciality-name">General<br>Medicine</span>
-        </div>
+        </button>
 
-        <div class="other-speciality-item reveal d2">
+        <button type="button" class="other-speciality-item reveal d2" onclick="goToTreatment('general-surgery')" aria-label="View General Surgery Laparoscopic treatment information">
           <span class="other-speciality-icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none">
               <circle cx="16" cy="8" r="4" stroke="#fff" stroke-width="2"/>
@@ -3257,9 +3477,9 @@
             </svg>
           </span>
           <span class="other-speciality-name">General Surgery<br>(Laparoscopic)</span>
-        </div>
+        </button>
 
-        <div class="other-speciality-item reveal d3">
+        <button type="button" class="other-speciality-item reveal d3" onclick="goToTreatment('urology')" aria-label="View Urology treatment information">
           <span class="other-speciality-icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none">
               <path d="M12.5 6C8.5 6 6 9.6 6 14c0 4.1 2.1 7.1 5.5 7.1 2.6 0 4.5-2 4.5-5V8.4C15 7 14 6 12.5 6Z" stroke="#fff" stroke-width="2"/>
@@ -3268,9 +3488,9 @@
             </svg>
           </span>
           <span class="other-speciality-name">Urology</span>
-        </div>
+        </button>
 
-        <div class="other-speciality-item reveal d4">
+        <button type="button" class="other-speciality-item reveal d4" onclick="goToTreatment('critical-care')" aria-label="View Critical Care information">
           <span class="other-speciality-icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none">
               <path d="M4 22h24M7 22v5M25 22v5M7 15h9a4 4 0 0 1 4 4v3H7v-7Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -3280,7 +3500,7 @@
             </svg>
           </span>
           <span class="other-speciality-name">Critical<br>Care</span>
-        </div>
+        </button>
       </div>
     </div>
   </div>
@@ -3535,7 +3755,7 @@
     <div class="wrap">
       <div class="breadcrumb">Home / <span class="cur">Doctor Profile</span></div>
       <h1>Dr. Aman Singh</h1>
-      <p>D.N.B ORTHOPAEDIC SURGERY | Fellowship in Joint Replacement &amp; Spine Surgery — focused care for knee, joint, spine, pediatric orthopaedics and trauma conditions.</p>
+      <p>MBBS, DNB (Orthopaedic Surgery) | Fellowship in Arthroscopy &amp; Arthroplasty (UK) | Paediatric Orthopaedics (Wadia Hospital, Mumbai) | Fellowship in Endoscopic Spine (Germany).</p>
     </div>
   </div>
 
@@ -3546,7 +3766,12 @@
             <img src="dr photo.jpeg" alt="Dr. Aman Singh" class="doc-image">
         </div>
         <div class="doc-name">Dr. Aman Singh</div>
-        <div class="doc-role">D.N.B ORTHOPAEDIC SURGERY | Fellowship in Joint Replacement &amp; Spine Surgery</div>
+        <div class="doc-role">MBBS, DNB (Orthopaedic Surgery)</div>
+        <div class="doc-credentials-list" aria-label="Dr. Aman Singh qualifications">
+          <span>Fellowship in Arthroscopy &amp; Arthroplasty (UK)</span>
+          <span>Paediatric Orthopaedics (Wadia Hospital, Mumbai)</span>
+          <span>Fellowship in Endoscopic Spine (Germany)</span>
+        </div>
         <div class="doc-meta-row"><span>Experience</span><span>10+ Years</span></div>
         <div class="doc-meta-row"><span>Published Joint Replacement Figure</span><span>6,000+</span></div>
         <div class="doc-meta-row"><span>Languages</span><span>Punjabi, Hindi, English</span></div>
@@ -3570,30 +3795,6 @@
           <span class="spec-tag">Pediatric Orthopaedics</span>
         </div>
         <p style="color:var(--ink-soft);">Dr. Singh trained in advanced joint replacement techniques and has led the orthopedic programme at JAP Hospital since its founding. Known among patients for taking time to explain every procedure in simple Punjabi and Hindi, he is especially attentive to the needs of elderly patients and their families.</p>
-
-        <h3 style="margin-top:34px;">Education &amp; Career Journey</h3>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="yr">2010</div>
-            <p style="margin:.3em 0 0;color:var(--ink-soft);">MBBS, Government Medical College, Amritsar</p>
-          </div>
-          <div class="timeline-item">
-            <div class="yr">2013</div>
-            <p style="margin:.3em 0 0;color:var(--ink-soft);">D.N.B Orthopaedic Surgery</p>
-          </div>
-          <div class="timeline-item">
-            <div class="yr">2015</div>
-            <p style="margin:.3em 0 0;color:var(--ink-soft);">Fellowship in Joint Replacement Surgery, Delhi</p>
-          </div>
-          <div class="timeline-item">
-            <div class="yr">2018</div>
-            <p style="margin:.3em 0 0;color:var(--ink-soft);">Advanced Spine Surgery Certification</p>
-          </div>
-          <div class="timeline-item">
-            <div class="yr">2013–Present</div>
-            <p style="margin:.3em 0 0;color:var(--ink-soft);">Chief Orthopedic Surgeon, JAP Hospital, Bhogpur</p>
-          </div>
-        </div>
 
         <h3 style="margin-top:34px;">Consultation Timings</h3>
         <table class="timing-table">
@@ -3742,6 +3943,58 @@
     </div>
   </section>
 
+  <!-- OTHER SPECIALITIES — linked from the homepage speciality strip -->
+  <section style="padding-top:8px;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Other Specialities</div>
+        <h2>Multispeciality Care at JAP Hospital</h2>
+        <p>Select a speciality to read patient-friendly information about common reasons for consultation and how evaluation is generally planned.</p>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-row">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 4v6a5 5 0 0 0 10 0V4M5 4h4M15 4h4M17 16v1a4 4 0 0 0 8 0" stroke="#0B4F8A" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <div>
+            <h3>General Medicine</h3>
+            <p>Adult medical consultation, chronic-condition review, pre-operative medical assessment and coordination of non-surgical medical care.</p>
+            <div class="tags"><span>Adult medicine</span><span>Pre-operative assessment</span></div>
+            <a class="t-link" href="#" onclick="goToTreatment('general-medicine');return false;">Read detailed information →</a>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="6" r="3" stroke="#0B4F8A" stroke-width="1.7"/><path d="M6 21v-6a6 6 0 0 1 12 0v6M9 12l3 3 3-3" stroke="#0B4F8A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div>
+            <h3>General Surgery (Laparoscopic)</h3>
+            <p>Assessment of selected abdominal and general surgical conditions, including minimally invasive approaches when clinically appropriate.</p>
+            <div class="tags"><span>Laparoscopic surgery</span><span>General surgical care</span></div>
+            <a class="t-link" href="#" onclick="goToTreatment('general-surgery');return false;">Read detailed information →</a>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 4C6 4 4 7 4 11c0 3 1.7 5 4.2 5 2 0 3.8-1.6 3.8-4V6.2C11.2 4.8 10.3 4 9 4Zm6 0c3 0 5 3 5 7 0 3-1.7 5-4.2 5-2 0-3.8-1.6-3.8-4V6.2C12.8 4.8 13.7 4 15 4Z" stroke="#0B4F8A" stroke-width="1.6"/><path d="M9 16v4M15 16v4M9 20h6" stroke="#D62828" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <div>
+            <h3>Urology</h3>
+            <p>Evaluation of urinary, kidney, bladder and prostate-related concerns with treatment planning based on symptoms, examination and investigations.</p>
+            <div class="tags"><span>Urinary health</span><span>Kidney &amp; prostate assessment</span></div>
+            <a class="t-link" href="#" onclick="goToTreatment('urology');return false;">Read detailed information →</a>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="t-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 14h18M5 14V9h8a4 4 0 0 1 4 4v1M5 14v5M19 14v5" stroke="#0B4F8A" stroke-width="1.7" stroke-linecap="round"/><path d="M16 5h5v6h-5zM17 8h1l1-2 1 4h1" stroke="#D62828" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div>
+            <h3>Critical Care</h3>
+            <p>Close monitoring and coordinated support for patients who need higher-acuity observation, emergency stabilisation or post-operative medical supervision.</p>
+            <div class="tags"><span>Close monitoring</span><span>Coordinated care</span></div>
+            <a class="t-link" href="#" onclick="goToTreatment('critical-care');return false;">Read detailed information →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
   <!-- DETAILED TREATMENT CONTENT — SEO + PATIENT EDUCATION -->
@@ -3754,12 +4007,16 @@
       </div>
 
       <nav class="treatment-jump-nav" aria-label="Treatment guide navigation">
-        <a href="#total-knee">Total Knee Replacement</a>
-        <a href="#robotic-knee">Robotic Knee</a>
-        <a href="#spine">Spine Surgery</a>
-        <a href="#hip">Hip Replacement</a>
-        <a href="#arthroscopy">Arthroscopy</a>
-        <a href="#trauma">Fracture / Trauma</a>
+        <a href="#" onclick="goToTreatment('total-knee');return false;">Total Knee Replacement</a>
+        <a href="#" onclick="goToTreatment('robotic-knee');return false;">Robotic Knee</a>
+        <a href="#" onclick="goToTreatment('spine');return false;">Spine Surgery</a>
+        <a href="#" onclick="goToTreatment('hip');return false;">Hip Replacement</a>
+        <a href="#" onclick="goToTreatment('arthroscopy');return false;">Arthroscopy</a>
+        <a href="#" onclick="goToTreatment('trauma');return false;">Fracture / Trauma</a>
+        <a href="#" onclick="goToTreatment('general-medicine');return false;">General Medicine</a>
+        <a href="#" onclick="goToTreatment('general-surgery');return false;">General Surgery</a>
+        <a href="#" onclick="goToTreatment('urology');return false;">Urology</a>
+        <a href="#" onclick="goToTreatment('critical-care');return false;">Critical Care</a>
       </nav>
 
       <article class="treatment-detail featured" id="total-knee">
@@ -3812,6 +4069,111 @@
       <article class="treatment-detail" id="trauma">
         <div class="eyebrow">Fracture &amp; Trauma Care</div><h2>Prompt Orthopaedic Assessment for Injuries</h2>
         <p class="lead-copy">Fractures, dislocations and serious musculoskeletal injuries need timely assessment. Treatment may range from splints and casts to reduction, fixation or surgery depending on the injury.</p>
+      </article>
+
+      <div class="other-speciality-guides-head">
+        <div class="eyebrow">Other Speciality Guides</div>
+        <h2>Multispeciality Consultation &amp; Support</h2>
+        <p class="lead-copy">The following sections provide general patient information. The exact evaluation, investigations and treatment plan depend on the individual patient and the consulting specialist.</p>
+      </div>
+
+      <article class="treatment-detail other-speciality-detail" id="general-medicine">
+        <div class="eyebrow">General Medicine</div>
+        <h2>Adult Medical Assessment &amp; Ongoing Health Management</h2>
+        <p class="lead-copy">General medicine supports adults with new symptoms, ongoing medical conditions and medical optimisation before or after surgery. Consultation is based on history, examination and investigations when clinically required.</p>
+        <div class="treatment-columns">
+          <div class="treatment-info-box">
+            <h3>Common reasons to consult</h3>
+            <ul>
+              <li>Fever, weakness, fatigue or unexplained symptoms</li>
+              <li>Blood-pressure, diabetes or other chronic-condition review</li>
+              <li>Respiratory, digestive or general medical concerns</li>
+              <li>Medical fitness and optimisation before planned surgery</li>
+            </ul>
+          </div>
+          <div class="treatment-info-box">
+            <h3>Evaluation may include</h3>
+            <ul>
+              <li>Detailed medical history and physical examination</li>
+              <li>Review of current medicines and previous reports</li>
+              <li>Blood tests, imaging or other investigations when indicated</li>
+              <li>Referral or coordination with another specialist when needed</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="treatment-detail other-speciality-detail" id="general-surgery">
+        <div class="eyebrow">General Surgery (Laparoscopic)</div>
+        <h2>General Surgical Evaluation With Minimally Invasive Options</h2>
+        <p class="lead-copy">General surgery covers a range of conditions that may require operative treatment. Where suitable, laparoscopic techniques use small incisions and a camera-assisted approach; the final method is selected after specialist assessment.</p>
+        <div class="treatment-columns">
+          <div class="treatment-info-box">
+            <h3>Consultation may be useful for</h3>
+            <ul>
+              <li>Abdominal or groin swelling and suspected hernia</li>
+              <li>Gallbladder or selected abdominal surgical concerns</li>
+              <li>Persistent symptoms for which surgery has been advised</li>
+              <li>Review of an existing surgical diagnosis or report</li>
+            </ul>
+          </div>
+          <div class="treatment-info-box">
+            <h3>Planning usually considers</h3>
+            <ul>
+              <li>Clinical examination and review of imaging/reports</li>
+              <li>Whether surgery is necessary and which approach is appropriate</li>
+              <li>Anaesthesia and medical-fitness assessment</li>
+              <li>Expected hospital stay, wound care and follow-up</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="treatment-detail other-speciality-detail" id="urology">
+        <div class="eyebrow">Urology</div>
+        <h2>Assessment for Urinary, Kidney, Bladder &amp; Prostate Concerns</h2>
+        <p class="lead-copy">Urology focuses on the urinary system and related male reproductive concerns. Symptoms are assessed with history and examination, followed by urine tests, blood tests, ultrasound or other investigations when appropriate.</p>
+        <div class="treatment-columns">
+          <div class="treatment-info-box">
+            <h3>Reasons to seek a urology review</h3>
+            <ul>
+              <li>Pain or difficulty while passing urine</li>
+              <li>Frequent urination, poor urinary flow or retention symptoms</li>
+              <li>Suspected kidney or urinary stones</li>
+              <li>Blood in urine or recurrent urinary concerns</li>
+            </ul>
+          </div>
+          <div class="treatment-info-box">
+            <h3>Possible next steps</h3>
+            <ul>
+              <li>Urine and blood investigations</li>
+              <li>Ultrasound or other imaging when indicated</li>
+              <li>Medication or procedure-based treatment depending on diagnosis</li>
+              <li>Follow-up planning and prevention advice where relevant</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="treatment-detail other-speciality-detail" id="critical-care">
+        <div class="eyebrow">Critical Care</div>
+        <h2>Close Monitoring for Patients Requiring Higher-Acuity Support</h2>
+        <p class="lead-copy">Critical-care support is intended for patients who require closer observation and coordinated medical management because of serious illness, unstable vital signs, emergency needs or post-operative concerns.</p>
+        <div class="treatment-columns">
+          <div class="treatment-info-box">
+            <h3>Care may involve</h3>
+            <ul>
+              <li>Frequent monitoring of vital signs and clinical status</li>
+              <li>Emergency stabilisation and rapid medical assessment</li>
+              <li>Post-operative observation when a patient needs closer supervision</li>
+              <li>Coordination between the treating surgeon, physician and care team</li>
+            </ul>
+          </div>
+          <div class="treatment-info-box">
+            <h3>Important note</h3>
+            <p style="margin:0;color:var(--ink-soft);">The level of monitoring and treatment required is determined by the treating clinicians. In an emergency, patients should seek immediate medical attention rather than relying on website information.</p>
+          </div>
+        </div>
       </article>
     </div>
   </section>
