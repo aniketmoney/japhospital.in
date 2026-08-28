@@ -3077,6 +3077,221 @@
       font-size:.84rem;
     }
   }
+
+
+  /* =========================================================
+     ABOUT PAGE — MISSION / VISION / CORE VALUES REFRESH
+     Content follows the hospital's displayed vision/mission board.
+     ========================================================= */
+  .mission-vision-section{
+    overflow:hidden;
+  }
+
+  .mission-vision-section .mv-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+    align-items:stretch;
+  }
+
+  .mission-vision-section .mv-card{
+    position:relative;
+    overflow:hidden;
+    min-height:250px;
+    padding:32px;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:24px;
+    color:#fff;
+    box-shadow:0 18px 42px rgba(4,31,55,.16);
+    isolation:isolate;
+    transition:transform .38s cubic-bezier(.2,.75,.25,1), box-shadow .38s ease, border-color .38s ease;
+  }
+
+  .mission-vision-section .mv-card::before{
+    content:"";
+    position:absolute;
+    width:210px;
+    height:210px;
+    border-radius:50%;
+    right:-82px;
+    top:-92px;
+    background:rgba(255,255,255,.10);
+    filter:blur(1px);
+    z-index:-1;
+    transition:transform .55s ease, opacity .55s ease;
+  }
+
+  .mission-vision-section .mv-card::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:4px;
+    background:linear-gradient(90deg,#fff,rgba(255,255,255,.15));
+    opacity:.75;
+  }
+
+  .mission-vision-section .mv-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 26px 56px rgba(4,31,55,.23);
+    border-color:rgba(255,255,255,.35);
+  }
+
+  .mission-vision-section .mv-card:hover::before{
+    transform:scale(1.16) translate(-8px,8px);
+    opacity:.85;
+  }
+
+  .mission-card{
+    background:linear-gradient(145deg,#052A49 0%,#0B4F8A 72%,#1177B9 125%) !important;
+  }
+
+  .vision-card{
+    background:linear-gradient(145deg,#7E1820 0%,#D62828 72%,#F15B5B 125%) !important;
+  }
+
+  .values-card{
+    grid-column:1/-1;
+    min-height:auto !important;
+    background:linear-gradient(118deg,#06355F 0%,#0B4F8A 46%,#7C1D2A 118%) !important;
+  }
+
+  .mv-card-head{
+    display:flex;
+    align-items:center;
+    gap:17px;
+    margin-bottom:22px;
+  }
+
+  .mv-card-icon{
+    width:58px;
+    height:58px;
+    flex:0 0 58px;
+    border-radius:18px;
+    display:grid;
+    place-items:center;
+    color:#fff;
+    background:rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.22);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.16);
+    backdrop-filter:blur(7px);
+  }
+
+  .mv-card-icon svg{width:29px;height:29px;}
+
+  .mv-kicker{
+    color:#fff;
+    font-family:'Frank Ruhl Libre',serif;
+    font-size:.83rem;
+    font-weight:700;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+    opacity:.82;
+    margin-bottom:5px;
+  }
+
+  .mission-vision-section .mv-card h3{
+    color:#fff;
+    font-size:clamp(1.28rem,2vw,1.6rem);
+    margin:0;
+  }
+
+  .mission-vision-section .mv-card > p{
+    color:rgba(255,255,255,.88);
+    font-size:1.04rem;
+    line-height:1.72;
+    margin:0;
+    max-width:620px;
+  }
+
+  .core-values-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:15px;
+    margin-top:6px;
+  }
+
+  .core-value-item{
+    display:flex;
+    align-items:flex-start;
+    gap:13px;
+    padding:18px;
+    border-radius:17px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.16);
+    backdrop-filter:blur(7px);
+    transition:transform .3s ease, background .3s ease, border-color .3s ease;
+  }
+
+  .core-value-item:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,.16);
+    border-color:rgba(255,255,255,.28);
+  }
+
+  .core-value-number{
+    width:34px;
+    height:34px;
+    flex:0 0 34px;
+    display:grid;
+    place-items:center;
+    border-radius:11px;
+    background:#fff;
+    color:var(--red-dark);
+    font-family:'Poppins',sans-serif;
+    font-size:.76rem;
+    font-weight:800;
+    box-shadow:0 7px 18px rgba(0,0,0,.14);
+  }
+
+  .core-value-item strong{
+    display:block;
+    color:#fff;
+    font-family:'Poppins',sans-serif;
+    font-size:.94rem;
+    margin-bottom:3px;
+  }
+
+  .core-value-item span:not(.core-value-number){
+    display:block;
+    color:rgba(255,255,255,.80);
+    font-size:.87rem;
+    line-height:1.5;
+  }
+
+  .about-accred-strip{
+    margin-top:30px;
+  }
+
+  .about-accred-strip .accred-chip{
+    border-color:rgba(11,79,138,.20);
+    box-shadow:0 8px 20px rgba(11,79,138,.08);
+    transition:transform .28s ease, box-shadow .28s ease, color .28s ease, border-color .28s ease;
+  }
+
+  .about-accred-strip .accred-chip:hover{
+    transform:translateY(-3px);
+    color:var(--red-dark);
+    border-color:rgba(214,40,40,.32);
+    box-shadow:0 12px 24px rgba(11,79,138,.13);
+  }
+
+  @media (max-width:860px){
+    .mission-vision-section .mv-grid{grid-template-columns:1fr;}
+    .mission-vision-section .values-card{grid-column:auto;}
+    .core-values-grid{grid-template-columns:1fr;}
+    .mission-vision-section .mv-card{min-height:auto;padding:26px 22px;}
+  }
+
+  @media (max-width:560px){
+    .mv-card-head{align-items:flex-start;gap:14px;}
+    .mv-card-icon{width:50px;height:50px;flex-basis:50px;border-radius:15px;}
+    .mv-card-icon svg{width:25px;height:25px;}
+    .mission-vision-section .mv-card > p{font-size:.96rem;}
+    .about-accred-strip{gap:10px;}
+    .about-accred-strip .accred-chip{width:100%;text-align:center;}
+  }
+
 </style>
 
 </head>
@@ -3715,27 +3930,77 @@
     </div>
   </section>
 
-  <section style="padding-top:0;">
+  <section class="mission-vision-section" style="padding-top:0;">
     <div class="wrap">
       <div class="mv-grid">
-        <div class="mv-card">
-          <div class="eyebrow">Our Mission</div>
-          <h3>Restore Mobility, Restore Independence</h3>
-          <p style="color:var(--ink-soft);margin:0;">To provide safe, affordable and advanced orthopedic care so every patient can return to a life of movement and independence.</p>
-        </div>
-        <div class="mv-card">
-          <div class="eyebrow">Our Vision</div>
-          <h3>Punjab's Trusted Name in Bone &amp; Joint Care</h3>
-          <p style="color:var(--ink-soft);margin:0;">To be the most trusted orthopedic and spine care destination in the region, known for compassionate, world‑class treatment.</p>
-        </div>
+        <article class="mv-card mission-card reveal d1">
+          <div class="mv-card-head">
+            <span class="mv-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 21s-7-4.4-9.3-8.7C.9 9 2.2 5.7 5.3 5c2.2-.5 4.4.4 5.7 2.2L12 8.6l1-1.4C14.3 5.4 16.5 4.5 18.7 5c3.1.7 4.4 4 2.6 7.3C19 16.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M8 12h2.4l1.1-2.6 1.6 5 1.2-2.4H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div>
+              <div class="mv-kicker">Our Mission</div>
+              <h3>Treating the Patients</h3>
+            </div>
+          </div>
+          <p>Using validated knowledge, resources &amp; skills for their satisfaction.</p>
+        </article>
+
+        <article class="mv-card vision-card reveal d2">
+          <div class="mv-card-head">
+            <span class="mv-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M3 12s3.3-5.5 9-5.5S21 12 21 12s-3.3 5.5-9 5.5S3 12 3 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </span>
+            <div>
+              <div class="mv-kicker">Our Vision</div>
+              <h3>Providing Best Care</h3>
+            </div>
+          </div>
+          <p>With access, reliability, dignity, safety &amp; affordability.</p>
+        </article>
+
+        <article class="mv-card values-card reveal d3">
+          <div class="mv-card-head">
+            <span class="mv-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.7"/>
+                <circle cx="17" cy="9" r="2.4" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M3.5 19c.5-3.4 2.2-5.3 4.5-5.3s4 1.9 4.5 5.3M13.5 18.5c.4-2.6 1.7-4 3.5-4 1.7 0 3 1.4 3.5 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div>
+              <div class="mv-kicker">Core Values</div>
+              <h3>Care Built on Values</h3>
+            </div>
+          </div>
+          <div class="core-values-grid">
+            <div class="core-value-item">
+              <span class="core-value-number">01</span>
+              <div><strong>Patient Centricity</strong><span>“Patients First Always”</span></div>
+            </div>
+            <div class="core-value-item">
+              <span class="core-value-number">02</span>
+              <div><strong>Integrity</strong><span>“Safe Care, Every Patient Every Time”</span></div>
+            </div>
+            <div class="core-value-item">
+              <span class="core-value-number">03</span>
+              <div><strong>Teamwork</strong><span>Together; We Heal</span></div>
+            </div>
+          </div>
+        </article>
       </div>
-      <div class="accred-strip">
+
+      <div class="accred-strip about-accred-strip reveal d4">
         <span class="accred-chip">NABH Certified</span>
         <span class="accred-chip">ECHS Empanelled</span>
-        <span class="accred-chip">Ayushman Bharat Empanelled</span>
-        <span class="accred-chip">Cashless Insurance Tie‑ups</span>
       </div>
-      <p class="echs-info-note"><strong>ECHS:</strong> JAP Hospital provides empanelled support for eligible ECHS beneficiaries, subject to applicable referral, authorisation and documentation requirements.</p>
+      <p class="echs-info-note reveal d4"><strong>ECHS:</strong> JAP Hospital provides empanelled support for eligible ECHS beneficiaries, subject to applicable referral, authorisation and documentation requirements.</p>
     </div>
   </section>
 
